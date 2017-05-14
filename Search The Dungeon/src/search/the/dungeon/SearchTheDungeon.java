@@ -10,11 +10,13 @@ import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
 import byui.cit260.searchTheDungeon.model.Location;
 import byui.cit260.searchTheDungeon.model.Player;
+import byui.cit260.searchTheDungeon.model.Map;
 import byui.cit260.searchTheDungeon.model.Riddle;
+import byui.cit260.searchTheDungeon.model.Scene;
 
 /**
  *
- * @author Gibran Millan
+ * @author Gibran Millan, Paul Darr, Les Aycock
  */
 public class SearchTheDungeon {
 
@@ -37,6 +39,9 @@ public class SearchTheDungeon {
         
         gameOne.setNoPeople(1);
         
+        String gameInfo = gameOne.toString();
+        System.out.println(gameInfo);
+        
         //Actor instance test
         Actor wizard = new Actor();
         
@@ -45,15 +50,10 @@ public class SearchTheDungeon {
         wizard.setCoordinates("A5");
         wizard.setPowerLevel(20);
         
-        //Location instance test
-        Location roomOne = new Location();
+        String actorInfo = wizard.toString();
+        System.out.println(actorInfo);
         
-        roomOne.setRow("A");
-        roomOne.setColumn("5");
-        roomOne.setVisited("yes");
-        roomOne.setAmountRemaining(16);
-        
-        //Riddle instance test
+                //Riddle instance test
         Riddle riddle = new Riddle();
         
         riddle.setRiddle("How many sides are in a pentagon?");
@@ -76,5 +76,41 @@ public class SearchTheDungeon {
         
         String InventoryItemInfo = inventoryItem.toString();
         System.out.println(InventoryItemInfo);
+        
+        //Map instance test
+        Map mapOne = new Map();
+        
+        mapOne.setDescription("Map of the game.");
+        mapOne.setRowCount(5);
+        mapOne.setColumnCount(5);
+        mapOne.setCurrentRow("A");
+        mapOne.setCurrentColumn("5");
+        mapOne.setCurrentScene("A5");
+        
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
+        
+        //Location instance test
+        Location roomOne = new Location();
+        
+        roomOne.setRow("A");
+        roomOne.setColumn("5");
+        roomOne.setVisited("yes");
+        roomOne.setAmountRemaining(16);
+        
+        String roomInfo = roomOne.toString();
+        System.out.println(roomInfo);
+        
+        //Scene instance test
+        Scene sceneOne = new Scene();
+        
+        sceneOne.setDescription("Scene description.");
+        sceneOne.setRow("A");
+        sceneOne.setColumn("5");
+        sceneOne.setVisited("yes");
+        
+        String sceneInfo = sceneOne.toString();
+        System.out.println(sceneInfo);
     }
+    
 }
