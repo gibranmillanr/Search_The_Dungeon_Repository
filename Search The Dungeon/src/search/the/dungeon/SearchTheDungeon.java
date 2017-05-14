@@ -9,6 +9,7 @@ import byui.cit260.searchTheDungeon.model.Actor;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.Location;
 import byui.cit260.searchTheDungeon.model.Player;
+import byui.cit260.searchTheDungeon.model.Riddle;
 
 /**
  *
@@ -26,6 +27,9 @@ public class SearchTheDungeon {
         
         playerOne.setName("Fred");
         playerOne.setPowerLevel(20);
+        
+        String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
         
         //Game instance test
         Game gameOne = new Game();
@@ -48,6 +52,18 @@ public class SearchTheDungeon {
         roomOne.setVisited("yes");
         roomOne.setAmountRemaining(16);
         
+        //Riddle instance test
+        Riddle riddle = new Riddle();
+        
+        riddle.setRiddle("How many sides are in a pentagon?");
+        riddle.setAnswer1(5); //correct answer
+        riddle.setAnswer2(10);
+        riddle.setAnswer3(8);
+        riddle.setAnswer4(7);
+        riddle.setCorrectAnswerNumber(5);
+        
+        String riddleInfo = riddle.toString();
+        System.out.println(riddleInfo);
+        
     }
-    
 }
