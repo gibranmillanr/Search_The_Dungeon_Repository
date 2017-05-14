@@ -7,6 +7,7 @@ package search.the.dungeon;
 
 import byui.cit260.searchTheDungeon.model.Actor;
 import byui.cit260.searchTheDungeon.model.Game;
+import byui.cit260.searchTheDungeon.model.InventoryItem;
 import byui.cit260.searchTheDungeon.model.Location;
 import byui.cit260.searchTheDungeon.model.Player;
 import byui.cit260.searchTheDungeon.model.Riddle;
@@ -64,6 +65,16 @@ public class SearchTheDungeon {
         
         String riddleInfo = riddle.toString();
         System.out.println(riddleInfo);
+     
+        //inventoryItem instance test
+        InventoryItem inventoryItem = new InventoryItem();
         
+        inventoryItem.setDescription("Axe");
+        inventoryItem.setItemType("handheld");
+        inventoryItem.setPowerLevel(15);
+        inventoryItem.setAmount(1);
+        
+        String InventoryItemInfo = inventoryItem.toString();
+        System.out.println(InventoryItemInfo);
     }
 }
