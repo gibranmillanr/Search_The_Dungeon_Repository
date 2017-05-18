@@ -61,7 +61,7 @@ public class SearchTheDungeon {
         riddle.setAnswer2(10);
         riddle.setAnswer3(8);
         riddle.setAnswer4(7);
-        riddle.setCorrectAnswerNumber(5);
+        riddle.setCorrectAnswerNumber(1);
         
         String riddleInfo = riddle.toString();
         System.out.println(riddleInfo);
