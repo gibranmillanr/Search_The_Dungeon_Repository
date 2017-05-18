@@ -83,9 +83,9 @@ public class SearchTheDungeon {
         mapOne.setDescription("Map of the game.");
         mapOne.setRowCount(5);
         mapOne.setColumnCount(5);
-        mapOne.setCurrentRow("A");
-        mapOne.setCurrentColumn("5");
-        mapOne.setCurrentScene("A5");
+        mapOne.setCurrentRow(5);
+        mapOne.setCurrentColumn(5);
+        mapOne.setScene("55");
         
         String mapInfo = mapOne.toString();
         System.out.println(mapInfo);
