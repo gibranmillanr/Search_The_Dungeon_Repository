@@ -17,16 +17,12 @@ public class Map implements Serializable {
     private String description;
     private int rowCount;
     private int columnCount;
-    private String currentRow;
-    private String currentColumn;
-    private String currentScene;
+    private int currentRow;
+    private int currentColumn;
+    private String scene;
 
-    //Default Constructor
-    public Map() {
-    }
-    
     //Getter and Setter
-    public String getDescription() {
+     public String getDescription() {
         return description;
     }
 
@@ -50,28 +46,32 @@ public class Map implements Serializable {
         this.columnCount = columnCount;
     }
 
-    public String getCurrentRow() {
+    public int getCurrentRow() {
         return currentRow;
     }
 
-    public void setCurrentRow(String currentRow) {
+    public void setCurrentRow(int currentRow) {
         this.currentRow = currentRow;
     }
 
-    public String getCurrentColumn() {
+    public int getCurrentColumn() {
         return currentColumn;
     }
 
-    public void setCurrentColumn(String currentColumn) {
+    public void setCurrentColumn(int currentColumn) {
         this.currentColumn = currentColumn;
     }
 
-    public String getCurrentScene() {
-        return currentScene;
+    public String getScene() {
+        return scene;
     }
 
-    public void setCurrentScene(String currentScene) {
-        this.currentScene = currentScene;
+    public void setScene(String scene) {
+        this.scene = scene;
+    }
+
+    //Default Constructor
+    public Map() {
     }
 
     //hashcode
@@ -83,14 +83,14 @@ public class Map implements Serializable {
         hash = 37 * hash + this.columnCount;
         hash = 37 * hash + Objects.hashCode(this.currentRow);
         hash = 37 * hash + Objects.hashCode(this.currentColumn);
-        hash = 37 * hash + Objects.hashCode(this.currentScene);
+        hash = 37 * hash + Objects.hashCode(this.scene);
         return hash;
     }
 
     //toString
     @Override
     public String toString() {
-        return "Map{" + "description=" + description + ", rowCount=" + rowCount + ", columnCount=" + columnCount + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", currentScene=" + currentScene + '}';
+        return "Map{" + "description=" + description + ", rowCount=" + rowCount + ", columnCount=" + columnCount + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", scene=" + scene + '}';
     }
 
     //equals
@@ -121,7 +121,7 @@ public class Map implements Serializable {
         if (!Objects.equals(this.currentColumn, other.currentColumn)) {
             return false;
         }
-        if (!Objects.equals(this.currentScene, other.currentScene)) {
+        if (!Objects.equals(this.scene, other.scene)) {
             return false;
         }
         return true;
