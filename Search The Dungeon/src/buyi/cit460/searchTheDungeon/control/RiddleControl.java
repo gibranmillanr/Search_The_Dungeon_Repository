@@ -32,4 +32,28 @@ public class RiddleControl {
         
     return -1;
     }
-}
+
+    /**
+    * 
+    * @author Les Aycock
+     * @param sizeOfMap
+     * @param howManyRooms
+     * @return 
+    */
+    public int calcFaries (int sizeOfMap, int howManyRooms){
+        if (sizeOfMap<=0){
+                return -1;
+        }
+        if (howManyRooms <= 0) {
+            return -1;
+        }
+        if (sizeOfMap !=26) {
+            return -2;
+        }
+        if (howManyRooms > 26){
+            return -2;
+        }
+        int percentageRooms = (howManyRooms * 100) / sizeOfMap;
+        return percentageRooms;
+    }
+}   
