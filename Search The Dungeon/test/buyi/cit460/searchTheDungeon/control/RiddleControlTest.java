@@ -238,7 +238,7 @@ public class RiddleControlTest {
         howManyRooms = 4;
         
         // expected output returned value
-        expResult = -2;
+        expResult = -1;
         
         // call function to run test
         result = instance.calcFaries(sizeOfMap, howManyRooms);
@@ -256,7 +256,7 @@ public class RiddleControlTest {
         howManyRooms = 15;
         
         // expected output returned value
-        expResult = -2;
+        expResult = -1;
         
         // call function to run test
         result = instance.calcFaries(sizeOfMap, howManyRooms);
@@ -294,7 +294,7 @@ public class RiddleControlTest {
         howManyRooms = 34;
         
         // expected output returned value
-        expResult = -2;
+        expResult = -1;
         
         // call function to run test
         result = instance.calcFaries(sizeOfMap, howManyRooms);
@@ -313,7 +313,7 @@ public class RiddleControlTest {
         howManyRooms = 17;
         
         // expected output returned value
-        expResult = -2;
+        expResult = -1;
         
         // call function to run test
         result = instance.calcFaries(sizeOfMap, howManyRooms);

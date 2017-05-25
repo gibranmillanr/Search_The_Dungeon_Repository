@@ -48,10 +48,10 @@ public class RiddleControl {
             return -1;
         }
         if (sizeOfMap !=26) {
-            return -2;
+            return -1;
         }
         if (howManyRooms > 26){
-            return -2;
+            return -1;
         }
         int percentageRooms = (howManyRooms * 100) / sizeOfMap;
         return percentageRooms;
