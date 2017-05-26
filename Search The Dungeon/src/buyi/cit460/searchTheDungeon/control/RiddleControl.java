@@ -56,4 +56,29 @@ public class RiddleControl {
         int percentageRooms = (howManyRooms * 100) / sizeOfMap;
         return percentageRooms;
     }
+    
+    /**
+     * @author Gibran Millan
+     * @param radius
+     * @param height
+     * @return 
+    */
+    public double calcTrap ( double radius, double height ){ 
+       
+        if (radius <= 0){ 
+            return -1;
+        }
+        if (height <= 0){ 
+            return -1;
+        }
+       
+        double volumeNotRounded = ( Math.PI * Math.pow(radius, 2) * height );
+        double volume = Math.round(volumeNotRounded*100.0)/100.0;
+        if ( volume >= 3141.59 && volume <= 10602.88){    
+             return volume ;
+        }
+        
+        return -1;
+    }
+    
 }   

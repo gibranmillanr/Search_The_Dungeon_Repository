@@ -324,4 +324,141 @@ public class RiddleControlTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     } 
+
+    /**
+     * Test of calcTrap method, of class RiddleControl.
+     */
+    @Test
+    public void testCalcTrap() {
+        System.out.println("calcTrap");
+        
+        //calcTrap test #1
+        System.out.println("\tTest case #1");
+        
+        //input values for test case 1
+        double radius = 11;
+        double height = 12;
+        
+        //create instance of inventory control class
+        RiddleControl instance = new RiddleControl();
+        
+        //expected output
+        double expResult = 4561.59;
+        
+        //call function to run test
+        double result = instance.calcTrap(radius, height);
+        
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0001);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        //calcTrap test #2
+        System.out.println("\tTest case #2");
+        
+        //input values 
+        radius = -11;
+        height = 12;
+        
+        //expected output
+        expResult = -1;
+        
+        //call function to run test
+        result = instance.calcTrap(radius, height);
+        
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0001);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        //calcTrap test #3
+        System.out.println("\tTest case #3");
+        
+        //input values 
+        radius = -11;
+        height = 0;
+        
+        //expected output
+        expResult = -1;
+        
+        //call function to run test
+        result = instance.calcTrap(radius, height);
+        
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0001);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        //calcTrap test #4
+        System.out.println("\tTest case #4");
+        
+        //input values 
+        radius = 3;
+        height = 4;
+        
+        //expected output
+        expResult = -1;
+        
+        //call function to run test
+        result = instance.calcTrap(radius, height);
+        
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0001);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        //calcTrap test #5
+        System.out.println("\tTest case #5");
+        
+        //input values 
+        radius = 0;
+        height = 10;
+        
+        //expected output
+        expResult = -1;
+        
+        //call function to run test
+        result = instance.calcTrap(radius, height);
+        
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0001);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        //calcTrap test #6
+        System.out.println("\tTest case #6");
+        
+        //input values 
+        radius = 10;
+        height = 0;
+        
+        //expected output
+        expResult = -1;
+        
+        //call function to run test
+        result = instance.calcTrap(radius, height);
+        
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0001);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        //calcTrap test #7
+        System.out.println("\tTest case #7");
+        
+        //input values 
+        radius = 10;
+        height = 100;
+        
+        //expected output
+        expResult = -1;
+        
+        //call function to run test
+        result = instance.calcTrap(radius, height);
+        
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0001);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
 }
