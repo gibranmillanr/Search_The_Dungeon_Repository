@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Les and Sue
+ * @author Les
  */
 public class Riddle implements Serializable{
     
