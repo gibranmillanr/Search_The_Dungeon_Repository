@@ -81,4 +81,29 @@ public class RiddleControl {
         return -1;
     }
     
+    /**
+    * 
+    * @author Paul Darr
+    * @param numberOne
+    * @param numberTwo
+    * @return 
+    */
+    public int calcDragon ( int numberOne, int numberTwo){ 
+       
+        if (numberOne <= 0){ 
+            return -1;
+        }
+        if (numberTwo <= 0){ 
+            return -1;
+        }
+ 
+        int addedNumber = numberOne + numberTwo;
+        int multipliedNumber = numberOne * numberTwo;
+        
+        if ((addedNumber == 14) && (multipliedNumber == 48)){    
+             return 1 ;
+        }
+        
+    return -1;
+    }
 }   
