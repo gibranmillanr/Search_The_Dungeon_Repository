@@ -5,10 +5,12 @@
  */
 package buyi.cit460.searchTheDungeon.control;
 
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  *
@@ -25,6 +27,14 @@ public class RiddleControlTest {
     
     @AfterClass
     public static void tearDownClass() {
+    }
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
     }
 
     /**
@@ -458,6 +468,150 @@ public class RiddleControlTest {
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of calcDragon method, of class RiddleControl.
+     */
+    @Test
+    public void testCalcDragon() {
+        System.out.println("calcDragon");
+        
+        //Test case #1
+        System.out.println("\tTest case #1");
+        
+        // input values for test case 1
+        int numberOne = 6;
+        int numberTwo = 8;
+        
+        // create instance of Riddle control class
+        RiddleControl instance = new RiddleControl();
+        
+        // expected output returned value
+        int expResult = 1;
+        
+        // call function to run test
+        int result = instance.calcDragon(numberOne, numberTwo);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0001);
+       
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         //Test case #2
+        System.out.println("\tTest case #2");
+        
+        // input values for test case 2
+        numberOne = -1;
+        numberTwo = 8;
+        
+        // expected output returned value
+        expResult = -1;
+        
+        // call function to run test
+        result = instance.calcDragon(numberOne, numberTwo);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0001);
+       
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        //Test case #3
+        System.out.println("\tTest case #3");
+        
+        // input values for test case 3
+        numberOne = 6;
+        numberTwo = -1;
+        
+        // expected output returned value
+        expResult = -1;
+        
+        // call function to run test
+        result = instance.calcDragon(numberOne, numberTwo);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0001);
+       
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        //Test case #4
+        System.out.println("\tTest case #4");
+        
+        // input values for test case 4
+        numberOne = 6;
+        numberTwo = 9;
+        
+        // expected output returned value
+        expResult = -1;
+        
+        // call function to run test
+        result = instance.calcDragon(numberOne, numberTwo);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0001);
+       
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         //Test case #5
+        System.out.println("\tTest case #5");
+        
+        // input values for test case 5
+        numberOne = 0;
+        numberTwo = 8;
+        
+        // expected output returned value
+        expResult = -1;
+        
+        // call function to run test
+        result = instance.calcDragon(numberOne, numberTwo);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0001);
+       
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         //Test case #6
+        System.out.println("\tTest case #6");
+        
+        // input values for test case 6
+        numberOne = 6;
+        numberTwo = 0;
+        
+        // expected output returned value
+        expResult = -1;
+        
+        // call function to run test
+        result = instance.calcDragon(numberOne, numberTwo);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0001);
+       
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         //Test case #7
+        System.out.println("\tTest case #7");
+        
+        // input values for test case 7
+        numberOne = 7;
+        numberTwo = 7;
+        
+        // expected output returned value
+        expResult = -1;
+        
+        // call function to run test
+        result = instance.calcDragon(numberOne, numberTwo);
+        
+        // compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0001);
+       
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
