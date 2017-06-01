@@ -5,10 +5,26 @@
  */
 package buyi.cit460.searchTheDungeon.control;
 
+import byui.cit260.searchTheDungeon.model.Player;
+import search.the.dungeon.SearchTheDungeon;
+
 /**
  *
  * @author Gibran Millan
  */
 public class GameControl {
+
+    public static Player createPlayer(String name) {
+       
+        if (name == null){
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setName(name);
+        
+        SearchTheDungeon.setPlayer(player); // save the player
+        return  player;
+    }
     
 }
