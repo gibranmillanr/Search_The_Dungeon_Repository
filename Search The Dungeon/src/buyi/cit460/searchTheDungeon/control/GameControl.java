@@ -26,5 +26,9 @@ public class GameControl {
         SearchTheDungeon.setPlayer(player); // save the player
         return  player;
     }
+
+    public static void createNewGame(Player player) {
+        System.out.println("\n*** createNewGame stub function called ***");
+    }
     
 }
