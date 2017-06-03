@@ -21,18 +21,18 @@ public class HelpMenuView {
         this.promptMessage = "\nPlease choose an option: ";
         
         this.menu = "\n"
-                  + "*******************************************"
-                  +"\n Help Menu                               |"
-                  +"\n******************************************"
-                  +"\nG - What is the goal of the game? "
-                  +"\nM - How to move to a new room?"
-                  +"\nH - How to Explore a room?"
-                  +"\nV - How to view gear in inventory?"
-                  +"\nA - How to add gear to inventory?"
-                  +"\nF - Fighting enemies"
-                  +"\nI - Game interactions"
-                  +"\nQ - Quit"
-                  +"\n******************************************";
+                  +"***********************************************"
+                  +"\n*                   HELP MENU                 *"
+                  +"\n***********************************************"
+                  +"\n* G - What is the goal of the game?           *"
+                  +"\n* M - How to move to a new room?              *"
+                  +"\n* H - How to Explore a room?                  *"
+                  +"\n* V - How to view gear in inventory?          *"
+                  +"\n* A - How to add gear to inventory?           *"
+                  +"\n* F - Fighting enemies                        *"
+                  +"\n* I - Game interactions                       *"
+                  +"\n* Q - Quit                                    *"
+                  +"\n***********************************************";
            
     }
 

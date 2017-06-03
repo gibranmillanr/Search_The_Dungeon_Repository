@@ -26,10 +26,29 @@ public class StartProgramView {
 
     private void displayBanner() {
        System.out.println(
-       "\n*******************************************"
-      +"\n* Welcome! Will you be able to survive    *"
-      +"\n*  the dungeon?                           *"
-      +"\n*******************************************"
+       "\n***********************************************"
+      +"\n*                                             *" 
+      +"\n*             SEARCH THE DUNGEON              *" 
+      +"\n*                                             *" 
+      +"\n* Search the Dungeon is a text based role     *"
+      +"\n* playing game based on some of the classics. *"
+      +"\n* This game will have you take on the role of *"
+      +"\n* a courageous adventurer delving into a      *"
+      +"\n* dungeon for treasure and glory. Search the  *"
+      +"\n* dungeon contains adventure, survival,       *"
+      +"\n* horror, and fantasy elements. It’s not an   *"
+      +"\n* easy game, will you be able to survive the  *"
+      +"\n* dungeon?                                    *" 
+      +"\n*                                             *"
+      +"\n* You will enter the dungeon with nothing but *"
+      +"\n* three items: your armor, your weapon, and   *"
+      +"\n* your shield. You won't be happy to find out *"
+      +"\n* that your initial items are not very        *"
+      +"\n* powerful. Hurry and search the dungeon for  *"
+      +"\n* better gear before you encounter something  *"
+      +"\n* dangerous.                                  *"
+      +"\n*                                             *"                         
+      +"\n***********************************************"
        );
     }
 
@@ -94,10 +113,10 @@ public class StartProgramView {
     private void displayNextView(Player player) {
         
         //display a custom welcome message
-         System.out.println("\n*******************************************"
-                           +"\n* Welcome to the game " + player.getName()
-                           +"\n  Try not to die!"
-                           +"\n*******************************************"
+         System.out.println("\n***********************************************"
+                           +"\n  Welcome to the game " + player.getName() 
+                           +"\n  Try not to die!                              "
+                           +"\n***********************************************"
                            );
          
          // Create MainMenuView object
