@@ -27,7 +27,8 @@ public class StartProgramView {
     private void displayBanner() {
        System.out.println(
        "\n*******************************************"
-      +"\n*                                         *"
+      +"\n* Welcome! Will you be able to survive    *"
+      +"\n*  the dungeon?                           *"
       +"\n*******************************************"
        );
     }
