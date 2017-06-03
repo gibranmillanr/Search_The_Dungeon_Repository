@@ -15,8 +15,11 @@ import search.the.dungeon.SearchTheDungeon;
  */
 public class MainMenuView {
     private String menu;
+    private String promptMessage;
     
     public MainMenuView(){
+        
+        this.promptMessage = "\nPlease choose an option: ";
         
         this.menu = "\n"
                   + "*******************************************"
@@ -104,7 +107,9 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        System.out.println("*** displayHelpMenu function called ***");
+        // Display the help menu
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayHelpMenuView();
     }
 
     private void saveGame() {
