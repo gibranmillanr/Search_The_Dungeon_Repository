@@ -26,7 +26,7 @@ public class HelpMenuView {
                   +"\n***********************************************"
                   +"\n* G - What is the goal of the game?           *"
                   +"\n* M - How to move to a new room?              *"
-                  +"\n* H - How to Explore a room?                  *"
+                  +"\n* E - How to Explore a room?                  *"
                   +"\n* V - How to view gear in inventory?          *"
                   +"\n* A - How to add gear to inventory?           *"
                   +"\n* F - Fighting enemies                        *"
