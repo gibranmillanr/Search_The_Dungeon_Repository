@@ -56,6 +56,7 @@ public class MainMenuView {
         
         while (!valid) { // loop while an invalid value is entered
             System.out.println("\n" + this.menu); // promptMessage in assignment
+            System.out.println("\n" + this.promptMessage);
             
             value = keyboard.nextLine(); //get next line typed on keyboard
             value = value.trim(); //trim off leading and trailing blanks
@@ -99,7 +100,7 @@ public class MainMenuView {
         
         // Display the game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.displayGameMenuView();
     }
 
     private void startExistingGame() {
