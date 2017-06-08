@@ -63,7 +63,7 @@ public class RiddleControl {
      * @param height
      * @return 
     */
-    public double calcTrap ( double radius, double height ){ 
+    public static double calcTrap ( double radius, double height ){ 
        
         if (radius <= 0){ 
             return -1;

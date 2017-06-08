@@ -35,6 +35,13 @@ public class GameMenuView {
                   +"\n* S - Save your current game                  *"
                   +"\n* Q - Quit                                    *"
                   +"\n*                                             *"
+                  +"\n* The following options do not belong in this *"
+                  +"\n*  menu and will be removed later             *"
+                  +"\n*                                             *"
+                  +"\n* F - Fight Menu                              *"
+                  +"\n* P - Player menu                             *"
+                  +"\n* C - Fairies control                         *"
+                  +"\n* T - Trap Control                            *"
                   +"\n***********************************************";      
     }
     
@@ -87,6 +94,18 @@ public class GameMenuView {
            case "S": // Save your current game 
                this.saveGame();
                break;
+           case "C": // Fairie Control
+               this.displayFarieControl();
+               break;
+           case "F": // fight menu
+               this.displayFightMenu();
+               break;
+           case "P": // Player View
+               this.displayPlayerView();
+               break;
+           case "T": // Player View
+               this.displayTrapView();
+               break;
            default:
                System.out.println("\n***Invalid selection *** Try again");
                break;
@@ -104,5 +123,25 @@ public class GameMenuView {
 
     private void saveGame() {
         System.out.println("*** saveGame function called ***");
+    }
+
+    private void displayFarieControl() {
+       FairiesView fairiesView = new FairiesView();
+        fairiesView.displayFairiesView();
+    }
+
+    private void displayFightMenu() {
+       FightMenuView fightMenu = new FightMenuView();
+        fightMenu.displayFightMenuView();
+    }
+
+    private void displayPlayerView() {
+      PlayerView playerView = new PlayerView();
+        playerView.displayPlayerView();
+    }
+
+    private void displayTrapView() {
+       TrapView trapView = new TrapView();
+        trapView.displayTrapView();  
     }
 }
