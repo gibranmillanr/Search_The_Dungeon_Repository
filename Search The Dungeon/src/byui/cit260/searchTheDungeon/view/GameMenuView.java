@@ -27,6 +27,7 @@ public class GameMenuView {
                   +"\n* I - View Inventory                          *"
                   +"\n* H - Get help on how to play the game        *"
                   +"\n* F - Fight Menu                              *"                
+                  +"\n* P - Player Menu                             *"
                   +"\n* Q - Quit                                    *"
                   +"\n***********************************************";
            
@@ -85,6 +86,9 @@ public class GameMenuView {
            case "F": // fight menu
                this.displayFightMenu();
                break;
+           case "P": // Player View
+               this.displayPlayerView();
+               break;
            default:
                System.out.println("\n***Invalid selection *** Try again");
                break;
@@ -109,5 +113,11 @@ public class GameMenuView {
     private void displayFightMenu() {
         FightMenuView fightMenu = new FightMenuView();
         fightMenu.displayFightMenuView();
+    }
+
+    private void displayPlayerView() {
+        // player view menu
+        PlayerView playerView = new PlayerView();
+        playerView.displayPlayerView();
     }
 }
