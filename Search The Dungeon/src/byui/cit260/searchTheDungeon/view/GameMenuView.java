@@ -28,6 +28,7 @@ public class GameMenuView {
                   +"\n* H - Get help on how to play the game        *"
                   +"\n* F - Fight Menu                              *"                
                   +"\n* P - Player Menu                             *"
+                  +"\n* C - Fairie Control                          *"
                   +"\n* Q - Quit                                    *"
                   +"\n***********************************************";
            
@@ -89,6 +90,9 @@ public class GameMenuView {
            case "P": // Player View
                this.displayPlayerView();
                break;
+           case "C": // Fairie Control
+               this.displayFarieControl();
+               break;
            default:
                System.out.println("\n***Invalid selection *** Try again");
                break;
@@ -119,5 +123,10 @@ public class GameMenuView {
         // player view menu
         PlayerView playerView = new PlayerView();
         playerView.displayPlayerView();
+    }
+
+    private void displayFarieControl() {
+        FairiesView fairiesView = new FairiesView();
+        fairiesView.displayFairiesView();
     }
 }

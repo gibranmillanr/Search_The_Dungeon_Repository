@@ -44,7 +44,7 @@ public class FairiesView {
         boolean done = false; // set flag to not done
         do{
            // prompt for and get players name
-           double numberRooms = this.getNumberRooms();
+           int numberRooms = this.getNumberRooms();
            if (numberRooms == 0) //User wants to quit
                return; //exit the game
            
@@ -53,15 +53,15 @@ public class FairiesView {
         } while (!done);
     }
 
-    private double getNumberRooms() {
+    private int getNumberRooms() {
         Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        double value = 0; //value to be returned
+        int value = 0; //value to be returned
         boolean valid = false; //initialize to not valid
         
         while (!valid) { // loop while an invalid value is entered
             System.out.println("\n" + this.promptMessage);
             
-            value = keyboard.nextDouble(); //get next line typed on keyboard
+            value = keyboard.nextInt(); //get next line typed on keyboard
 
             
             break; //end the loop
@@ -70,8 +70,11 @@ public class FairiesView {
         return value; //return the value entered
     }
 
-    private boolean doAction(double numberRooms) {
-        
+    private boolean doAction(int numberRooms) {
+        if (numberRooms > 26) {
+            System.out.println("\n There are only so many rooms! Try again!");
+            return false;
+        }
        // call checkRooms() control function
        boolean half = FairiesControl.checkRooms(numberRooms);
        
@@ -88,7 +91,7 @@ public class FairiesView {
         +"\n***********************************************"
        );
        }
-       else if (half=true){
+       else {
         System.out.println(
             "\n***********************************************"
             +"\n*                                             *" 
@@ -102,9 +105,7 @@ public class FairiesView {
             +"\n* Now go and continue exploring!              *"
             +"\n***********************************************"
             );
-        return false;   
        }
-       
        return true; // success!
     }
 }

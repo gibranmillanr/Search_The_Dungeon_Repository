@@ -10,11 +10,9 @@ package buyi.cit460.searchTheDungeon.control;
  * @author Les and Sue
  */
 public class FairiesControl {
-    public boolean checkRooms(double numberRooms) {
-        if (numberRooms < 13) {
-            return false; }
-            else {
-            return true;
-        }
+    public static boolean checkRooms(int numberRooms) {
+        int totalRooms=32; // 32 rooms in the dungeon
+        int halfRooms = totalRooms / 2; // getting half the number of rooms
+        return numberRooms >= halfRooms; // returning if user explored half or not
     }
 }
