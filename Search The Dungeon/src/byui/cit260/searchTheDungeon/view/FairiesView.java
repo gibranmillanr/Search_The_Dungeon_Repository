@@ -50,6 +50,7 @@ public class FairiesView {
            
            // do the requested action and display the next view
            done = this.doAction(numberRooms);
+           numberRooms = 0;
         } while (!done);
     }
 
