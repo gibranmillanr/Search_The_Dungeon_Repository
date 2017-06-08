@@ -70,7 +70,7 @@ public class FightMenuView {
        choice = choice.toUpperCase(); //convert choice to uppsercase
 
        switch (choice) {
-           case "F": // Player Chose to Fight
+           case "A": // Player Chose to Fight
                this.displayFight();
                break;
            case "R": // Run Away
