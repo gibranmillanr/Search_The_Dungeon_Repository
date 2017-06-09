@@ -88,7 +88,7 @@ public class RiddleControl {
     * @param numberTwo
     * @return 
     */
-    public double calcDragon ( double numberOne, double numberTwo){ 
+    public static double calcDragon ( double numberOne, double numberTwo){ 
        
         if (numberOne <= 0){ 
             return -1;
