@@ -349,7 +349,7 @@ public class RiddleControlTest {
         double radius = 11;
         double height = 12;
         
-        //create instance of inventory control class
+        //create instance of riddle control class
         RiddleControl instance = new RiddleControl();
         
         //expected output
