@@ -42,6 +42,7 @@ public class GameMenuView {
                   +"\n* P - Player menu                             *"
                   +"\n* C - Fairies control                         *"
                   +"\n* T - Trap Control                            *"
+                  +"\n* D - Dragon Control                          *"
                   +"\n***********************************************";      
     }
     
@@ -103,8 +104,11 @@ public class GameMenuView {
            case "P": // Player View
                this.displayPlayerView();
                break;
-           case "T": // Player View
+           case "T": // Trap View
                this.displayTrapView();
+               break;
+           case "D": // Dragon View
+               this.displayDragonView();
                break;
            default:
                System.out.println("\n***Invalid selection *** Try again");
@@ -143,5 +147,10 @@ public class GameMenuView {
     private void displayTrapView() {
        TrapView trapView = new TrapView();
         trapView.displayTrapView();  
+    }
+    
+    private void displayDragonView() {
+       DragonView dragonView = new DragonView();
+        dragonView.displayDragonView();  
     }
 }
