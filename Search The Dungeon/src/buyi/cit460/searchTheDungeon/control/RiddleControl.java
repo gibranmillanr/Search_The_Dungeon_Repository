@@ -88,7 +88,7 @@ public class RiddleControl {
     * @param numberTwo
     * @return 
     */
-    public int calcDragon ( int numberOne, int numberTwo){ 
+    public double calcDragon ( double numberOne, double numberTwo){ 
        
         if (numberOne <= 0){ 
             return -1;
@@ -97,11 +97,11 @@ public class RiddleControl {
             return -1;
         }
  
-        int addedNumber = numberOne + numberTwo;
-        int multipliedNumber = numberOne * numberTwo;
+        double addedNumber = numberOne + numberTwo;
+        double multipliedNumber = numberOne * numberTwo;
         
         if ((addedNumber == 14) && (multipliedNumber == 48)){    
-             return 1 ;
+             return 1;
         }
         
     return -1;
