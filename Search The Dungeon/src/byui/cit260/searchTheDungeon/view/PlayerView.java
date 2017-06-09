@@ -5,7 +5,10 @@
  */
 package byui.cit260.searchTheDungeon.view;
 
+import buyi.cit460.searchTheDungeon.control.GameControl;
+import byui.cit260.searchTheDungeon.model.Player;
 import java.util.Scanner;
+
 
 /**
  *
