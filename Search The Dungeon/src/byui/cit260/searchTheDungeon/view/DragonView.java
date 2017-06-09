@@ -12,21 +12,21 @@ import java.util.Scanner;
  *
  * @author Paul Darr
  */
+
 public class DragonView {
-        private String promptMessage;
+    private String promptMessage;
     
-    public DragonView() {
+    public DragonView(){
     
-    this.promptMessage = "\nWhat are two numbers whose product is 48 and sum is 14? (enter 0 to quit) ";
-    // display the banner when view is created
+    this.promptMessage = "\nWhat are two numbers whose product is 48 and sum is 14? Enter the first number, hit the Enter key, and then enter the second number. ";
     this.displayBanner();
     }
-
-    private void displayBanner() {
+    
+     private void displayBanner() {
        System.out.println(
        "\n***********************************************"
-      +"\n*                                             *" 
-      +"\n*             The Dragon!                    *" 
+      +"\n*            The Dragon!                      *" 
+      +"\n***********************************************" 
       +"\n*                                             *" 
       +"\n* Hello human, you have defeated many         *"
       +"\n* enemies but are you wise? If you            *"
@@ -35,34 +35,44 @@ public class DragonView {
       +"\n* room without being made into a              *"
       +"\n* toasted treat. What are two numbers         *"
       +"\n* whose product is 48 and sum is 14?          *"
+      +"\n*                                             *"
+      +"\n* To Quit use the number 0                    *"
+      +"\n*                                             *"
       +"\n***********************************************"
        );
     }
 
     public void displayDragonView() {
-        
+       
         boolean done = false; // set flag to not done
         do{
-           // prompt for and get integers
-           int numberOne = this.getNumberOne();
+           // prompt for and get numbers
+           System.out.println("\n enter first number: ");
+           double numberOne = this.getinput();
+           System.out.println("\n enter second number: ");
+           double numberTwo = this.getinput();
+           double mathDragon = 0; 
            if (numberOne == 0) //User wants to quit
                return; //exit the game
            
            // do the requested action and display the next view
-           done = this.doAction(numberOne);
-           numberOne = 0;
+           done = this.doAction(numberOne,numberTwo,mathDragon);
+          
         } while (!done);
-    }
+        
+    } 
 
-    private int getNumberOne() {
+    private double getinput() {
         Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        int value = 0; //value to be returned
+        double value = 1; //value to be returned
         boolean valid = false; //initialize to not valid
         
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
+            //System.out.println("\n" + this.menu);
+            //System.out.println("\n" + this.promptMessage);
             
-            value = keyboard.nextInt(); //get next line typed on keyboard
+            
+            value = keyboard.nextDouble(); //get next line typed on keyboard
 
             
             break; //end the loop
@@ -71,42 +81,30 @@ public class DragonView {
         return value; //return the value entered
     }
 
-    private boolean doAction(int numberOne) {
-        if (numberOne > 8) {
-            System.out.println("\n That is too high of a number, try again");
-            return false;
-        }
-       // call checkRooms() control function
-       boolean half = FairiesControl.checkRooms(numberRooms);
-       
-       if (!half) {  //if usuccessful
+    private boolean doAction(double numberOne,double numberTwo,double mathDragon) {
+        double addedNum = RiddleControl.calcDragon(numberOne,numberTwo);
+        
+        if (addedNum == -1) {  //incorrect
         System.out.println(
         "\n***********************************************"
         +"\n*                                             *" 
-        +"\n*            Less than HALF?                  *" 
+        +"\n*       Foolish human, you have lost.         *" 
         +"\n*                                             *" 
-        +"\n* You are one lazy traveller! You still have  *"
-        +"\n* so much to explore and learn! You have      *"
-        +"\n* brought upon yourself the 'Weak Item'       *"
-        +"\n* damnation! NOW GET OUT OF OUR ROOM!         *"
         +"\n***********************************************"
        );
+       
        }
-       else {
+
+        else
         System.out.println(
-            "\n***********************************************"
-            +"\n*                                             *" 
-            +"\n*             Over HALF!                      *" 
-            +"\n*                                             *" 
-            +"\n* You have found grace in our sight,          *"
-            +"\n* traveller! You have explored more than half *"
-            +"\n* of this dungeon. You are definately one     *"
-            +"\n* hard worker! Accept this powerful item      *"
-            +"\n* as a gift to you.                           *"
-            +"\n* Now go and continue exploring!              *"
-            +"\n***********************************************"
-            );
-       }
-       return true; // success!
+        "\n***********************************************"
+        +"\n*                                             *" 
+        +"\n*   Well done! The numbers six and eight      *" 
+        +"\n*   are the answer to my riddle.              *" 
+        +"\n***********************************************"
+       );    
+        
+        return true;
     }
+    
 }
