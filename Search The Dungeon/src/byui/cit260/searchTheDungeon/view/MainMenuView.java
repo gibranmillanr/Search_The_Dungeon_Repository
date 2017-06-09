@@ -88,7 +88,7 @@ public class MainMenuView {
            case "S": // save current game
                this.saveGame();
                break;
-           default:
+           default: // if none of the above applies
                System.out.println("\n***Invalid selection *** Try again");
                break;
        }
