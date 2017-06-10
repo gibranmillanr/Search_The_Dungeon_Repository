@@ -493,7 +493,7 @@ public class RiddleControlTest {
         int expResult = 1;
         
         // call function to run test
-        int result = instance.calcDragon(numberOne, numberTwo);
+        double result = instance.calcDragon(numberOne, numberTwo);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
