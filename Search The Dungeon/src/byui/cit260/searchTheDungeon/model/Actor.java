@@ -17,7 +17,7 @@ public class Actor implements Serializable {
     private String name;
     private String description;
     private String coordinates;
-    private int powerLevel;
+    public static int powerLevel;
     
     // Defaul Constructor
 

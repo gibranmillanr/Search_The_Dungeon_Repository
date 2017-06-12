@@ -16,7 +16,7 @@ public class Player implements Serializable {
     
     // Class instance Variables
     private String name;
-    private int powerLevel;
+    public static int powerLevel;
     
     //Default Constructor
     public Player() {
@@ -74,10 +74,7 @@ public class Player implements Serializable {
         if (Double.doubleToLongBits(this.powerLevel) != Double.doubleToLongBits(other.powerLevel)) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.name, other.name);
     }
     
     

@@ -5,6 +5,7 @@
  */
 package byui.cit260.searchTheDungeon.view;
 
+import buyi.cit460.searchTheDungeon.control.FightControl;
 import java.util.Scanner;
 
 /**
@@ -83,10 +84,24 @@ public class FightMenuView {
        return false;
     }
     private void displayFight() {
-        System.out.println("*** Player chose to fight ***");
+        boolean winFight = FightControl.winFight();
+        if (!winFight) {
+            System.out.println("\n You’ve lost the game!");
+        }
+        else {
+            System.out.println("\n You WON! The room has been cleared!");
+        }
     }
 
+    @SuppressWarnings("UnusedAssignment")
     private void displayRun() {
-        System.out.println("*** Player chose to Run ***");
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("\nAre you sure you want to Run Away? (Y or N): ");
+        String verifyRunAway = keyboard.nextLine();
+        verifyRunAway = verifyRunAway.toUpperCase();
+        if ("Y".equals(verifyRunAway)) {
+            GameMenuView.gameMenuView();
+        }
+        else displayFight();
     }
 }
