@@ -99,7 +99,7 @@ public class FightMenuView {
         }
     }
 
-    @SuppressWarnings("UnusedAssignment")
+    // @SuppressWarnings("UnusedAssignment")
     private void displayRun() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("\nAre you sure you want to Run Away? (Y or N): ");
