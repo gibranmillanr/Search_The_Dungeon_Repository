@@ -16,7 +16,7 @@ public class Player implements Serializable {
     
     // Class instance Variables
     private String name;
-    public static int powerLevel;
+    public int powerLevel;
     
     //Default Constructor
     public Player() {

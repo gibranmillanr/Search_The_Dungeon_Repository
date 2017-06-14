@@ -8,14 +8,15 @@ package buyi.cit460.searchTheDungeon.control;
 import byui.cit260.searchTheDungeon.model.Actor;
 import byui.cit260.searchTheDungeon.model.Player;
 
+
 /**
  *
  * @author Les Aycock
  */
 public class FightControl {
-    public static boolean winFight() {
-        int playerLevel = Player.powerLevel; // retrieve player power level
-        int monsterLevel = Actor.powerLevel; // retrieve power level of monster
+    public static boolean winFight(Player player, Actor actor) {
+        int playerLevel = player.powerLevel; // retrieve player power level
+        int monsterLevel = actor.powerLevel; // retrieve power level of monster
         return playerLevel >= monsterLevel;
     }
 }

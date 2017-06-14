@@ -6,6 +6,9 @@
 package byui.cit260.searchTheDungeon.view;
 
 import buyi.cit460.searchTheDungeon.control.FightControl;
+import byui.cit260.searchTheDungeon.model.Actor;
+import byui.cit260.searchTheDungeon.model.Player;
+import search.the.dungeon.SearchTheDungeon;
 import java.util.Scanner;
 
 /**
@@ -84,7 +87,10 @@ public class FightMenuView {
        return false;
     }
     private void displayFight() {
-        boolean winFight = FightControl.winFight();
+        Player player=SearchTheDungeon.getPlayer();
+        Actor tempActor = new Actor();
+        tempActor.powerLevel = 12;
+        boolean winFight = FightControl.winFight(player, tempActor);
         if (!winFight) {
             System.out.println("\n You’ve lost the game!");
         }
