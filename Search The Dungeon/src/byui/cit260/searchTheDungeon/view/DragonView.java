@@ -82,9 +82,9 @@ public class DragonView {
     }
 
     private boolean doAction(double numberOne,double numberTwo,double mathDragon) {
-        double addedNum = RiddleControl.calcDragon(numberOne,numberTwo);
+        double mathDrag = RiddleControl.calcDragon(numberOne,numberTwo);
         
-        if (addedNum == -1) {  //incorrect
+        if (mathDrag == -1) {  //incorrect
         System.out.println(
         "\n***********************************************"
         +"\n*                                             *" 
@@ -100,7 +100,8 @@ public class DragonView {
         "\n***********************************************"
         +"\n*                                             *" 
         +"\n*   Well done! The numbers six and eight      *" 
-        +"\n*   are the answer to my riddle.              *" 
+        +"\n*   are the answer to my riddle.              *"
+        +"\n*                                             *" 
         +"\n***********************************************"
        );    
         
