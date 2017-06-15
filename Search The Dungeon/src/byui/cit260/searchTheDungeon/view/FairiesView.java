@@ -12,19 +12,16 @@ import java.util.Scanner;
  *
  * @author Les and Sue
  */
-public class FairiesView {
-        private String promptMessage;
+public class FairiesView extends View{
+    
+        private String banner;
     
     public FairiesView() {
     
-    this.promptMessage = "\nHow many rooms have you explored so far? (enter 0 to quit) ";
-    // display the banner when view is created
-    this.displayBanner();
-    }
-
-    private void displayBanner() {
-       System.out.println(
-       "\n***********************************************"
+      super("\nHow many rooms have you explored so far? (enter 0 to quit) ");
+              
+      this.banner = "\n"
+      +"\n***********************************************"
       +"\n*                                             *" 
       +"\n*             The Fairies!                    *" 
       +"\n*                                             *" 
@@ -35,23 +32,13 @@ public class FairiesView {
       +"\n*                                             *"
       +"\n* We love and reward hardworking travelers    *"
       +"\n* and hate and curse lazy travellers!         *"
-      +"\n***********************************************"
-       );
+      +"\n***********************************************";    
+    
+    this.displayBanner();
     }
-
-    public void displayFairiesView() {
+    private void displayBanner() {
         
-        boolean done = false; // set flag to not done
-        do{
-           // prompt for and get players name
-           int numberRooms = this.getNumberRooms();
-           if (numberRooms == 0) //User wants to quit
-               return; //exit the game
-           
-           // do the requested action and display the next view
-           done = this.doAction(numberRooms);
-           numberRooms = 0;
-        } while (!done);
+        System.out.println("\n" + this.banner);
     }
 
     private int getNumberRooms() {
@@ -60,7 +47,7 @@ public class FairiesView {
         boolean valid = false; //initialize to not valid
         
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
+            System.out.println("\n" + this.banner);
             
             value = keyboard.nextInt(); //get next line typed on keyboard
 
@@ -70,8 +57,12 @@ public class FairiesView {
         
         return value; //return the value entered
     }
-
-    private boolean doAction(int numberRooms) {
+    
+    public boolean doAction(String value) {
+        
+        
+        int numberRooms = Integer.parseInt(value);
+        
         if (numberRooms > 26) {
             System.out.println("\n There are only so many rooms! Try again!");
             return false;
