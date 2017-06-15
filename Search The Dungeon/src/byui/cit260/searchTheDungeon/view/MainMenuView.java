@@ -13,15 +13,11 @@ import search.the.dungeon.SearchTheDungeon;
  *
  * @author Gibran Millan
  */
-public class MainMenuView {
-    private String menu;
-    private String promptMessage;
-    
+public class MainMenuView extends View {
+
     public MainMenuView(){
         
-        this.promptMessage = "\nPlease choose an option: ";
-        
-        this.menu = "\n"
+        super("\n"
                   +"***********************************************"
                   +"\n*                  MAIN MENU                  *"
                   +"\n***********************************************"
@@ -30,49 +26,11 @@ public class MainMenuView {
                   +"\n* H - Get help on how to play the game        *"
                   +"\n* S - Save Game                               *"
                   +"\n* Q - Quit                                    *"
-                  +"\n***********************************************";
+                  +"\n***********************************************");
            
     }
-
-    public void displayMainMenuView() {
-       
-        boolean done = false; // set flag to not done
-
-        do {
-            // prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))  // user wants to quit
-                return; // exit the game
-
-            // do the requested action and display the next view
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; //value to be returned
-        boolean valid = false; //initialize to not valid
-        
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.menu); // promptMessage in assignment
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); //get next line typed on keyboard
-            value = value.trim(); //trim off leading and trailing blanks
-            
-            if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            
-            break; //end the loop
-        }
-        
-        return value; //return the value entered
-    }
-
-    private boolean doAction(String menuOption) {
+    @Override       
+    public boolean doAction(String menuOption) {
        menuOption = menuOption.toUpperCase(); //convert choice to uppsercase
 
        switch (menuOption) {
@@ -100,7 +58,7 @@ public class MainMenuView {
         
         // Display the game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
+        gameMenu.display();
     }
 
     private void startExistingGame() {
@@ -110,7 +68,7 @@ public class MainMenuView {
     private void displayHelpMenu() {
         // Display the help menu
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+        helpMenu.display();
     }
 
     private void saveGame() {
