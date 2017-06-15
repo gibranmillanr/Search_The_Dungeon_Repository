@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author Paul Darr
  */
 
-public class DragonView {
+public class DragonView  {
     private String promptMessage;
     
     public DragonView(){
