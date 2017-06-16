@@ -39,6 +39,7 @@ public class GameMenuView extends View {
                   +"\n* C - Fairies control                         *"
                   +"\n* T - Trap Control                            *"
                   +"\n* D - Dragon Control                          *"
+                  +"\n* A - add or remove item view                 *"
                   +"\n***********************************************");      
     }
     
@@ -70,6 +71,9 @@ public class GameMenuView extends View {
                break;
            case "D": // Dragon View
                this.displayDragonView();
+               break;
+           case "A": // add or remove item View
+               this.displayAddOrRemoveItemView();
                break;
            default:
                System.out.println("\n***Invalid selection *** Try again");
@@ -107,11 +111,16 @@ public class GameMenuView extends View {
 
     private void displayTrapView() {
        TrapView trapView = new TrapView();
-        trapView.displayTrapView();  
+        trapView.display();  
     }
     
     private void displayDragonView() {
        DragonView dragonView = new DragonView();
         dragonView.display();  
+    }
+
+    private void displayAddOrRemoveItemView() {
+        AddOrRemoveItemView addOrRemoveItemView = new AddOrRemoveItemView();
+        addOrRemoveItemView.display();
     }
 }

@@ -13,16 +13,15 @@ import java.util.Scanner;
  *
  * @author Gibran Millan
  */
-public class TrapView {
+public class TrapView extends View {
+    private String banner;
     
-    private String menu;
-    private String promptMessage; 
 
     public TrapView(){
         
-        this.promptMessage = "\nEnter the radius, hit the Enter key, and then enter the height: ";
+        super("\nEnter the radius, hit the Enter key, and then enter the height: ");
         
-        this.menu = "\n"
+        this.banner = "\n"
                   +"***********************************************"
                   +"\n*       THERE IS A TRAP IN THIS ROOM          *"
                   +"\n***********************************************"
@@ -41,51 +40,71 @@ public class TrapView {
                   +"\n*                                             *"
                   +"\n* 0 - to Quit use the number 0                *"
                   +"\n*                                             *"
-                  +"\n***********************************************";      
+                  +"\n***********************************************";     
+        
+        this.displayBanner();
+        
     }
     
-    public void displayTrapView() {
+    private void displayBanner() {
         
-        boolean done = false; // set flag to not done
-        do{
-           System.out.println("\n" + this.menu);
-           // prompt for and get players name
-           System.out.println("\n enter radius: ");
-           double radius = this.getinput();
-           System.out.println("\n enter height: ");
-           double height = this.getinput();
-           double volumeOfHole = 0; 
-           if (radius == 0) //User wants to quit
-               return; //exit the game
-           
-           // do the requested action and display the next view
-           done = this.doAction(radius,height,volumeOfHole);
-          
-        } while (!done);
-        
-    } 
-
-    private double getinput() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        double value = 1; //value to be returned
-        boolean valid = false; //initialize to not valid
-        
-        while (!valid) { // loop while an invalid value is entered
-            //System.out.println("\n" + this.menu);
-            //System.out.println("\n" + this.promptMessage);
-            
-            
-            value = keyboard.nextDouble(); //get next line typed on keyboard
-
-            
-            break; //end the loop
-        }
-        
-        return value; //return the value entered
+        System.out.println("\n" + this.banner);
     }
+    
+//    public void displayTrapView() {
+//        
+//        boolean done = false; // set flag to not done
+//        do{
+//           System.out.println("\n" + this.menu);
+//           // prompt for and get players name
+//           System.out.println("\n enter radius: ");
+//           double radius = this.getinput();
+//           System.out.println("\n enter height: ");
+//           double height = this.getinput();
+//           double volumeOfHole = 0; 
+//           if (radius == 0) //User wants to quit
+//               return; //exit the game
+//           
+//           // do the requested action and display the next view
+//           done = this.doAction(radius,height,volumeOfHole);
+//          
+//        } while (!done);
+//        
+//    } 
+//
+//    private double getinput() {
+//        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+//        double value = 1; //value to be returned
+//        boolean valid = false; //initialize to not valid
+//        
+//        while (!valid) { // loop while an invalid value is entered
+//            //System.out.println("\n" + this.menu);
+//            //System.out.println("\n" + this.promptMessage);
+//            
+//            
+//            value = keyboard.nextDouble(); //get next line typed on keyboard
+//
+//            
+//            break; //end the loop
+//        }
+//        
+//        return value; //return the value entered
+//    }
 
-    private boolean doAction(double radius,double height,double volumeOfHole) {
+   // private boolean doAction(double radius,double height,double volumeOfHole) {
+    @Override
+    public boolean doAction(String value) {
+        double radius = Double.parseDouble(value);
+        this.displayMessage="\nNow enter the height! ";
+        
+        String heightRaw = getInput();
+        double height = Double.parseDouble(heightRaw); 
+        
         double volumeOfH = RiddleControl.calcTrap(radius,height);
+        
+        if (radius == 0) //User wants to quit
+
+              return false; //exit the game
         
         if (volumeOfH < 3141.59) {  //if too small
         System.out.println(
