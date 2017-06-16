@@ -13,18 +13,15 @@ import java.util.Scanner;
  * @author Paul Darr
  */
 
-public class DragonView  {
-    private String promptMessage;
+public class DragonView extends View  {
+    private String banner;
     
     public DragonView(){
     
-    this.promptMessage = "\nWhat are two numbers whose product is 48 and sum is 14? Enter the first number, hit the Enter key, and then enter the second number. ";
-    this.displayBanner();
-    }
+     super("\nWhat are two numbers whose product is 48 and sum is 14? \nWhat is your first number (or Q to quit): ");
     
-     private void displayBanner() {
-       System.out.println(
-       "\n***********************************************"
+     this.banner = "\n"
+      +"\n***********************************************"
       +"\n*            The Dragon!                      *" 
       +"\n***********************************************" 
       +"\n*                                             *" 
@@ -38,53 +35,31 @@ public class DragonView  {
       +"\n*                                             *"
       +"\n* To Quit use the number 0                    *"
       +"\n*                                             *"
-      +"\n***********************************************"
-       );
-    }
-
-    public void displayDragonView() {
+      +"\n***********************************************";
        
-        boolean done = false; // set flag to not done
-        do{
-           // prompt for and get numbers
-           System.out.println("\n enter first number: ");
-           double numberOne = this.getinput();
-           System.out.println("\n enter second number: ");
-           double numberTwo = this.getinput();
-           double mathDragon = 0; 
-           if (numberOne == 0) //User wants to quit
-               return; //exit the game
-           
-           // do the requested action and display the next view
-           done = this.doAction(numberOne,numberTwo,mathDragon);
-          
-        } while (!done);
-        
-    } 
-
-    private double getinput() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        double value = 1; //value to be returned
-        boolean valid = false; //initialize to not valid
-        
-        while (!valid) { // loop while an invalid value is entered
-            //System.out.println("\n" + this.menu);
-            //System.out.println("\n" + this.promptMessage);
-            
-            
-            value = keyboard.nextDouble(); //get next line typed on keyboard
-
-            
-            break; //end the loop
-        }
-        
-        return value; //return the value entered
+       
+       this.displayBanner();
     }
-
-    private boolean doAction(double numberOne,double numberTwo,double mathDragon) {
-        double mathDrag = RiddleControl.calcDragon(numberOne,numberTwo);
+    
+    private void displayBanner() {
         
-        if (mathDrag == -1) {  //incorrect
+        System.out.println("\n" + this.banner);
+    }
+    
+      @Override
+      public boolean doAction(String value) {
+          double numberOne = Double.parseDouble(value);
+          this.displayMessage="\nWhat is your second number? ";
+          String numberTwoRaw = getInput();
+          double numberTwo = Double.parseDouble(numberTwoRaw); 
+          double mathDragon = 0; 
+           
+          double mathDrag = RiddleControl.calcDragon(numberOne,numberTwo);
+          if (numberOne == 0) //User wants to quit
+
+              return false; //exit the game
+        
+       if (mathDrag == -1) {  //incorrect
         System.out.println(
         "\n***********************************************"
         +"\n*                                             *" 
@@ -92,10 +67,9 @@ public class DragonView  {
         +"\n*                                             *" 
         +"\n***********************************************"
        );
+        }
        
-       }
-
-        else
+        else {
         System.out.println(
         "\n***********************************************"
         +"\n*                                             *" 
@@ -105,7 +79,8 @@ public class DragonView  {
         +"\n***********************************************"
        );    
         
-        return true;
+       // return true;
+        }
+        return true;   
     }
-    
 }
