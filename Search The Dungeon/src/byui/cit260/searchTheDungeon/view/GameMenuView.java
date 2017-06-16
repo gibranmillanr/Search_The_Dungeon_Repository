@@ -112,6 +112,6 @@ public class GameMenuView extends View {
     
     private void displayDragonView() {
        DragonView dragonView = new DragonView();
-        dragonView.displayDragonView();  
+        dragonView.display();  
     }
 }
