@@ -47,10 +47,16 @@ public class WinGameView extends View{
         case "N": // Starting a new game
             // start a new game
             System.out.println("\nPlayer chose to start a new game");
+            StartProgramView();
             break;
         default:
             return false;
         }
     return false;
+    }
+
+    private void StartProgramView() {
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.display();
     }
 }
