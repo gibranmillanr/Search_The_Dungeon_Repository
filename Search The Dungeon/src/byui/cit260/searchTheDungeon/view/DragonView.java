@@ -77,6 +77,7 @@ public class DragonView extends View  {
         +"\n*                                             *" 
         +"\n***********************************************");
         
+        this.displayWinGameView();
         }
         return true;   
     }
@@ -84,6 +85,11 @@ public class DragonView extends View  {
         private void displayLoseGameView() {
         LoseGameView loseGameView = new LoseGameView();
         loseGameView.display();
+    }
+        
+        private void displayWinGameView() {
+        WinGameView winGameView = new WinGameView();
+        winGameView.display();
     }
 
 }
