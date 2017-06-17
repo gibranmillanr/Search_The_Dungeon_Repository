@@ -38,6 +38,7 @@ public class GameMenuView extends View {
                   +"\n* T - Trap Control                            *"
                   +"\n* D - Dragon Control                          *"
                   +"\n* A - add or remove item view                 *"
+                  +"\n* W - Win Game Scenario                       *"
                   +"\n***********************************************");      
     }
     
@@ -72,6 +73,9 @@ public class GameMenuView extends View {
                break;
            case "A": // add or remove item View
                this.displayAddOrRemoveItemView();
+               break;
+           case "W":
+               this.displayWinGameView();
                break;
            default:
                System.out.println("\n***Invalid selection *** Try again");
@@ -120,5 +124,10 @@ public class GameMenuView extends View {
     private void displayAddOrRemoveItemView() {
         AddOrRemoveItemView addOrRemoveItemView = new AddOrRemoveItemView();
         addOrRemoveItemView.display();
+    }
+
+    private void displayWinGameView() {
+        WinGameView winGameView = new WinGameView();
+        winGameView.display();
     }
 }

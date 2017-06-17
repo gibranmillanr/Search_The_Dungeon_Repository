@@ -46,6 +46,7 @@ public class WinGameView extends View{
             break;
         case "N": // Starting a new game
             // start a new game
+            System.out.println("\nPlayer chose to start a new game");
             break;
         default:
             return false;
