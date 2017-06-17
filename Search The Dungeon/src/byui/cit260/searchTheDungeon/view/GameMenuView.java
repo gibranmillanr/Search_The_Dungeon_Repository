@@ -5,8 +5,6 @@
  */
 package byui.cit260.searchTheDungeon.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Les and Sue

@@ -9,7 +9,6 @@ import buyi.cit460.searchTheDungeon.control.FightControl;
 import byui.cit260.searchTheDungeon.model.Actor;
 import byui.cit260.searchTheDungeon.model.Player;
 import search.the.dungeon.SearchTheDungeon;
-import java.util.Scanner;
 
 /**
  *
