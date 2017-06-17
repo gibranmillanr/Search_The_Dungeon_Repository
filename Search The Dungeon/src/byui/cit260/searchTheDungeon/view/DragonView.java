@@ -63,8 +63,9 @@ public class DragonView extends View  {
         +"\n*                                             *" 
         +"\n*       Foolish human, you have lost.         *" 
         +"\n*                                             *" 
-        +"\n***********************************************"
-       );
+        +"\n***********************************************");
+           
+        this.displayLoseGameView();
         }
        
         else {
@@ -74,11 +75,15 @@ public class DragonView extends View  {
         +"\n*   Well done! The numbers six and eight      *" 
         +"\n*   are the answer to my riddle.              *"
         +"\n*                                             *" 
-        +"\n***********************************************"
-       );    
+        +"\n***********************************************");
         
-       // return true;
         }
         return true;   
     }
+      
+        private void displayLoseGameView() {
+        LoseGameView loseGameView = new LoseGameView();
+        loseGameView.display();
+    }
+
 }

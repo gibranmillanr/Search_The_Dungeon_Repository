@@ -112,9 +112,9 @@ public class TrapView extends View {
         +"\n*                                             *" 
         +"\n*       It Is either too big or too small     *" 
         +"\n*  Your feet is traped! you loose the game    *" 
-        +"\n***********************************************"
-       );
-       
+        +"\n***********************************************");
+        
+        this.displayLoseGameView();
        }
         else if (volumeOfH > 10602.88) {
         System.out.println(
@@ -122,9 +122,9 @@ public class TrapView extends View {
         +"\n*                                             *" 
         +"\n*       It Is either too big or too small     *" 
         +"\n*   Your are traped! you loose the game       *" 
-        +"\n***********************************************"
-       );
+        +"\n***********************************************");
         
+        this.displayLoseGameView();
        }
         else
         System.out.println(
@@ -136,6 +136,11 @@ public class TrapView extends View {
        );    
         
         return true;
+    }
+    
+        private void displayLoseGameView() {
+        LoseGameView loseGameView = new LoseGameView();
+        loseGameView.display();
     }
     
 }
