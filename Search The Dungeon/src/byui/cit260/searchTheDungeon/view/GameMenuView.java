@@ -39,6 +39,7 @@ public class GameMenuView extends View {
                   +"\n* D - Dragon Control                          *"
                   +"\n* A - add or remove item view                 *"
                   +"\n* W - Win Game Scenario                       *"
+                  +"\n* L - Lose Game Scenario                      *"                
                   +"\n***********************************************");      
     }
     
@@ -77,6 +78,8 @@ public class GameMenuView extends View {
            case "W":
                this.displayWinGameView();
                break;
+           case "L":
+               this.displayLoseGameView();
            default:
                System.out.println("\n***Invalid selection *** Try again");
                break;
@@ -129,5 +132,10 @@ public class GameMenuView extends View {
     private void displayWinGameView() {
         WinGameView winGameView = new WinGameView();
         winGameView.display();
+    }
+
+    private void displayLoseGameView() {
+        LoseGameView loseGameView = new LoseGameView();
+        loseGameView.display();
     }
 }
