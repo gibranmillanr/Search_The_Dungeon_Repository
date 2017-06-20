@@ -5,6 +5,8 @@
  */
 package byui.cit260.searchTheDungeon.view;
 
+import search.the.dungeon.SearchTheDungeon;
+
 /**
  *
  * @author pauldarr
@@ -44,19 +46,12 @@ public class LoseGameView extends View{
     switch (choice) {
         case "E": // Exit the game
             System.exit(0);
-            break;
+            return true;
         case "N": // Starting a new game
             // start a new game
-            StartProgramView();
-            break;
-        default:
-            return false;
+            SearchTheDungeon.getCurrentGame().setGameOver(true);
+            return true;
         }
     return false;
-    }
-
-    private void StartProgramView() {
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
     }
 }

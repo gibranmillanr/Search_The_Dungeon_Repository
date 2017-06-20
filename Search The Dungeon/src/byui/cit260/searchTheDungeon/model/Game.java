@@ -15,12 +15,29 @@ public class Game implements Serializable {
     
     // Class instance Variables
     private int noPeople;
-    
+    private boolean gameOver;
+    private Player player;
     //Default Constructor
 
     public Game() {
+        gameOver=false;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
     
+    public boolean isGameOver() {
+        return gameOver;
+    }
+
+    public void setGameOver(boolean gameOver) {
+        this.gameOver = gameOver;
+    }
     
     //Getter and Setter
 

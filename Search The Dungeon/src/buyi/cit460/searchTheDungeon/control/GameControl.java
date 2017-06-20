@@ -5,8 +5,10 @@
  */
 package buyi.cit460.searchTheDungeon.control;
 
+import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.Player;
 import search.the.dungeon.SearchTheDungeon;
+
 
 /**
  *
@@ -28,7 +30,11 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
+//        System.out.println("\n*** createNewGame stub function called ***");
+        Game game = new Game();
+        game.setPlayer(player);
+        SearchTheDungeon.setCurrentGame(game);
+        
     }
     
 }

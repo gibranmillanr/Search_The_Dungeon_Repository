@@ -5,6 +5,8 @@
  */
 package byui.cit260.searchTheDungeon.view;
 
+import search.the.dungeon.SearchTheDungeon;
+
 /**
  *
  * @author Les and Sue
