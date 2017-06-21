@@ -31,7 +31,7 @@ public class DragonView extends View  {
       +"\n* room without being made into a              *"
       +"\n* toasted treat.                              *"
       +"\n*                                             *"
-      +"\n* To Quit use the number 0                    *"
+      +"\n* To Quit use Q                               *"
       +"\n*                                             *"
       +"\n***********************************************";
        
