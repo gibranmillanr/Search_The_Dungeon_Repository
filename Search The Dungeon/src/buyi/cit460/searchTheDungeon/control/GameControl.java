@@ -30,11 +30,18 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-//        System.out.println("\n*** createNewGame stub function called ***");
+
         Game game = new Game();
-        game.setPlayer(player);
         SearchTheDungeon.setCurrentGame(game);
         
+        game.setPlayer(player);
+        
+        // create inventory
+        //InventoryItem[] inventoryList = GameControl.createInventoryList();
+        //game.setInventory(inventoryList);
+        
+        // move player to starting position
+        //MapControl.moveactorsToStartingLocation(map);        
     }
     
 }
