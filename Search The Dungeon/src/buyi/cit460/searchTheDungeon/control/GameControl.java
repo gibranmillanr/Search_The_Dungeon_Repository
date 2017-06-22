@@ -37,11 +37,21 @@ public class GameControl {
         game.setPlayer(player);
         
         // create inventory
-        //InventoryItem[] inventoryList = GameControl.createInventoryList();
-        //game.setInventory(inventoryList);
+        InventoryItem[] inventoryList = GameControl.createInventoryList();
+        game.setInventory(inventoryList);
+        
+        BackPack[] backPack = new Backpack();
+        game.setBackpack(backPack);
+        
+        map map = MapControl.createMap(); // create and initialize new map
+        game.setMap(map); // save map in game
         
         // move player to starting position
-        //MapControl.moveactorsToStartingLocation(map);        
+        MapControl.moveActorsToStartingLocation(map);        
     }
     
+    public static InventoryItem[] createInventoryList() {
+        System.out.println("*** called createInventoryList() in GameControl ***");
+        return null;
+    }
 }
