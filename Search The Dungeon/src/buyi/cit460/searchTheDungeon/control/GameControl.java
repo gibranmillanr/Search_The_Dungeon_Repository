@@ -8,7 +8,9 @@ package buyi.cit460.searchTheDungeon.control;
 
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
+import byui.cit260.searchTheDungeon.model.Map;
 import byui.cit260.searchTheDungeon.model.Player;
+import byui.cit260.searchTheDungeon.model.Scene;
 import search.the.dungeon.SearchTheDungeon;
 
 
@@ -42,8 +44,8 @@ public class GameControl {
         InventoryItem[] inventoryList = GameControl.createInventoryList();
         game.setInventory(inventoryList);
         
-        BackPack[] backPack = new Backpack();
-        game.setBackpack(backPack);
+        BackPack backPack = new BackPack();
+        game.setBackPack(backPack);
         
         map map = MapControl.createMap(); // create and initialize new map
         game.setMap(map); // save map in game
@@ -95,5 +97,9 @@ public class GameControl {
         basicShield.setAmount(0);
         
         return inventory;
+    }
+
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
