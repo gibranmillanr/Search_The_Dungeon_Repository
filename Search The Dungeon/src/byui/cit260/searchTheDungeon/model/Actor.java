@@ -5,6 +5,7 @@
  */
 package byui.cit260.searchTheDungeon.model;
 import java.io.Serializable;
+import java.awt.Point;
 
 /**
  *
