@@ -5,7 +5,7 @@
  */
 package byui.cit260.searchTheDungeon.model;
 import java.io.Serializable;
-import java.util.Objects;
+//import java.util.Objects;
 
 /**
  *
@@ -118,7 +118,4 @@ public class Game implements Serializable {
 //        }
 //        return true;
 //    }
-    
-    
-    
 }

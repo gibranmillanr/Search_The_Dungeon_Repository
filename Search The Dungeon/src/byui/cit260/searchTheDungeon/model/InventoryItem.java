@@ -73,7 +73,8 @@ public class InventoryItem implements Serializable{
     //toString
     @Override
     public String toString() {
-        return "InventoryItem{" + "description=" + description + ", itemType=" + itemType + ", powerLevel=" + powerLevel + ", amount=" + amount + '}';
+        return "InventoryItem{" + "description=" + description + ", itemType=" 
+                + itemType + ", powerLevel=" + powerLevel + ", amount=" + amount + '}';
     }
     
 
@@ -102,6 +103,10 @@ public class InventoryItem implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public void setLevel(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
