@@ -5,6 +5,7 @@
  */
 package byui.cit260.searchTheDungeon.model;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -18,6 +19,24 @@ public class Location implements Serializable  {
     private String column;
     private String visited;
     private int amountRemaining;
+    private Scene scene;
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public ArrayList<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(ArrayList<Actor> actors) {
+        this.actors = actors;
+    }
+    private ArrayList<Actor> actors;
     
     //Default Constructor
     public Location() {

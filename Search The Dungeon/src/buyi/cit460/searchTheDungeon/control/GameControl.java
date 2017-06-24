@@ -47,7 +47,7 @@ public class GameControl {
         BackPack backPack = new BackPack();
         game.setBackPack(backPack);
         
-        map map = MapControl.createMap(); // create and initialize new map
+        Map map = MapControl.createMap(); // create and initialize new map
         game.setMap(map); // save map in game
         
         // move player to starting position
@@ -97,9 +97,5 @@ public class GameControl {
         basicShield.setAmount(0);
         
         return inventory;
-    }
-
-    public static void assignScenesToLocations(Map map, Scene[] scenes) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

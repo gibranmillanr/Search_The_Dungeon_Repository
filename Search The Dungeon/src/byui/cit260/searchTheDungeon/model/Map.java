@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package byui.cit260.searchTheDungeon.model;
-import buyi.cit460.searchTheDungeon.control.GameControl;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -15,9 +14,7 @@ import java.util.Objects;
 
 public class Map implements Serializable {
 
-    private static Scene[] createScenes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
     
     // Class instance Variables
     private String description;
@@ -30,42 +27,6 @@ public class Map implements Serializable {
     private Location[][] locations;
     
        private Game game;
-    
-    public Map(int rowCount, int columnCount) {
-        
-        if(rowCount < 1 || columnCount < 1) {
-            System.out.println("The number of rows and colums must be > zero");
-            return;
-        }
-        
-        this.rowCount = rowCount;
-        this.columnCount = columnCount;
-        
-        this.locations = new Location[rowCount][columnCount];
-        
-        for (int row = 0; row < rowCount; row++) {
-            for(int column = 0; column < columnCount; column++) {
-                
-                Location location = new Location();
-                location.setColumn(column);
-                location.setRow(row);
-                location.setVisited(false);
-                
-                locations[row][column] = location;
-            }
-        }
-    }
-    
-    private static Map createMap() {
-        
-        Map map = new Map(20, 20);
-        
-        Scene[] scenes = createScenes();
-        
-        GameControl.assignScenesToLocations(map, scenes);
-        
-        return map;        
-    }
     
     //Getter and Setter
      public String getDescription() {
@@ -117,7 +78,34 @@ public class Map implements Serializable {
     }
 
     //Default Constructor
-    public Map() {
+//    public Map() {
+//    }
+    
+    public Map(int rowCount, int columnCount) {
+        
+        if (rowCount < 1 || columnCount < 1) {
+            System.out.println("The number of rows and columns must be > zero");
+            return;
+        }
+        
+        this.rowCount = rowCount;
+        this.columnCount = columnCount;
+        
+        //create 2-D array for Location objects
+        this.locations = new Location[rowCount][columnCount];
+        
+        for (int row=0; row < rowCount ; row++) {
+            for (int column = 0; column < columnCount; column++) {
+                //create and initialize new Location object instance
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+                
+                //assign the Location object to the current position in array
+                locations[row][column] = location;
+            }
+        }
     }
 
     //hashcode
