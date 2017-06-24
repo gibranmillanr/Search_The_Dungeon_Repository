@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package buyi.cit460.searchTheDungeon.control;
-
-import byui.cit260.searchTheDungeon.model.Location;
 import byui.cit260.searchTheDungeon.model.Map;
 import byui.cit260.searchTheDungeon.model.Scene;
 
@@ -14,28 +12,17 @@ import byui.cit260.searchTheDungeon.model.Scene;
  * @author Gibran Millan
  */
 public class MapControl {
-    private static Map createMap() {
-        
+    static Map createMap() {
         // create the map
         Map map = new Map(5, 5);
-        
         // create teh scenes for the game
         Scene[] scenes = createScenes();
-
         // assign scenes to locations
         GameControl.assignScenesToLocations(map, scenes);
-        
         return map;        
     }
     
-    public static ActorsToStartingLocation moveActorsToStartingLocation() {
-        System.out.println("\n*** ActorsToStartingLocation() called ***");
-        
-        return ActorsToStartingLocation;
-    }
-    
     private static Scene[] createScenes() {
-        
         Scene[] scenes = new Scene[SceneType.values().length];
         
         Scene startScene = new Scene();
@@ -172,7 +159,7 @@ public class MapControl {
         fairiesScene.setDescription("You have entered the fairies domain!");
         fairiesScene.setMapSymbol = (" R20 ");
         fairiesScene.setBlocked(false);
-        scenes[SceneType.fairies.ordinal()] = room20Scene;
+        scenes[SceneType.fairies.ordinal()] = fairiesScene;
         
         Scene blueWizardScene = new Scene();
         blueWizardScene.setDescription("You have entered the realm of the Blue Wizard!");
@@ -223,35 +210,16 @@ public class MapControl {
         finish;
     }
     
-    private static void assignScenesToLocations(Map map, Scene[] scenes) {
-        Location[][] locations = map.getLocations();
-        
-        
-        locations[0][0].setScene(scenes[SceneType.startScene.ordinal()]);
-        locations[0][1].setScene(scenes[SceneType.room1Scene.ordinal()]);
-        locations[0][2].setScene(scenes[SceneType.room2Scene.ordinal()]);
-        locations[0][3].setScene(scenes[SceneType.room3Scene.ordinal()]);
-        locations[0][4].setScene(scenes[SceneType.room4Scene.ordinal()]);
-        locations[1][0].setScene(scenes[SceneType.room5Scene.ordinal()]);
-        locations[1][1].setScene(scenes[SceneType.room6Scene.ordinal()]);
-        locations[1][2].setScene(scenes[SceneType.fairiesScene.ordinal()]);
-        locations[1][3].setScene(scenes[SceneType.room7Scene.ordinal()]);
-        locations[1][4].setScene(scenes[SceneType.room8Scene.ordinal()]);
-        locations[2][0].setScene(scenes[SceneType.room9Scene.ordinal()]);
-        locations[2][1].setScene(scenes[SceneType.blueWizardScene.ordinal()]);
-        locations[2][2].setScene(scenes[SceneType.room10Scene.ordinal()]);
-        locations[2][3].setScene(scenes[SceneType.room11Scene.ordinal()]);
-        locations[2][4].setScene(scenes[SceneType.trapScene.ordinal()]);
-        locations[3][0].setScene(scenes[SceneType.room12Scene.ordinal()]);
-        locations[3][1].setScene(scenes[SceneType.room13Scene.ordinal()]);
-        locations[3][2].setScene(scenes[SceneType.room14Scene.ordinal()]);
-        locations[3][3].setScene(scenes[SceneType.room15Scene.ordinal()]);
-        locations[3][4].setScene(scenes[SceneType.room16Scene.ordinal()]);
-        locations[4][0].setScene(scenes[SceneType.room17Scene.ordinal()]);
-        locations[4][1].setScene(scenes[SceneType.room18Scene.ordinal()]);
-        locations[4][2].setScene(scenes[SceneType.room19Scene.ordinal()]);
-        locations[4][3].setScene(scenes[SceneType.dragonScene.ordinal()]);
-        locations[4][4].setScene(scenes[SceneType.finishScene.ordinal()]);
+    public static void movePlayerToStartingLocation(Map map) {
+        // If starting location is not supposed to be 0,0 then use the correct values here.
+        movePlayer(map, 0, 0); // or instead of 0,0 you can select a different starting location
     }
+
+    public static void movePlayer(Map map, int row, int column) {
+        map.setCurrentRow(row);
+        map.setCurrentColumn(column);
+//        map.getCurrentLocation().setVisited(true);
+
+    } 
         
 }

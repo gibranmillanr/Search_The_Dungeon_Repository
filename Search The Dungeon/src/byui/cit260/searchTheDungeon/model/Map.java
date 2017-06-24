@@ -14,8 +14,6 @@ import java.util.Objects;
 
 public class Map implements Serializable {
 
-
-    
     // Class instance Variables
     private String description;
     private int rowCount;
@@ -23,12 +21,50 @@ public class Map implements Serializable {
     private int currentRow;
     private int currentColumn;
     private String scene;
-
     private Location[][] locations;
     
-       private Game game;
+    public Map() {
+    }
+       
+    public Map(int rowCount, int columnCount) {
+        
+        if (rowCount < 1 || columnCount < 1) {
+            System.out.println("The number of rows and columns must be > zero");
+            return;
+        }
+        
+        this.rowCount = rowCount;
+        this.columnCount = columnCount;
+        
+        //create 2-D array for Location objects
+        this.locations = new Location[rowCount][columnCount];
+        
+        for (int row=0; row < rowCount ; row++) {
+            for (int column = 0; column < columnCount; column++) {
+                //create and initialize new Location object instance
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+                
+                //assign the Location object to the current position in array
+                locations[row][column] = location;
+            }
+        }
+    }       
     
     //Getter and Setter
+    public Location getCurrentLocation() {
+    return locations[currentRow][currentColumn];
+    }
+    public Location[][] getLocations() {
+        return locations;
+    }
+    
+    public void setLocations(Location[][] locations) {
+    this.locations = locations;
+    }
+    
      public String getDescription() {
         return description;
     }
@@ -75,37 +111,6 @@ public class Map implements Serializable {
 
     public void setScene(String scene) {
         this.scene = scene;
-    }
-
-    //Default Constructor
-//    public Map() {
-//    }
-    
-    public Map(int rowCount, int columnCount) {
-        
-        if (rowCount < 1 || columnCount < 1) {
-            System.out.println("The number of rows and columns must be > zero");
-            return;
-        }
-        
-        this.rowCount = rowCount;
-        this.columnCount = columnCount;
-        
-        //create 2-D array for Location objects
-        this.locations = new Location[rowCount][columnCount];
-        
-        for (int row=0; row < rowCount ; row++) {
-            for (int column = 0; column < columnCount; column++) {
-                //create and initialize new Location object instance
-                Location location = new Location();
-                location.setColumn(column);
-                location.setRow(row);
-                location.setVisited(false);
-                
-                //assign the Location object to the current position in array
-                locations[row][column] = location;
-            }
-        }
     }
 
     //hashcode

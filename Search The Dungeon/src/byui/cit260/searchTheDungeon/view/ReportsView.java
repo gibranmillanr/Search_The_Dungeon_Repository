@@ -100,16 +100,14 @@ public class ReportsView extends View {
     }
     
     private void displayActors() {
-        //
         //DISPLAY the line
-        System.out.println(line.toString());
+        System.out.println("*** stub ***");
         }
     }
        
     private void displayEnemies() {
-        //
         //DISPLAY the line
-        System.out.println(line.toString());
+        System.out.println("*** stub ***");
         }
     }        
 

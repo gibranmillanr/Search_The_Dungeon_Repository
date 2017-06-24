@@ -16,7 +16,7 @@ import byui.cit260.searchTheDungeon.model.Player;
 public class FightControl {
     public static boolean winFight(Player player, Actor actor) {
         int playerLevel = player.powerLevel; // retrieve player power level
-        int monsterLevel = actor.powerLevel; // retrieve power level of monster
+        double monsterLevel = actor.powerLevel; // retrieve power level of monster
         return playerLevel >= monsterLevel;
     }
 }

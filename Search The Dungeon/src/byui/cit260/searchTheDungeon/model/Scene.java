@@ -18,6 +18,7 @@ public class Scene implements Serializable {
     private String row;
     private String column;
     private String visited;
+    public String setMapSymbol;
     
     //Default Constructor
     public Scene() {
@@ -99,6 +100,24 @@ public class Scene implements Serializable {
             return false;
         }
         return true;
+    }
+
+    public void setMapSymbol(String _st_) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setBlocked(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static class startScene {
+
+        public static int ordinal() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public startScene() {
+        }
     }
     
 }

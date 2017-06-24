@@ -6,8 +6,11 @@
 package buyi.cit460.searchTheDungeon.control;
 
 
+import buyi.cit460.searchTheDungeon.control.MapControl.SceneType;
+import byui.cit260.searchTheDungeon.model.Actor;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
+import byui.cit260.searchTheDungeon.model.Location;
 import byui.cit260.searchTheDungeon.model.Map;
 import byui.cit260.searchTheDungeon.model.Player;
 import byui.cit260.searchTheDungeon.model.Scene;
@@ -34,68 +37,96 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-
-        Game game = new Game();
-        SearchTheDungeon.setCurrentGame(game);
-        
-        game.setPlayer(player);
-        
-        // create inventory
-        InventoryItem[] inventoryList = GameControl.createInventoryList();
-        game.setInventory(inventoryList);
-        
-        BackPack backPack = new BackPack();
-        game.setBackPack(backPack);
-        
-        Map map = MapControl.createMap(); // create and initialize new map
-        game.setMap(map); // save map in game
-        
-        // move player to starting position
-        MapControl.moveActorsToStartingLocation(map);        
+      Game game = new Game();
+      game.setActors(createActorList());
+      game.setPlayer(player);
+      SearchTheDungeon.setCurrentGame(game);
+      
+      InventoryItem[] inventoryList = InventoryControl.createInventoryList();
+      game.setInventory(inventoryList);
+      
+      Map map = MapControl.createMap();
+      game.setMap(map);
+      MapControl.movePlayerToStartingLocation(map);
     }
-    
-    public static InventoryItem[] createInventoryList() {
-    
-        // created array (list) of inventory items
-        InventoryItem[] inventory = new InventoryItem[6];
-        
-        // created list of items
-        InventoryItem sword = new InventoryItem();
-        sword.setDescription("Sword");
-        sword.setItemType("Weapon");
-        sword.setPowerLevel(2);
-        sword.setAmount(0);
-        
-        InventoryItem dagger = new InventoryItem();
-        dagger.setDescription("Dagger");
-        dagger.setItemType("Weapon");
-        dagger.setPowerLevel(1);
-        dagger.setAmount(1);
-        
-        InventoryItem basicShield = new InventoryItem();
-        basicShield.setDescription("Basic Shield");
-        basicShield.setItemType("Shield");
-        basicShield.setPowerLevel(1);
-        basicShield.setAmount(1);
 
-        InventoryItem powerShield = new InventoryItem();
-        powerShield.setDescription("Advanced Shield");
-        powerShield.setItemType("Shield");
-        powerShield.setPowerLevel(2);
-        basicShield.setAmount(0);
+    public boolean starNewGame(boolean player, boolean newGame, boolean saveFile, boolean starNewGame){
+        if (player == newGame && player ==saveFile){
+            return false;   
+        }
+        if (player == newGame && player != saveFile){
+            return true;
+        }
         
-        InventoryItem basicArmor = new InventoryItem();
-        basicArmor.setDescription("Basic Armor");
-        basicArmor.setItemType("Armor");
-        basicArmor.setPowerLevel(1);
-        basicShield.setAmount(1);
+        return starNewGame;
+        }
         
-        InventoryItem powerArmor = new InventoryItem();
-        powerArmor.setDescription("Power Armor");
-        basicArmor.setItemType("Armor");
-        powerArmor.setPowerLevel(2);
-        basicShield.setAmount(0);
+    public static Actor[] createActorList(){
+       Actor[] actors = new Actor[5]; 
         
-        return inventory;
+        Actor newActor = new Actor();
+        
+        newActor.setName("Fairie");
+        newActor.setDescription("Lot's of trouble");
+        newActor.setEnemy(false);
+        actors[0] = newActor;
+
+	newActor = new Actor();
+        newActor.setName("Blue Wizard");
+        newActor.setDescription("He might be helpful");
+        newActor.setEnemy(false);
+        actors[1] = newActor;
+        
+        newActor = new Actor();
+        newActor.setName("Dragon");
+        newActor.setDescription("A common enemy in the dungeon");
+        newActor.setEnemy(false);
+        actors[2] = newActor;
+        
+        newActor = new Actor();
+        newActor.setName("Troll");
+        newActor.setDescription("A common enemy in the dungeon");
+        newActor.setPowerLevel(2);
+        newActor.setEnemy(true);
+        actors[3] = newActor;
+                
+        newActor = new Actor();
+        newActor.setName("Orc");
+        newActor.setDescription("A common enemy in the dungeon");
+        newActor.setPowerLevel(1);
+        newActor.setEnemy(true);
+        actors[4] = newActor;
+        return actors;
+        
+    }
+        
+    static void assignScenesToLocations(Map map, Scene[] scenes) {
+        Location[][] locations = map.getLocations();
+        
+        locations[0][0].setScene(scenes[Scene.startScene.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.room1.ordinal()]);
+        locations[0][2].setScene(scenes[SceneType.room2.ordinal()]);
+        locations[0][3].setScene(scenes[SceneType.room3.ordinal()]);
+        locations[0][4].setScene(scenes[SceneType.room4.ordinal()]);
+        locations[1][0].setScene(scenes[SceneType.room5.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.room6.ordinal()]);
+        locations[1][2].setScene(scenes[SceneType.fairies.ordinal()]);
+        locations[1][3].setScene(scenes[SceneType.room7.ordinal()]);
+        locations[1][4].setScene(scenes[SceneType.room8.ordinal()]);
+        locations[2][0].setScene(scenes[SceneType.room9.ordinal()]);
+        locations[2][1].setScene(scenes[SceneType.blueWizard.ordinal()]);
+        locations[2][2].setScene(scenes[SceneType.room10.ordinal()]);
+        locations[2][3].setScene(scenes[SceneType.room11.ordinal()]);
+        locations[2][4].setScene(scenes[SceneType.trap.ordinal()]);
+        locations[3][0].setScene(scenes[SceneType.room12.ordinal()]);
+        locations[3][1].setScene(scenes[SceneType.room13.ordinal()]);
+        locations[3][2].setScene(scenes[SceneType.room14.ordinal()]);
+        locations[3][3].setScene(scenes[SceneType.room15.ordinal()]);
+        locations[3][4].setScene(scenes[SceneType.room16.ordinal()]);
+        locations[4][0].setScene(scenes[SceneType.room17.ordinal()]);
+        locations[4][1].setScene(scenes[SceneType.room18.ordinal()]);
+        locations[4][2].setScene(scenes[SceneType.room19.ordinal()]);
+        locations[4][3].setScene(scenes[SceneType.dragon.ordinal()]);
+        locations[4][4].setScene(scenes[SceneType.finish.ordinal()]);
     }
 }
