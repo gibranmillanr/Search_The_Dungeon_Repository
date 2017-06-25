@@ -100,8 +100,27 @@ public class ReportsView extends View {
     }
     
     private void displayActors() {
-        //DISPLAY the line
-        System.out.println("*** stub ***");
+        StringBuilder line;
+        
+        Game game = SearchTheDungeon.getCurrentGame();
+        Actor[] actors = game.getActor();
+        
+        System.out.println("\n LIST OF CHARACTERS IN THE GAME");
+        line = new StringBuilder("                                              ");
+        line.insert(0,"NAME");
+        line.insert(20, "DESCRIPTION");
+        System.out.println(line.toString());
+        
+        //for each inventory item
+        for (Actor actors : actors) {
+            line = new StringBuilder("                                              ");
+            line.insert(0, actors.getName());
+            line.insert(23, actors.getDescription());
+           
+            
+            //DISPLAY the line
+            System.out.println(line.toString());
+        }
         }
     }
        
