@@ -17,7 +17,7 @@ public class Location implements Serializable  {
     // Class instance Variables
     private String row;
     private String column;
-    private String visited;
+    public String visited;
     private int amountRemaining;
     private Scene scene;
 

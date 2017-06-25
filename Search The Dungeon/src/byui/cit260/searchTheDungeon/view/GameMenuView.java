@@ -111,31 +111,28 @@ public class GameMenuView extends View {
         System.out.println();
         for( int row = 0; row < locations.length; row++){
         System.out.print(row + " "); // print row numbers to side of map
-        for( int column = 0; column < locations[row].length; column++){
-            // set default indicators as blanks
-            leftIndicator = " ";
-            rightIndicator = " ";
-        if(locations[row][column] == map.getCurrentLocation()){
-          // Set star indicators to show this is the current location.
-          leftIndicator = "*"; 
-          rightIndicator = "*"; 
-        } 
-        else if(locations[row][column].visited){
-           // Set < > indicators to show this location has been visited.
-           leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
-           rightIndicator = "<"; // same as above
-        }
-        System.out.print("|"); // start map with a |
-        if(locations[row][column].getScene() == null)
-        {
-             // No scene assigned here so use ?? for the symbol
-             System.out.print(leftIndicator + "??" + rightIndicator);
-        }
-        else
-          System.out.print(leftIndicator
-             + locations[row][column].getScene().getMapSymbol()
-             + rightIndicator);
-         }
+            for (Location location : locations[row]) {
+                // set default indicators as blanks
+                leftIndicator = " ";
+                rightIndicator = " ";
+                if (location == map.getCurrentLocation()) {
+                    // Set star indicators to show this is the current location.
+                    leftIndicator = "*";
+                    rightIndicator = "*";
+                } 
+//                else if (location.visited) {
+//                    // Set < > indicators to show this location has been visited.
+//                    leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
+//                    rightIndicator = "<"; // same as above
+//                }
+                System.out.print("|"); // start map with a |
+                if (location.getScene() == null) {
+                    // No scene assigned here so use ?? for the symbol
+                    System.out.print(leftIndicator + "??" + rightIndicator);
+                } else {
+                    System.out.print(leftIndicator + location.getScene().getMapSymbol() + rightIndicator);
+                }
+            }
      System.out.println("|");
     }
  }

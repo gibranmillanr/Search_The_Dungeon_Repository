@@ -5,6 +5,11 @@
  */
 package byui.cit260.searchTheDungeon.view;
 
+import byui.cit260.searchTheDungeon.model.Actor;
+import byui.cit260.searchTheDungeon.model.Game;
+import byui.cit260.searchTheDungeon.model.InventoryItem;
+import search.the.dungeon.SearchTheDungeon;
+
 /**
  *
  * @author Paul Darr, Gibran Milan, Les Aycock
@@ -42,9 +47,9 @@ public class ReportsView extends View {
             case "E": // List all enemies in game
                 this.displayEnemies();
                 break;
-            default:
-                this.console.println("\n*** Invalid selection *** Try again");
-
+           default:
+               System.out.println("\n***Invalid selection *** Try again");
+               break;
         }
         return false;
     }
@@ -103,7 +108,7 @@ public class ReportsView extends View {
         StringBuilder line;
         
         Game game = SearchTheDungeon.getCurrentGame();
-        Actor[] actors = game.getActor();
+        Actor actors = game.getActor();
         
         System.out.println("\n LIST OF CHARACTERS IN THE GAME");
         line = new StringBuilder("                                              ");
@@ -112,22 +117,19 @@ public class ReportsView extends View {
         System.out.println(line.toString());
         
         //for each inventory item
-        for (Actor actors : actors) {
-            line = new StringBuilder("                                              ");
-            line.insert(0, actors.getName());
-            line.insert(23, actors.getDescription());
-           
-            
-            //DISPLAY the line
-            System.out.println(line.toString());
+//        for (Actor actor : actor) {
+//            line = new StringBuilder("                                              ");
+//            line.insert(0, actors.getName());
+//            line.insert(23, actors.getDescription());
+//           
+//            
+//            //DISPLAY the line
+//            System.out.println(line.toString());
+//        }
         }
-        }
-    }
-       
-    private void displayEnemies() {
-        //DISPLAY the line
-        System.out.println("*** stub ***");
-        }
-    }        
 
+    private void displayEnemies() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+             
 }

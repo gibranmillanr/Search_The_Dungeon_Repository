@@ -15,24 +15,26 @@ public class Actor implements Serializable {
     
     // Class instance Variables
     private String name;
-    private final String description;
+    private String description;
     private double coordinates;
     public double powerLevel;
     private boolean enemy;
-    private double coordinants;
  
-//    public Actor() {
-//    }
-
+    public Actor() {
+    }
+    
+    public Actor(String name, String description, double coordinates, double powerLevel, boolean enemy) {
+        this.name = name;
+        this.description = description;
+        this.coordinates = coordinates;
+        this.powerLevel = powerLevel;
+        this.enemy = enemy;
+    }
 
 public boolean isEnemy() {
         return enemy;
     }
 
-    /**
-     *
-     * @param enemy
-     */
     public void setEnemy(boolean enemy) {
         this.enemy = enemy;
     }
@@ -49,16 +51,16 @@ public boolean isEnemy() {
         return description;
     }
 
-//    public void setDescription(String description) {
+    public void setDescription(String description) {
 //        this.description = description;
-//    }
-
-    public double getCoordinants() {
-        return coordinants;
     }
 
-    public void setCoordinants(double coordinants) {
-        this.coordinants = coordinants;
+    public double getCoordinants() {
+        return coordinates;
+    }
+
+    public void setCoordinants(double coordinates) {
+        this.coordinates = coordinates;
     }
 
     public double getpowerLevel() {
@@ -74,7 +76,7 @@ public boolean isEnemy() {
         int hash = 7;
         hash = 37 * hash + Objects.hashCode(this.name);
         hash = 37 * hash + Objects.hashCode(this.description);
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.coordinants) ^ (Double.doubleToLongBits(this.coordinants) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.coordinates) ^ (Double.doubleToLongBits(this.coordinates) >>> 32));
         hash = 37 * hash + (int) (Double.doubleToLongBits(this.powerLevel) ^ (Double.doubleToLongBits(this.powerLevel) >>> 32));
         return hash;
     }
@@ -91,7 +93,7 @@ public boolean isEnemy() {
             return false;
         }
         final Actor other = (Actor) obj;
-        if (Double.doubleToLongBits(this.coordinants) != Double.doubleToLongBits(other.coordinants)) {
+        if (Double.doubleToLongBits(this.coordinates) != Double.doubleToLongBits(other.coordinates)) {
             return false;
         }
         if (Double.doubleToLongBits(this.powerLevel) != Double.doubleToLongBits(other.powerLevel)) {
@@ -105,15 +107,15 @@ public boolean isEnemy() {
 
     @Override
     public String toString() {
-        return "Actor{" + "name=" + name + ", description=" + description + ", coordinants=" + coordinants + ", powerLevel=" + powerLevel + '}';
+        return "Actor{" + "name=" + name + ", description=" + description + ", coordinants=" + coordinates + ", powerLevel=" + powerLevel + '}';
     }
 
-    public void setDescription(String lots_of_trouble) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    public void setDescription(String lots_of_trouble) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
     public void setPowerLevel(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+      }
     
 }
