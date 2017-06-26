@@ -15,66 +15,19 @@ public class Scene implements Serializable {
     
     // Class instance Variables
     private String description;
-    private String row;
-    private String column;
-    private String visited;
-    public String setMapSymbol;
-    
-    //Default Constructor
-    public Scene() {
-    }
-    
-    //Getter and Setter
-    public String getDescription() {
-        return description;
-    }
+    private String name;
+    private Actor actor;
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getRow() {
-        return row;
-    }
-
-    public void setRow(String row) {
-        this.row = row;
-    }
-
-    public String getColumn() {
-        return column;
-    }
-
-    public void setColumn(String column) {
-        this.column = column;
-    }
-
-    public String getVisited() {
-        return visited;
-    }
-
-    public void setVisited(String visited) {
-        this.visited = visited;
-    }
-
-    //hashcode
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 29 * hash + Objects.hashCode(this.description);
-        hash = 29 * hash + Objects.hashCode(this.row);
-        hash = 29 * hash + Objects.hashCode(this.column);
-        hash = 29 * hash + Objects.hashCode(this.visited);
+        hash = 89 * hash + Objects.hashCode(this.description);
+        hash = 89 * hash + Objects.hashCode(this.name);
+        hash = 89 * hash + Objects.hashCode(this.actor);
+        hash = 89 * hash + Objects.hashCode(this.mapSymbol);
         return hash;
     }
 
-    //toString
-    @Override
-    public String toString() {
-        return "Scene{" + "description=" + description + ", row=" + row + ", column=" + column + ", visited=" + visited + '}';
-    }
-
-    //equals
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -90,38 +43,55 @@ public class Scene implements Serializable {
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.row, other.row)) {
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.column, other.column)) {
+        if (!Objects.equals(this.mapSymbol, other.mapSymbol)) {
             return false;
         }
-        if (!Objects.equals(this.visited, other.visited)) {
+        if (!Objects.equals(this.actor, other.actor)) {
             return false;
         }
         return true;
     }
 
-    public void setMapSymbol(String _st_) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getName() {
+        return name;
     }
 
-    public void setBlocked(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Actor getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor actor) {
+        this.actor = actor;
     }
 
     public String getMapSymbol() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return mapSymbol;
     }
 
-    public static class startScene {
-
-        public static int ordinal() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        public startScene() {
-        }
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
     }
+    public String mapSymbol;
+    
+    //Default Constructor
+    public Scene() {
+    }
+    
+    //Getter and Setter
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
     
 }

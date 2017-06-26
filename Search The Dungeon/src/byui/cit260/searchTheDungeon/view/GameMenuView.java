@@ -5,6 +5,7 @@
  */
 package byui.cit260.searchTheDungeon.view;
 
+import buyi.cit460.searchTheDungeon.control.MapControl;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
 import byui.cit260.searchTheDungeon.model.Location;
@@ -30,9 +31,10 @@ public class GameMenuView extends View {
                   +"\n* items too.                                  *"
                   +"\n* What will you do now?                       *"
                   +"\n*                                             *"
-                  +"\n* M - Go to the map and choose a room         *"
+                  +"\n* V - View the Map                            *"
+                  +"\n* M - Move to new location                    *"                
                   +"\n* I - Review the items in your inventory      *"
-                  +"\n* S - Save your current game                  *"
+                  +"\n* R - Report View                             *"
                   +"\n* Q - Quit                                    *"
                   +"\n*                                             *"
                   +"\n* The following options do not belong in this *"
@@ -54,14 +56,17 @@ public class GameMenuView extends View {
         choice = choice.toUpperCase(); //convert choice to uppsercase
 
        switch (choice) {
-           case "M": // Go to the map and choose a room
+           case "V": // Go to the map and choose a room
                this.displayMap();
                break;
+           case "M": // Go to the map and choose a room
+               this.move();
+               break;               
            case "I": // Review the items in your inventory  
                this.displayInventory();
                break;
-           case "S": // Save your current game 
-               this.saveGame();
+           case "R": // View Reports 
+               this.viewReports();
                break;
            case "C": // Fairie Control
                this.displayFarieControl();
@@ -120,11 +125,11 @@ public class GameMenuView extends View {
                     leftIndicator = "*";
                     rightIndicator = "*";
                 } 
-//                else if (location.visited) {
-//                    // Set < > indicators to show this location has been visited.
-//                    leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
-//                    rightIndicator = "<"; // same as above
-//                }
+                else if (location.visited) {
+                    // Set < > indicators to show this location has been visited.
+                    leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
+                    rightIndicator = "<"; // same as above
+                }
                 System.out.print("|"); // start map with a |
                 if (location.getScene() == null) {
                     // No scene assigned here so use ?? for the symbol
@@ -135,6 +140,7 @@ public class GameMenuView extends View {
             }
      System.out.println("|");
     }
+        System.out.println("You are currently at "+map.getCurrentLocation().getScene().getDescription());
  }
 
     private void displayInventory() {
@@ -162,8 +168,9 @@ public class GameMenuView extends View {
         }
     }
 
-    private void saveGame() {
-        System.out.println("*** saveGame function called ***");
+    private void viewReports() {
+        ReportsView reportsView = new ReportsView();
+        reportsView.display();
     }
 
     private void displayFarieControl() {
@@ -204,5 +211,17 @@ public class GameMenuView extends View {
     private void displayLoseGameView() {
         LoseGameView loseGameView = new LoseGameView();
         loseGameView.display();
+    }
+
+    private void move() {
+        displayMap();
+        int row = getIntInput("Enter row: ", 0 ,4);
+        if (row == -999)
+            return;
+        int column = getIntInput ("Enter column: ", 0,4);
+        if (column == -999) 
+            return;
+        MapControl.movePlayer(SearchTheDungeon.getCurrentGame().getMap(), row, column);
+        displayMap();
     }
 }

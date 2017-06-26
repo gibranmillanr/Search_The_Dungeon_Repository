@@ -18,7 +18,7 @@ public class Game implements Serializable {
     private boolean gameOver;
     private Player player;
     private Map map;
-    private Actor actor; // enum
+    private Actor[] actors; // enum
     private InventoryItem[] inventory;
     private BackPack[] backpack;
     //Default Constructor
@@ -39,13 +39,13 @@ public class Game implements Serializable {
         this.backpack = backpack;
     }
 
-    public Actor getActor() {
-        return actor;
-    }
-
-    public void setActor(Actor actor) {
-        this.actor = actor;
-    }
+//    public Actor getActor() {
+//        return actor;
+//    }
+//
+//    public void setActor(Actor actor) {
+//        this.actor = actor;
+//    }
     
     public InventoryItem[] getInventory() {
         return inventory;
@@ -119,7 +119,12 @@ public class Game implements Serializable {
 //        return true;
 //    }
 
-    public void setActors(Actor[] createActorList) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Actor[] getActors() {
+        return actors;
     }
+
+    public void setActors(Actor[] actors) {
+        this.actors = actors;
+    }
+
 }

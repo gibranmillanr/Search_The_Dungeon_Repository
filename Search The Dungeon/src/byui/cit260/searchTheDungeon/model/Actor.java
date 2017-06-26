@@ -17,13 +17,13 @@ public class Actor implements Serializable {
     private String name;
     private String description;
     private double coordinates;
-    public double powerLevel;
+    public int powerLevel;
     private boolean enemy;
  
     public Actor() {
     }
     
-    public Actor(String name, String description, double coordinates, double powerLevel, boolean enemy) {
+    public Actor(String name, String description, double coordinates, int powerLevel, boolean enemy) {
         this.name = name;
         this.description = description;
         this.coordinates = coordinates;
@@ -63,11 +63,11 @@ public boolean isEnemy() {
         this.coordinates = coordinates;
     }
 
-    public double getpowerLevel() {
+    public int getPowerLevel() {
         return powerLevel;
     }
 
-    public void setpowerLevel(double powerLevel) {
+    public void setPowerLevel(int powerLevel) {
         this.powerLevel = powerLevel;
     }
     
@@ -114,8 +114,8 @@ public boolean isEnemy() {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //    }
 
-    public void setPowerLevel(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-      }
+//    public void setPowerLevel(int i) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//      }
     
 }

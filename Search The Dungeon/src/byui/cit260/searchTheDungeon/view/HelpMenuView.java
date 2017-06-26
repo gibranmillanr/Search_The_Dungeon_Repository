@@ -5,8 +5,6 @@
  */
 package byui.cit260.searchTheDungeon.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Paul Darr
@@ -65,7 +63,19 @@ public class HelpMenuView extends View {
        return false;
     }
     private void displayGame() {
-        System.out.println("*** What is the goal of the game? ***");
+        
+//        PurposeView purposeView = new PurposeView();
+//        purposeView.display();
+        System.out.println(
+                 "\n***********************************************"
+                +"\n*                   Goal of Game              *"
+                +"\n***********************************************"
+                +"\n* What is your purpose in this dungeon?       *"
+                +"\n* Simple, to survive. In this dungeon live    *"
+                +"\n* many creatures. Your goal is to survive     *"
+                +"\n* the challenges, and conquer the dragon      *"
+                +"\n* hidden somewhere in this dungeon.           *"
+                +"\n***********************************************");
     }
 
     private void displayMove() {

@@ -107,26 +107,27 @@ public class ReportsView extends View {
     private void displayActors() {
         StringBuilder line;
         
+        //retrieve list of actors
         Game game = SearchTheDungeon.getCurrentGame();
-        Actor actors = game.getActor();
+        Actor[] actors = game.getActors();
         
-        System.out.println("\n LIST OF CHARACTERS IN THE GAME");
-        line = new StringBuilder("                                              ");
-        line.insert(0,"NAME");
-        line.insert(20, "DESCRIPTION");
+        System.out.println("\n               LIST OF ACTORS IN GAME");
+        line = new StringBuilder("                                                 ");
+        line.insert(0, "NAME");
+        line.insert(25, "STRENGTH");
         System.out.println(line.toString());
+//        Iterable<Actor> actors = null;
         
-        //for each inventory item
-//        for (Actor actor : actor) {
-//            line = new StringBuilder("                                              ");
-//            line.insert(0, actors.getName());
-//            line.insert(23, actors.getDescription());
-//           
-//            
-//            //DISPLAY the line
-//            System.out.println(line.toString());
-//        }
+        //for each actor
+        for (Actor actor : actors) {
+            line = new StringBuilder("                                                 ");
+            line.insert(0, actor.getName());
+            line.insert(24, actor.getPowerLevel());
+            
+            //Display line
+            System.out.println(line.toString());
         }
+    }
 
     private void displayEnemies() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

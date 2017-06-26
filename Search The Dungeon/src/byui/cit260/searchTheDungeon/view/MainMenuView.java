@@ -6,7 +6,8 @@
 package byui.cit260.searchTheDungeon.view;
 
 import buyi.cit460.searchTheDungeon.control.GameControl;
-import java.util.Scanner;
+import byui.cit260.searchTheDungeon.model.Actor;
+import byui.cit260.searchTheDungeon.model.Game;
 import search.the.dungeon.SearchTheDungeon;
 
 /**
@@ -46,6 +47,7 @@ public class MainMenuView extends View {
            case "S": // save current game
                this.saveGame();
                break;
+
            default: // if none of the above applies
                System.out.println("\n***Invalid selection *** Try again");
                break;
@@ -74,4 +76,5 @@ public class MainMenuView extends View {
     private void saveGame() {
         System.out.println("*** saveGame function called ***");
     }
+
 }

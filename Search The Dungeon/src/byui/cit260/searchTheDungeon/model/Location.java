@@ -15,9 +15,9 @@ import java.util.Objects;
 public class Location implements Serializable  {
     
     // Class instance Variables
-    private String row;
-    private String column;
-    public String visited;
+    private int row;
+    private int column;
+    public boolean visited;
     private int amountRemaining;
     private Scene scene;
 
@@ -41,31 +41,30 @@ public class Location implements Serializable  {
     //Default Constructor
     public Location() {
     }
-    
-    
-    // Getter and Setter
 
-    public String getRow() {
+
+    public int getRow() {
         return row;
     }
 
-    public void setRow(String row) {
+    public void setRow(int row) {
         this.row = row;
     }
 
-    public String getColumn() {
+    public int getColumn() {
         return column;
     }
 
-    public void setColumn(String column) {
+    public void setColumn(int column) {
         this.column = column;
     }
 
-    public String getVisited() {
+    public boolean isVisited() {
         return visited;
     }
 
-    public void setVisited(String visited) {
+    // Getter and Setter
+    public void setVisited(boolean visited) {
         this.visited = visited;
     }
 
@@ -94,9 +93,7 @@ public class Location implements Serializable  {
     public String toString() {
         return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + '}';
     }
-    
 
-    //equals
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -109,31 +106,19 @@ public class Location implements Serializable  {
             return false;
         }
         final Location other = (Location) obj;
+        if (this.row != other.row) {
+            return false;
+        }
+        if (this.column != other.column) {
+            return false;
+        }
+        if (this.visited != other.visited) {
+            return false;
+        }
         if (this.amountRemaining != other.amountRemaining) {
             return false;
         }
-        if (!Objects.equals(this.row, other.row)) {
-            return false;
-        }
-        if (!Objects.equals(this.column, other.column)) {
-            return false;
-        }
-        if (!Objects.equals(this.visited, other.visited)) {
-            return false;
-        }
         return true;
-    }
-
-    void setColumn(int column) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void setRow(int row) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void setVisited(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

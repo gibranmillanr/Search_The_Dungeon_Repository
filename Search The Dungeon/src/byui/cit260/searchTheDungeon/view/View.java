@@ -75,4 +75,37 @@ public abstract class View implements ViewInterface {
         
         return value; // return the name
     }
+    
+    public int getIntInput(String prompt, int min, int max) {
+        
+        Scanner keyboard = new Scanner(System.in);
+        boolean valid = false;
+        String value = null;
+        int returned = 0;
+        
+	// while a valid name has not been retrived
+        while (!valid) {
+
+	    // prompt for the player's name
+            System.out.println("\n" + prompt + "(enter Q to Quit): ");
+            
+	    // get the value entered from the keyboard
+            value = keyboard.nextLine();
+            value = value.trim();
+            
+            if (value.length() < 1) {
+                System.out.println("\n*** You must enter a value *** ");
+                continue;
+            }
+            if (value.toUpperCase().equals("Q"))
+            return -999;
+            returned = Integer.parseInt(value);
+            if (returned < min || returned > max){
+                System.out.println("Invalid entry. Must be between "+ min + " and "+ max+ " (inclusive).");
+                continue;
+            }
+            valid = true;
+        }
+        return returned; // return the name
+    }
 }

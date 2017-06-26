@@ -103,7 +103,7 @@ public class GameControl {
     static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
         
-        locations[0][0].setScene(scenes[Scene.startScene.ordinal()]);
+        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.room1.ordinal()]);
         locations[0][2].setScene(scenes[SceneType.room2.ordinal()]);
         locations[0][3].setScene(scenes[SceneType.room3.ordinal()]);
