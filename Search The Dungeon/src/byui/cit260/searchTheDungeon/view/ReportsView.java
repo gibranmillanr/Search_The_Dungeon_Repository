@@ -143,8 +143,7 @@ public class ReportsView extends View {
         
         //retrieve list of actors
         Game game = SearchTheDungeon.getCurrentGame();
-        Actor[] actors = game.getActors();
-        InventoryItem[] inventory = game.getInventory();        
+        Actor[] actors = game.getActors();        
         
         System.out.println("\n   LIST OF ENEMIES IN GAME\n");
         line = new StringBuilder("                                                 ");
