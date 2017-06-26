@@ -27,7 +27,7 @@ public class SearchTheDungeon {
      * @param args the command line arguments
      */
     private static Game currentGame = null;
-    private static Player player = null;
+    public static Player player = null;
 
     public static Game getCurrentGame() {
         return currentGame;

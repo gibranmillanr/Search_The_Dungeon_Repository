@@ -36,18 +36,18 @@ public class GameMenuView extends View {
                   +"\n* I - Review the items in your inventory      *"
                   +"\n* R - Report View                             *"
                   +"\n* Q - Quit                                    *"
-                  +"\n*                                             *"
-                  +"\n* The following options do not belong in this *"
-                  +"\n*  menu and will be removed later             *"
-                  +"\n*                                             *"
-                  +"\n* F - Fight Menu                              *"
-                  +"\n* P - Player menu                             *"
-                  +"\n* C - Fairies control                         *"
-                  +"\n* T - Trap Control                            *"
-                  +"\n* D - Dragon Control                          *"
-                  +"\n* A - add or remove item view                 *"
-                  +"\n* W - Win Game Scenario                       *"
-                  +"\n* L - Lose Game Scenario                      *"                
+//                  +"\n*                                             *"
+//                  +"\n* The following options do not belong in this *"
+//                  +"\n*  menu and will be removed later             *"
+//                  +"\n*                                             *"
+//                  +"\n* F - Fight Menu                              *"
+//                  +"\n* P - Player menu                             *"
+//                  +"\n* C - Fairies control                         *"
+//                  +"\n* T - Trap Control                            *"
+//                  +"\n* D - Dragon Control                          *"
+//                  +"\n* A - add or remove item view                 *"
+//                  +"\n* W - Win Game Scenario                       *"
+//                  +"\n* L - Lose Game Scenario                      *"                
                   +"\n***********************************************");      
     }
     
@@ -68,29 +68,29 @@ public class GameMenuView extends View {
            case "R": // View Reports 
                this.viewReports();
                break;
-           case "C": // Fairie Control
-               this.displayFarieControl();
-               break;
-           case "F": // fight menu
-               this.displayFightMenu();
-               break;
-           case "P": // Player View
-               this.displayPlayerView();
-               break;
-           case "T": // Trap View
-               this.displayTrapView();
-               break;
-           case "D": // Dragon View
-               this.displayDragonView();
-               break;
-           case "A": // add or remove item View
-               this.displayAddOrRemoveItemView();
-               break;
-           case "W":
-               this.displayWinGameView();
-               break;
-           case "L":
-               this.displayLoseGameView();
+//           case "C": // Fairie Control
+//               this.displayFarieControl();
+//               break;
+//           case "F": // fight menu
+//               this.displayFightMenu();
+//               break;
+//           case "P": // Player View
+//               this.displayPlayerView();
+//               break;
+//           case "T": // Trap View
+//               this.displayTrapView();
+//               break;
+//           case "D": // Dragon View
+//               this.displayDragonView();
+//               break;
+//           case "A": // add or remove item View
+//               this.displayAddOrRemoveItemView();
+//               break;
+//           case "W":
+//               this.displayWinGameView();
+//               break;
+//           case "L":
+//               this.displayLoseGameView();
            default:
                System.out.println("\n***Invalid selection *** Try again");
                break;
@@ -172,48 +172,8 @@ public class GameMenuView extends View {
         ReportsView reportsView = new ReportsView();
         reportsView.display();
     }
-
-    private void displayFarieControl() {
-       FairiesView fairiesView = new FairiesView();
-        fairiesView.display();
-    }
-
-    private void displayFightMenu() {
-       FightMenuView fightMenu = new FightMenuView();
-        fightMenu.display();
-    }
-
-    private void displayPlayerView() {
-      PlayerView playerView = new PlayerView();
-        playerView.display();
-    }
-
-    private void displayTrapView() {
-       TrapView trapView = new TrapView();
-        trapView.display();  
-    }
     
-    private void displayDragonView() {
-       DragonView dragonView = new DragonView();
-        dragonView.display();  
-    }
-
-    private void displayAddOrRemoveItemView() {
-        AddOrRemoveItemView addOrRemoveItemView = new AddOrRemoveItemView();
-        addOrRemoveItemView.display();
-    }
-
-    private void displayWinGameView() {
-        WinGameView winGameView = new WinGameView();
-        winGameView.display();
-    }
-
-    private void displayLoseGameView() {
-        LoseGameView loseGameView = new LoseGameView();
-        loseGameView.display();
-    }
-
-    private void move() {
+        private void move() {
         displayMap();
         int row = getIntInput("Enter row: ", 0 ,4);
         if (row == -999)
@@ -224,4 +184,44 @@ public class GameMenuView extends View {
         MapControl.movePlayer(SearchTheDungeon.getCurrentGame().getMap(), row, column);
         displayMap();
     }
+
+//    private void displayFarieControl() {
+//       FairiesView fairiesView = new FairiesView();
+//        fairiesView.display();
+//    }
+//
+//    private void displayFightMenu() {
+//       FightMenuView fightMenu = new FightMenuView();
+//        fightMenu.display();
+//    }
+//
+//    private void displayPlayerView() {
+//      PlayerView playerView = new PlayerView();
+//        playerView.display();
+//    }
+//
+//    private void displayTrapView() {
+//       TrapView trapView = new TrapView();
+//        trapView.display();  
+//    }
+//    
+//    private void displayDragonView() {
+//       DragonView dragonView = new DragonView();
+//        dragonView.display();  
+//    }
+//
+//    private void displayAddOrRemoveItemView() {
+//        AddOrRemoveItemView addOrRemoveItemView = new AddOrRemoveItemView();
+//        addOrRemoveItemView.display();
+//    }
+//
+//    private void displayWinGameView() {
+//        WinGameView winGameView = new WinGameView();
+//        winGameView.display();
+//    }
+//
+//    private void displayLoseGameView() {
+//        LoseGameView loseGameView = new LoseGameView();
+//        loseGameView.display();
+//    }
 }

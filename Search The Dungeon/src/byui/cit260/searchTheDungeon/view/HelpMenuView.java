@@ -63,12 +63,10 @@ public class HelpMenuView extends View {
        return false;
     }
     private void displayGame() {
-        
-//        PurposeView purposeView = new PurposeView();
-//        purposeView.display();
+
         System.out.println(
                  "\n***********************************************"
-                +"\n*                   Goal of Game              *"
+                +"\n*                Goal of Game                 *"
                 +"\n***********************************************"
                 +"\n* What is your purpose in this dungeon?       *"
                 +"\n* Simple, to survive. In this dungeon live    *"
@@ -79,26 +77,75 @@ public class HelpMenuView extends View {
     }
 
     private void displayMove() {
-        System.out.println("\n*** How to move to a new room ***");
+        System.out.println(
+                 "\n***********************************************"
+                +"\n*                 How to Move                 *"
+                +"\n***********************************************"
+                +"\n* How to move around in the dungeon is        *"
+                +"\n* just a matter of chosing what room you want *"
+                +"\n* to explore, in the map, and putting in the  *"
+                +"\n* appropriate grid coordinates. Of course you *"
+                +"\n* can quit at any time or go back a menu by   *"
+                +"\n* entering a Q.                               *"
+                +"\n***********************************************");
     }
 
     private void displayExplore() {
-        System.out.println("\n*** How to explore a room ***");
+        System.out.println(
+                 "\n***********************************************"
+                +"\n*               How to Explore                *"
+                +"\n***********************************************"
+                +"\n* Once you are in a room, you will either be  *"
+                +"\n* confronted with a creature from the dungeon *"
+                +"\n* or a trap, or an empty room. By responding  *"
+                +"\n* to the questions you are asked you will     *"
+                +"\n* be allowed to continue or die.              *"
+                +"\n***********************************************");
     }
 
     private void displayView() {
-        System.out.println("\n*** How to view gear in inventory ***");
+        System.out.println(
+                 "\n***********************************************"
+                +"\n*           How to View Inventory             *"
+                +"\n***********************************************"
+                +"\n* To view your inventory, from the game menu, *"
+                +"\n* select Review the items in your inventory.  *"
+                +"\n***********************************************");
     }
 
     private void displayAdd() {
-        System.out.println("\n*** How to add gear to inventory ***");
+        System.out.println(
+                 "\n************************************************"
+                +"\n*         How to Add To Your Inventory         *"
+                +"\n************************************************"
+                +"\n* You will add equipment based on interactions *"
+                +"\n* with the dungeon residents and random rooms. *"
+                +"\n************************************************");
     }
     
     private void displayFight() {
-        System.out.println("\n*** Fighting enemies ***");
+        System.out.println(
+                 "\n************************************************"
+                +"\n*                How to Fight                  *"
+                +"\n************************************************"
+                +"\n* Fighting in this dungeon is based on your    *"
+                +"\n* answers to these riddle-obsessed residents   *"
+                +"\n* questions. Correct answers earn rewards.     *"
+                +"\n* Incorrect answers will cost you.             *"
+                +"\n************************************************");
     }
     
     private void displayInteractions() {
-        System.out.println("\n*** Game interactions ***");
+        System.out.println(
+                 "\n*************************************************"
+                +"\n*                Interactions                   *"
+                +"\n*************************************************"
+                +"\n* Throughout this dungeon, you will be faced    *"
+                +"\n* with various creatures living in the dungeon. *"
+                +"\n* You will be asked either riddles, or other    *"
+                +"\n* random questions. Your continued existance    *"
+                +"\n* will depend on your responses to these        *"
+                +"\n* questions.                                    *"
+                +"\n*************************************************");
     }
 }

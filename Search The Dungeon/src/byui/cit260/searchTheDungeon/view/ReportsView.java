@@ -8,6 +8,7 @@ package byui.cit260.searchTheDungeon.view;
 import byui.cit260.searchTheDungeon.model.Actor;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
+import byui.cit260.searchTheDungeon.model.Player;
 import search.the.dungeon.SearchTheDungeon;
 
 /**
@@ -64,7 +65,6 @@ public class ReportsView extends View {
         line = new StringBuilder("                                              ");
         line.insert(0,"DESCRIPTION");
         line.insert(20, "LEVEL");
-        line.insert(30, "# EQUIPPED");
         System.out.println(line.toString());
         
         //for each inventory item
@@ -72,7 +72,6 @@ public class ReportsView extends View {
             line = new StringBuilder("                                              ");
             line.insert(0, item.getDescription());
             line.insert(23, item.getPowerLevel());
-            line.insert(33, item.getAmount());
             
             //DISPLAY the line
             System.out.println(line.toString());
@@ -110,13 +109,13 @@ public class ReportsView extends View {
         //retrieve list of actors
         Game game = SearchTheDungeon.getCurrentGame();
         Actor[] actors = game.getActors();
+        InventoryItem[] inventory = game.getInventory();        
         
-        System.out.println("\n               LIST OF ACTORS IN GAME");
+        System.out.println("\n   LIST OF ACTORS IN GAME\n");
         line = new StringBuilder("                                                 ");
         line.insert(0, "NAME");
-        line.insert(25, "STRENGTH");
+        line.insert(20, "STRENGTH");
         System.out.println(line.toString());
-//        Iterable<Actor> actors = null;
         
         //for each actor
         for (Actor actor : actors) {
@@ -127,10 +126,40 @@ public class ReportsView extends View {
             //Display line
             System.out.println(line.toString());
         }
+//        int power = 0;
+//        for (InventoryItem item : inventory) {
+//            if (item.getAmount() == 1) {
+//                power = power + item.getPowerLevel();
+//            }
+//        }
+//        line = new StringBuilder("                                                 ");
+//        line.insert(0, SearchTheDungeon.player);
+//        line.insert(24, power);
+//        System.out.println(line.toString());
     }
 
     private void displayEnemies() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-             
+        StringBuilder line;
+        
+        //retrieve list of actors
+        Game game = SearchTheDungeon.getCurrentGame();
+        Actor[] actors = game.getActors();
+        InventoryItem[] inventory = game.getInventory();        
+        
+        System.out.println("\n   LIST OF ENEMIES IN GAME\n");
+        line = new StringBuilder("                                                 ");
+        line.insert(0, "NAME");
+        line.insert(20, "STRENGTH");
+        System.out.println(line.toString());
+        
+        //for each actor
+        for (Actor actor : actors) {
+            line = new StringBuilder("                                                 ");
+            line.insert(0, actor.getName());
+            line.insert(24, actor.getPowerLevel());
+            
+            //Display line
+            System.out.println(line.toString());
+        }
+    }        
 }
