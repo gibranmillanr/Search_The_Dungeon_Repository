@@ -15,8 +15,15 @@ public class Scene implements Serializable {
     
     // Class instance Variables
     private String description;
+    public String mapSymbol;
     private String name;
     private Actor actor;
+    private InventoryItem item;
+    
+        //Default Constructor
+    public Scene() {
+        item=null;
+    }
 
     @Override
     public int hashCode() {
@@ -55,6 +62,7 @@ public class Scene implements Serializable {
         return true;
     }
 
+        //Getter and Setter
     public String getName() {
         return name;
     }
@@ -78,13 +86,7 @@ public class Scene implements Serializable {
     public void setMapSymbol(String mapSymbol) {
         this.mapSymbol = mapSymbol;
     }
-    public String mapSymbol;
     
-    //Default Constructor
-    public Scene() {
-    }
-    
-    //Getter and Setter
     public String getDescription() {
         return description;
     }
@@ -92,6 +94,13 @@ public class Scene implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
-    
-    
+
+    public InventoryItem getItem() {
+        return item;
+    }
+
+    public void setItem(InventoryItem item) {
+        this.item = item;
+    }
+  
 }

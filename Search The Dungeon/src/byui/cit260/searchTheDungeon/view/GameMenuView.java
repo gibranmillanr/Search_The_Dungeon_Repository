@@ -141,6 +141,9 @@ public class GameMenuView extends View {
      System.out.println("|");
     }
         System.out.println("You are currently at "+map.getCurrentLocation().getScene().getDescription());
+        if (map.getCurrentLocation().getScene().getItem()!=null){
+            System.out.println("There is something here! "+map.getCurrentLocation().getScene().getItem().getDescription());
+        }
  }
 
 //    private void displayInventory() {

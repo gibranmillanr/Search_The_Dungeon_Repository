@@ -5,6 +5,7 @@
  */
 package byui.cit260.searchTheDungeon.model;
 import java.io.Serializable;
+import java.util.ArrayList;
 //import java.util.Objects;
 
 /**
@@ -20,7 +21,8 @@ public class Game implements Serializable {
     private Map map;
     private Actor[] actors; // enum
     private InventoryItem[] inventory;
-    private BackPack[] backpack;
+    private ArrayList<InventoryItem> backpack;
+//    private BackPack[] backpack;
     //Default Constructor
 
     public Map getMap() {
@@ -31,21 +33,9 @@ public class Game implements Serializable {
         this.map = map;
     }
 
-    public BackPack[] getBackpack() {
+    public ArrayList<InventoryItem> getBackpack() {
         return backpack;
     }
-
-    public void setBackpack(BackPack[] backpack) {
-        this.backpack = backpack;
-    }
-
-//    public Actor getActor() {
-//        return actor;
-//    }
-//
-//    public void setActor(Actor actor) {
-//        this.actor = actor;
-//    }
     
     public InventoryItem[] getInventory() {
         return inventory;
@@ -57,6 +47,7 @@ public class Game implements Serializable {
 
     public Game() {
         gameOver=false;
+        backpack = new ArrayList<InventoryItem>();
     }
 
     public Player getPlayer() {

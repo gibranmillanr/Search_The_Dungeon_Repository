@@ -4,8 +4,12 @@
  * and open the template in the editor.
  */
 package buyi.cit460.searchTheDungeon.control;
+import buyi.cit460.searchTheDungeon.control.InventoryControl.ItemType;
+import byui.cit260.searchTheDungeon.model.Game;
+import byui.cit260.searchTheDungeon.model.InventoryItem;
 import byui.cit260.searchTheDungeon.model.Map;
 import byui.cit260.searchTheDungeon.model.Scene;
+import search.the.dungeon.SearchTheDungeon;
 
 /**
  *
@@ -24,7 +28,8 @@ public class MapControl {
     
     private static Scene[] createScenes() {
         Scene[] scenes = new Scene[SceneType.values().length];
-        
+        Game game = SearchTheDungeon.getCurrentGame();
+        InventoryItem[] inventory = game.getInventory();
         Scene startScene = new Scene();
         startScene.setDescription(
             "You will enter the dungeon with nothing but three items: your armor, "
@@ -32,6 +37,7 @@ public class MapControl {
            +"initial items are not very powerful. Hurry and search the dungeon for "
            +"better gear before you encounter something dangerous. ");
         startScene.setMapSymbol("ST");
+        startScene.setItem(inventory[InventoryControl.ItemType.dagger.ordinal()]);
         scenes[SceneType.start.ordinal()] = startScene;
         
         Scene finishScene = new Scene();
@@ -87,6 +93,7 @@ public class MapControl {
         Scene room10Scene = new Scene();
         room10Scene.setDescription("You have entered an empty room as the rusty door creaks shut!");
         room10Scene.setMapSymbol("10");
+        room10Scene.setItem(inventory[InventoryControl.ItemType.sword.ordinal()]);
         scenes[SceneType.room10.ordinal()] = room10Scene;
         
         Scene room11Scene = new Scene();

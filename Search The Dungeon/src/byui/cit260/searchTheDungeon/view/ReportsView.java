@@ -9,7 +9,9 @@ import byui.cit260.searchTheDungeon.model.Actor;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
 import byui.cit260.searchTheDungeon.model.Player;
+import java.util.ArrayList;
 import search.the.dungeon.SearchTheDungeon;
+import static search.the.dungeon.SearchTheDungeon.player;
 
 /**
  *
@@ -24,7 +26,7 @@ public class ReportsView extends View {
         + "\n* Which report would you like to see? *"
         + "\n***************************************"
         + "\n* I - List all items in game          *"
-        + "\n* C - List all items carried          *" 
+        + "\n* C - List all items carried(Backpack)*" 
         + "\n* A - List all actors in game         *" 
         + "\n* E - List all enemies in game        *"
         + "\n* Q - Quit                            *"
@@ -109,7 +111,9 @@ public class ReportsView extends View {
         
         //retrieve list of actors
         Game game = SearchTheDungeon.getCurrentGame();
-        Actor[] actors = game.getActors();        
+        Actor[] actors = game.getActors();
+        ArrayList<InventoryItem> backpack=game.getBackpack();
+        int playerStrength=0;
         
         System.out.println("\n   LIST OF ACTORS IN GAME\n");
         line = new StringBuilder("                                                 ");
@@ -126,6 +130,14 @@ public class ReportsView extends View {
             //Display line
             System.out.println(line.toString());
         }
+        for (InventoryItem item : backpack) {
+            playerStrength = playerStrength+item.getPowerLevel();
+        }
+            line = new StringBuilder("                                                 ");
+            line.insert(0, player.getName());
+            line.insert(24, playerStrength);
+            
+            System.out.println(line.toString());
     }
 
     private void displayEnemies() {
