@@ -8,7 +8,6 @@ package byui.cit260.searchTheDungeon.view;
 import byui.cit260.searchTheDungeon.model.Actor;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
-import byui.cit260.searchTheDungeon.model.Player;
 import java.util.ArrayList;
 import search.the.dungeon.SearchTheDungeon;
 import static search.the.dungeon.SearchTheDungeon.player;
@@ -85,17 +84,16 @@ public class ReportsView extends View {
         
         //Retrieve list of items
         Game game = SearchTheDungeon.getCurrentGame();
-        InventoryItem[] inventory = game.getInventory();
+        ArrayList<InventoryItem> backpack=game.getBackpack();
         
         System.out.println("\n LIST OF INVENTORY ITEMS\n");
         line = new StringBuilder("                                              ");
         line.insert(0,"DESCRIPTION");
         line.insert(20, "LEVEL");
-//        line.insert(30, "# EQUIPPED");
         System.out.println(line.toString());
         
         //for each inventory item
-        for (InventoryItem item : inventory) {
+        for (InventoryItem item : backpack) {
             line = new StringBuilder("                                              ");
             line.insert(0, item.getDescription());
             line.insert(23, item.getPowerLevel());
@@ -151,18 +149,16 @@ public class ReportsView extends View {
         line = new StringBuilder("                                                 ");
         line.insert(0, "NAME");
         line.insert(20, "STRENGTH");
-        line.insert(30, "Enemy");
         System.out.println(line.toString());
         
         //for each actor
         for (Actor actor : actors) {
-            line = new StringBuilder("                                                 ");
-            line.insert(0, actor.getName());
-            line.insert(24, actor.getPowerLevel());
-            line.insert(30, actor.isEnemy());
-            
-            //Display line
-            System.out.println(line.toString());
+            if (actor.isEnemy()!=false) {
+                line = new StringBuilder("                                                 ");
+                line.insert(0, actor.getName());
+                line.insert(24, actor.getPowerLevel());
+                System.out.println(line.toString());
+            }
         }
     }        
 }
