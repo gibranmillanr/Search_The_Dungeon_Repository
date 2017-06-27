@@ -81,14 +81,15 @@ public class ReportsView extends View {
     private void displayInventoryCarried() {
         StringBuilder line;
         
+        //Retrieve list of items
         Game game = SearchTheDungeon.getCurrentGame();
         InventoryItem[] inventory = game.getInventory();
         
-        System.out.println("\n LIST OF INVENTORY ITEMS");
+        System.out.println("\n LIST OF INVENTORY ITEMS\n");
         line = new StringBuilder("                                              ");
         line.insert(0,"DESCRIPTION");
         line.insert(20, "LEVEL");
-        line.insert(30, "# EQUIPPED");
+//        line.insert(30, "# EQUIPPED");
         System.out.println(line.toString());
         
         //for each inventory item
@@ -96,7 +97,7 @@ public class ReportsView extends View {
             line = new StringBuilder("                                              ");
             line.insert(0, item.getDescription());
             line.insert(23, item.getPowerLevel());
-            line.insert(33, item.getAmount());
+//            line.insert(33, item.getAmount());
             
             //DISPLAY the line
             System.out.println(line.toString());
@@ -108,8 +109,7 @@ public class ReportsView extends View {
         
         //retrieve list of actors
         Game game = SearchTheDungeon.getCurrentGame();
-        Actor[] actors = game.getActors();
-        InventoryItem[] inventory = game.getInventory();        
+        Actor[] actors = game.getActors();        
         
         System.out.println("\n   LIST OF ACTORS IN GAME\n");
         line = new StringBuilder("                                                 ");
@@ -126,16 +126,6 @@ public class ReportsView extends View {
             //Display line
             System.out.println(line.toString());
         }
-//        int power = 0;
-//        for (InventoryItem item : inventory) {
-//            if (item.getAmount() == 1) {
-//                power = power + item.getPowerLevel();
-//            }
-//        }
-//        line = new StringBuilder("                                                 ");
-//        line.insert(0, SearchTheDungeon.player);
-//        line.insert(24, power);
-//        System.out.println(line.toString());
     }
 
     private void displayEnemies() {
@@ -149,6 +139,7 @@ public class ReportsView extends View {
         line = new StringBuilder("                                                 ");
         line.insert(0, "NAME");
         line.insert(20, "STRENGTH");
+        line.insert(30, "Enemy");
         System.out.println(line.toString());
         
         //for each actor
@@ -156,6 +147,7 @@ public class ReportsView extends View {
             line = new StringBuilder("                                                 ");
             line.insert(0, actor.getName());
             line.insert(24, actor.getPowerLevel());
+            line.insert(30, actor.isEnemy());
             
             //Display line
             System.out.println(line.toString());

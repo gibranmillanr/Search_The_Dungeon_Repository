@@ -32,9 +32,8 @@ public class GameMenuView extends View {
                   +"\n* What will you do now?                       *"
                   +"\n*                                             *"
                   +"\n* V - View the Map                            *"
-                  +"\n* M - Move to new location                    *"                
-                  +"\n* I - Review the items in your inventory      *"
-                  +"\n* R - Report View                             *"
+                  +"\n* M - Move to new location                    *"                  
+                  +"\n* R - Report View (Items, Enemies, ect.)      *"
                   +"\n* Q - Quit                                    *"
 //                  +"\n*                                             *"
 //                  +"\n* The following options do not belong in this *"
@@ -45,6 +44,7 @@ public class GameMenuView extends View {
 //                  +"\n* C - Fairies control                         *"
 //                  +"\n* T - Trap Control                            *"
 //                  +"\n* D - Dragon Control                          *"
+//                  +"\n* I - Review the items in your inventory      *"
 //                  +"\n* A - add or remove item view                 *"
 //                  +"\n* W - Win Game Scenario                       *"
 //                  +"\n* L - Lose Game Scenario                      *"                
@@ -62,12 +62,12 @@ public class GameMenuView extends View {
            case "M": // Go to the map and choose a room
                this.move();
                break;               
-           case "I": // Review the items in your inventory  
-               this.displayInventory();
-               break;
            case "R": // View Reports 
                this.viewReports();
                break;
+//           case "I": // Review the items in your inventory  
+//               this.displayInventory();
+//               break;
 //           case "C": // Fairie Control
 //               this.displayFarieControl();
 //               break;
@@ -143,30 +143,30 @@ public class GameMenuView extends View {
         System.out.println("You are currently at "+map.getCurrentLocation().getScene().getDescription());
  }
 
-    private void displayInventory() {
-        StringBuilder line;
-        
-        Game game = SearchTheDungeon.getCurrentGame();
-        InventoryItem[] inventory = game.getInventory();
-        
-        System.out.println("\n        LIST OF INVENTORY ITEMS");
-        line = new StringBuilder("                                              ");
-        line.insert(0,"DESCRIPTION");
-        line.insert(20, "LEVEL");
-        line.insert(30, "# EQUIPPED");
-        System.out.println(line.toString());
-        
-        //for each inventory item
-        for (InventoryItem item : inventory) {
-            line = new StringBuilder("                                              ");
-            line.insert(0, item.getDescription());
-            line.insert(23, item.getPowerLevel());
-            line.insert(33, item.getAmount());
-            
-            //DISPLAY the line
-            System.out.println(line.toString());
-        }
-    }
+//    private void displayInventory() {
+//        StringBuilder line;
+//        
+//        Game game = SearchTheDungeon.getCurrentGame();
+//        InventoryItem[] inventory = game.getInventory();
+//        
+//        System.out.println("\n        LIST OF INVENTORY ITEMS");
+//        line = new StringBuilder("                                              ");
+//        line.insert(0,"DESCRIPTION");
+//        line.insert(20, "LEVEL");
+//        line.insert(30, "# EQUIPPED");
+//        System.out.println(line.toString());
+//        
+//        //for each inventory item
+//        for (InventoryItem item : inventory) {
+//            line = new StringBuilder("                                              ");
+//            line.insert(0, item.getDescription());
+//            line.insert(23, item.getPowerLevel());
+//            line.insert(33, item.getAmount());
+//            
+//            //DISPLAY the line
+//            System.out.println(line.toString());
+//        }
+//    }
 
     private void viewReports() {
         ReportsView reportsView = new ReportsView();
