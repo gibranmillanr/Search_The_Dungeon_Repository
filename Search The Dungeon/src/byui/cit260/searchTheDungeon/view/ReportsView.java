@@ -25,7 +25,7 @@ public class ReportsView extends View {
         + "\n* Which report would you like to see? *"
         + "\n***************************************"
         + "\n* I - List all items in game          *"
-        + "\n* C - List all items carried(Backpack)*" 
+        + "\n* C - List all in your backpack       *" 
         + "\n* A - List all actors in game         *" 
         + "\n* E - List all enemies in game        *"
         + "\n* Q - Quit                            *"
