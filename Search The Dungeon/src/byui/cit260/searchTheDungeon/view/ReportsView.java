@@ -62,7 +62,7 @@ public class ReportsView extends View {
         Game game = SearchTheDungeon.getCurrentGame();
         InventoryItem[] inventory = game.getInventory();
         
-        System.out.println("\n LIST OF INVENTORY ITEMS");
+        System.out.println("\n LIST OF GAME INVENTORY ITEMS");
         line = new StringBuilder("                                              ");
         line.insert(0,"DESCRIPTION");
         line.insert(20, "LEVEL");
@@ -97,7 +97,6 @@ public class ReportsView extends View {
             line = new StringBuilder("                                              ");
             line.insert(0, item.getDescription());
             line.insert(23, item.getPowerLevel());
-//            line.insert(33, item.getAmount());
             
             //DISPLAY the line
             System.out.println(line.toString());

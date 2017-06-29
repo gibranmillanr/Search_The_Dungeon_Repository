@@ -7,7 +7,6 @@ package byui.cit260.searchTheDungeon.view;
 
 import buyi.cit460.searchTheDungeon.control.MapControl;
 import byui.cit260.searchTheDungeon.model.Game;
-import byui.cit260.searchTheDungeon.model.InventoryItem;
 import byui.cit260.searchTheDungeon.model.Location;
 import byui.cit260.searchTheDungeon.model.Map;
 import search.the.dungeon.SearchTheDungeon;
@@ -34,20 +33,7 @@ public class GameMenuView extends View {
                   +"\n* V - View the Map                            *"
                   +"\n* M - Move to new location                    *"                  
                   +"\n* R - Report View (Items, Enemies, ect.)      *"
-                  +"\n* Q - Quit                                    *"
-//                  +"\n*                                             *"
-//                  +"\n* The following options do not belong in this *"
-//                  +"\n*  menu and will be removed later             *"
-//                  +"\n*                                             *"
-//                  +"\n* F - Fight Menu                              *"
-//                  +"\n* P - Player menu                             *"
-//                  +"\n* C - Fairies control                         *"
-//                  +"\n* T - Trap Control                            *"
-//                  +"\n* D - Dragon Control                          *"
-//                  +"\n* I - Review the items in your inventory      *"
-//                  +"\n* A - add or remove item view                 *"
-//                  +"\n* W - Win Game Scenario                       *"
-//                  +"\n* L - Lose Game Scenario                      *"                
+                  +"\n* Q - Quit                                    *"                
                   +"\n***********************************************");      
     }
     
@@ -65,32 +51,6 @@ public class GameMenuView extends View {
            case "R": // View Reports 
                this.viewReports();
                break;
-//           case "I": // Review the items in your inventory  
-//               this.displayInventory();
-//               break;
-//           case "C": // Fairie Control
-//               this.displayFarieControl();
-//               break;
-//           case "F": // fight menu
-//               this.displayFightMenu();
-//               break;
-//           case "P": // Player View
-//               this.displayPlayerView();
-//               break;
-//           case "T": // Trap View
-//               this.displayTrapView();
-//               break;
-//           case "D": // Dragon View
-//               this.displayDragonView();
-//               break;
-//           case "A": // add or remove item View
-//               this.displayAddOrRemoveItemView();
-//               break;
-//           case "W":
-//               this.displayWinGameView();
-//               break;
-//           case "L":
-//               this.displayLoseGameView();
            default:
                System.out.println("\n***Invalid selection *** Try again");
                break;
@@ -98,7 +58,6 @@ public class GameMenuView extends View {
        return false;
     }
 
-//    private void displayMap() {
     public void displayMap() {
         String leftIndicator;
         String rightIndicator;
@@ -146,31 +105,6 @@ public class GameMenuView extends View {
         }
  }
 
-//    private void displayInventory() {
-//        StringBuilder line;
-//        
-//        Game game = SearchTheDungeon.getCurrentGame();
-//        InventoryItem[] inventory = game.getInventory();
-//        
-//        System.out.println("\n        LIST OF INVENTORY ITEMS");
-//        line = new StringBuilder("                                              ");
-//        line.insert(0,"DESCRIPTION");
-//        line.insert(20, "LEVEL");
-//        line.insert(30, "# EQUIPPED");
-//        System.out.println(line.toString());
-//        
-//        //for each inventory item
-//        for (InventoryItem item : inventory) {
-//            line = new StringBuilder("                                              ");
-//            line.insert(0, item.getDescription());
-//            line.insert(23, item.getPowerLevel());
-//            line.insert(33, item.getAmount());
-//            
-//            //DISPLAY the line
-//            System.out.println(line.toString());
-//        }
-//    }
-
     private void viewReports() {
         ReportsView reportsView = new ReportsView();
         reportsView.display();
@@ -187,44 +121,4 @@ public class GameMenuView extends View {
         MapControl.movePlayer(SearchTheDungeon.getCurrentGame().getMap(), row, column);
         displayMap();
     }
-
-//    private void displayFarieControl() {
-//       FairiesView fairiesView = new FairiesView();
-//        fairiesView.display();
-//    }
-//
-//    private void displayFightMenu() {
-//       FightMenuView fightMenu = new FightMenuView();
-//        fightMenu.display();
-//    }
-//
-//    private void displayPlayerView() {
-//      PlayerView playerView = new PlayerView();
-//        playerView.display();
-//    }
-//
-//    private void displayTrapView() {
-//       TrapView trapView = new TrapView();
-//        trapView.display();  
-//    }
-//    
-//    private void displayDragonView() {
-//       DragonView dragonView = new DragonView();
-//        dragonView.display();  
-//    }
-//
-//    private void displayAddOrRemoveItemView() {
-//        AddOrRemoveItemView addOrRemoveItemView = new AddOrRemoveItemView();
-//        addOrRemoveItemView.display();
-//    }
-//
-//    private void displayWinGameView() {
-//        WinGameView winGameView = new WinGameView();
-//        winGameView.display();
-//    }
-//
-//    private void displayLoseGameView() {
-//        LoseGameView loseGameView = new LoseGameView();
-//        loseGameView.display();
-//    }
 }

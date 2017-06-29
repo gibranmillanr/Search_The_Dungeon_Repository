@@ -17,7 +17,7 @@ public class WizardView extends View  {
     
     public WizardView(){
     
-     super("\n what 3 positive numbers give the same result when multiplied and added together? \n What is your first number (or Q to quit): ");
+     super("\n what 3 positive numbers give the same result when multiplied and added together? \n What is your first number: ");
     
      this.banner = "\n"
       +"\n***********************************************"
@@ -41,17 +41,17 @@ public class WizardView extends View  {
         System.out.println("\n" + this.banner);
     }
     
-      @Override
-      public boolean doAction(String value) {
-          double numberOne = Double.parseDouble(value);
-          this.displayMessage="\nWhat is your second number? ";
+    @Override
+    public boolean doAction(String value) {
+        double numberOne = Double.parseDouble(value);
+        this.displayMessage="\nWhat is your second number? ";
           
-          String numberTwoRaw = getInput();
-          double numberTwo = Double.parseDouble(numberTwoRaw);
+        String numberTwoRaw = getInput();
+        double numberTwo = Double.parseDouble(numberTwoRaw);
 
-          this.displayMessage="\nWhat is your third number? ";
-          String numberThreeRaw = getInput();
-          double numberThree = Double.parseDouble(numberThreeRaw); 
+        this.displayMessage="\nWhat is your third number? ";
+        String numberThreeRaw = getInput();
+        double numberThree = Double.parseDouble(numberThreeRaw); 
           
 //          double mathWizard = 0; 
            
@@ -60,7 +60,7 @@ public class WizardView extends View  {
 
               return false; //exit the game
         
-       if (mathWiz == -1) {  //incorrect
+       if (mathWiz == 1) {  //incorrect
         System.out.println(
         "\n***********************************************"
         +"\n*                                             *" 
