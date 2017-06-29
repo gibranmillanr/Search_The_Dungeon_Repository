@@ -11,7 +11,16 @@ package buyi.cit460.searchTheDungeon.control;
  */
 public class RiddleControl {
     
-    public int calcWizard ( int numberOne, int numberTwo, int numberThree){ 
+    /**
+    * 
+    * @author Paul Darr
+    * @param numberOne
+    * @param numberTwo
+    * @param numberThree
+    * @return 
+    */
+    
+    public static double calcWizard ( double numberOne, double numberTwo, double numberThree){ 
        
         if (numberOne <= 0){ 
             return -1;
@@ -23,8 +32,8 @@ public class RiddleControl {
             return -1;
         }
  
-        int addedNumber = numberOne + numberTwo + numberThree;
-        int multipliedNumber = numberOne * numberTwo * numberThree;
+        double addedNumber = numberOne + numberTwo + numberThree;
+        double multipliedNumber = numberOne * numberTwo * numberThree;
         
         if ((addedNumber == 6) && (multipliedNumber == 6)){    
              return 1 ;
