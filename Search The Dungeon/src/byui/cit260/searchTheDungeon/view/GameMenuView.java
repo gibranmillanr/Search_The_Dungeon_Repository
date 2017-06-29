@@ -6,9 +6,12 @@
 package byui.cit260.searchTheDungeon.view;
 
 import buyi.cit460.searchTheDungeon.control.MapControl;
+import byui.cit260.searchTheDungeon.exceptions.MapControlException;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.Location;
 import byui.cit260.searchTheDungeon.model.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import search.the.dungeon.SearchTheDungeon;
 
 /**
@@ -45,9 +48,10 @@ public class GameMenuView extends View {
            case "V": // Go to the map and choose a room
                this.displayMap();
                break;
-           case "M": // Go to the map and choose a room
-               this.move();
-               break;               
+           case "M": {
+                this.move(); // Go to the map and choose a room
+                break;                              
+           }
            case "R": // View Reports 
                this.viewReports();
                break;
@@ -110,15 +114,21 @@ public class GameMenuView extends View {
         reportsView.display();
     }
     
-        private void move() {
-        displayMap();
-        int row = getIntInput("Enter row: ", 0 ,4);
-        if (row == -999)
-            return;
-        int column = getIntInput ("Enter column: ", 0,4);
-        if (column == -999) 
-            return;
-        MapControl.movePlayer(SearchTheDungeon.getCurrentGame().getMap(), row, column);
-        displayMap();
+    private void move(){ 
+        try {
+            Game game = SearchTheDungeon.getCurrentGame(); // retreive the game
+            Map map = game.getMap(); // retreive the map from game
+            displayMap();
+            int row = getIntInput("Enter row: ",4,4);
+            if (row == -999)
+                return;
+            int column = getIntInput ("Enter column: ",4,4);
+            if (column == -999)
+                return;
+            MapControl.movePlayer(SearchTheDungeon.getCurrentGame().getMap(), row, column);
+            displayMap();
+        } catch (MapControlException ex) {
+            Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

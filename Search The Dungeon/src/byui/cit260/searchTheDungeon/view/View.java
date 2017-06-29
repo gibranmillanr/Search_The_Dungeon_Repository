@@ -5,6 +5,7 @@
  */
 package byui.cit260.searchTheDungeon.view;
 
+import byui.cit260.searchTheDungeon.exceptions.MapControlException;
 import byui.cit260.searchTheDungeon.model.Game;
 import java.util.Scanner;
 import search.the.dungeon.SearchTheDungeon;
@@ -76,7 +77,8 @@ public abstract class View implements ViewInterface {
         return value; // return the name
     }
     
-    public int getIntInput(String prompt, int min, int max) {
+    public int getIntInput(String prompt, int min, int max)
+        throws MapControlException {
         
         Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
@@ -100,10 +102,12 @@ public abstract class View implements ViewInterface {
             if (value.toUpperCase().equals("Q"))
             return -999;
             returned = Integer.parseInt(value);
-            if (returned < min || returned > max){
-                System.out.println("Invalid entry. Must be between "+ min + " and "+ max+ " (inclusive).");
-                continue;
-            }
+            if (returned < min || returned >=max ||
+                returned < min || returned >=max) {
+            throw new MapControlException ("Sorry, but YOU CAN'T DO THAT!"
+                    + returned + "is not valid at thsi point."
+                            + "\nWere you thinking of a different dungeon?");
+        }
             valid = true;
         }
         return returned; // return the name
