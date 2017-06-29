@@ -107,6 +107,7 @@ public abstract class View implements ViewInterface {
             throw new MapControlException ("Sorry, but YOU CAN'T DO THAT!"
                     + returned + "is not valid at thsi point."
                             + "\nWere you thinking of a different dungeon?");
+//            return -1;
         }
             valid = true;
         }
