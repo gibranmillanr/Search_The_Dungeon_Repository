@@ -8,7 +8,7 @@ import byui.cit260.searchTheDungeon.model.InventoryItem;
 
 /**
  *
- * @author Gibran Millan
+ * @author Gibran Millan, Paul Darr, Les Aycock
  */
 public class InventoryControl {
     

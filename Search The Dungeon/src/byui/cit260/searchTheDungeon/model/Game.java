@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Gibran Millan
+ * @author Gibran Millan, Paul Darr, Les Aycock
  */
 public class Game implements Serializable {
     

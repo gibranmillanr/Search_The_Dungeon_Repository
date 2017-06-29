@@ -19,7 +19,7 @@ import search.the.dungeon.SearchTheDungeon;
 
 /**
  *
- * @author Gibran Millan
+ * @author Gibran Millan, Paul Darr, Les Aycock
  */
 public class GameControl {
 

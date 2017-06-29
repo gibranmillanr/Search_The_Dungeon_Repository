@@ -7,7 +7,7 @@ package buyi.cit460.searchTheDungeon.control;
 
 /**
  *
- * @author Gibran Millan
+ * @author Gibran Millan, Paul Darr, Les Aycock
  */
 public class RiddleControl {
     

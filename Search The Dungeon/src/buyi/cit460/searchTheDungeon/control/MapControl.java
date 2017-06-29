@@ -13,7 +13,7 @@ import search.the.dungeon.SearchTheDungeon;
 
 /**
  *
- * @author Gibran Millan
+ * @author Gibran Millan, Paul Darr, Les Aycock
  */
 public class MapControl {
     static Map createMap() {
@@ -33,9 +33,9 @@ public class MapControl {
         Scene startScene = new Scene();
         startScene.setDescription(
             "You will enter the dungeon with nothing but three items: your armor, "
-           +"your weapon, and your shield. You won't be happy to find out that your "
-           +"initial items are not very powerful. Hurry and search the dungeon for "
-           +"better gear before you encounter something dangerous. ");
+           +"\n your weapon, and your shield. You won't be happy to find out that your "
+           +"\n initial items are not very powerful. Hurry and search the dungeon for "
+           +"\n better gear before you encounter something dangerous. ");
         startScene.setMapSymbol("ST");
         startScene.setItem(inventory[InventoryControl.ItemType.dagger.ordinal()]);
         scenes[SceneType.start.ordinal()] = startScene;
@@ -46,13 +46,31 @@ public class MapControl {
         scenes[SceneType.finish.ordinal()] = finishScene;
         
         Scene room1Scene = new Scene();
-        room1Scene.setDescription("Rats inside the room shriek when they hear the door open, then they run in all directions from a putrid corpse lying in the center of the floor. As these creatures crowd around the edges of the room, seeking to crawl through a hole in one corner, they fight one another. The stinking corpse in the middle of the room looks human, but the damage both time and the rats have wrought are enough to make determining its race by appearance an extremely difficult task at best. ");
+        room1Scene.setDescription(
+           
+           "***********************************************"
+           +"\n                                            "
+           +"\n Rats inside the room shriek when they hear "
+           +"\n the door open, then they run in all"
+           +"\n directions from a putrid corpse lying in"
+           +"\n the center of the floor. As these creatures"
+           +"\n crowd around the edges of the room, seeking"
+           +"\n to crawl through a hole in one corner, they"
+           +"\n fight one another. The stinking corpse in"
+           +"\n the middle of the room looks human, but the"
+           +"\n damage both time and the rats have wrought"
+           +"\n are enough to make determining its race by"
+           +"\n appearance an extremely difficulttask at best."
+           +"\n                                               "
+           +"\n***********************************************");
+
         room1Scene.setMapSymbol(" 1");
         scenes[SceneType.room1.ordinal()] = room1Scene;
 
         Scene room2Scene = new Scene();
         room2Scene.setDescription("The strong, sour-sweet scent of vinegar assaults your nose as you enter this room. Sundered casks and broken bottle glass line the walls of this room. Clearly this was someone's wine cellar for a time. The shards of glass are somewhat dusty, and the spilled wine is nothing more than a sticky residue in some places. Only one small barrel remains unbroken amid the rubbish. ");
         room2Scene.setMapSymbol(" 2");
+        startScene.setItem(inventory[InventoryControl.ItemType.basicShield.ordinal()]);
         scenes[SceneType.room2.ordinal()] = room2Scene;        
         
         Scene room3Scene = new Scene();
@@ -63,6 +81,7 @@ public class MapControl {
         Scene room4Scene = new Scene();
         room4Scene.setDescription("You gaze into the room and hundreds of skulls gaze coldly back at you. They're set in niches in the walls in a checkerboard pattern, each skull bearing a half-melted candle on its head. The grinning bones stare vacantly into the room, which otherwise seems empty. ");
         room4Scene.setMapSymbol(" 4");
+        startScene.setItem(inventory[InventoryControl.ItemType.basicArmor.ordinal()]);
         scenes[SceneType.room4.ordinal()] = room4Scene;
         
         Scene room5Scene = new Scene();
@@ -104,6 +123,7 @@ public class MapControl {
         Scene room12Scene = new Scene();
         room12Scene.setDescription("Rounded green stones set in the floor form a snake's head that points in the direction of the doorway you stand in. The body of the snake flows back and toward the wall to go round about the room in ever smaller circles, creating a spiral pattern on the floor. Similar green-stone snakes wend along the walls, seemingly at random heights, and their long bodies make wave shapes.");
         room12Scene.setMapSymbol("12");
+        room10Scene.setItem(inventory[InventoryControl.ItemType.powerShield.ordinal()]);
         scenes[SceneType.room12.ordinal()] = room12Scene;
         
         Scene room13Scene = new Scene();
@@ -113,7 +133,8 @@ public class MapControl {
         
         Scene room14Scene = new Scene();
         room14Scene.setDescription("Huge rusted metal blades jut out of cracks in the walls, and rusting spikes project down from the ceiling almost to the floor. This room may have once been trapped heavily, but someone triggered them, apparently without getting killed. The traps were never reset and now seem rusted in place. ");
-        room14Scene.setMapSymbol("14");        
+        room14Scene.setMapSymbol("14");
+        room10Scene.setItem(inventory[InventoryControl.ItemType.powerArmor.ordinal()]);
         scenes[SceneType.room14.ordinal()] = room14Scene;
         
         Scene room15Scene = new Scene();

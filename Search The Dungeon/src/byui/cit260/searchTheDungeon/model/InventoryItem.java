@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Les and Sue
+ * @author Gibran Millan, Paul Darr, Les Aycock
  */
 public class InventoryItem implements Serializable{
    

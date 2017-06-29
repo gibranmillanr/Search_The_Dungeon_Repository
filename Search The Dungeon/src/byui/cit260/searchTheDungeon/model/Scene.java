@@ -9,7 +9,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Paul Darr
+ * @author Gibran Millan, Paul Darr, Les Aycock
  */
 public class Scene implements Serializable {
     

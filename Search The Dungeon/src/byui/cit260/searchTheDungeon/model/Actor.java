@@ -9,7 +9,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Gibran Millan
+ * @author Gibran Millan, Paul Darr, Les Aycock
  */
 public class Actor implements Serializable {
     

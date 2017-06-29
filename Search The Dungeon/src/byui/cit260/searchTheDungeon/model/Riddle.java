@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Les
+ * @author Gibran Millan, Paul Darr, Les Aycock
  */
 public class Riddle implements Serializable{
     
