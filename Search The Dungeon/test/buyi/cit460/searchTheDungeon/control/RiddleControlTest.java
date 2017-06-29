@@ -49,18 +49,18 @@ public class RiddleControlTest {
         System.out.println("\tTest case #1");
         
         // input values for test case 1
-        int numberOne = 1;
-        int numberTwo = 2;
-        int numberThree = 3;
+        double numberOne = 1;
+        double numberTwo = 2;
+        double numberThree = 3;
         
         // create instance of Riddle control class
         RiddleControl instance = new RiddleControl();
         
         // expected output returned value
-        int expResult = 1;
+        double expResult = 1;
         
         // call function to run test
-        int result = instance.calcWizard(numberOne, numberTwo, numberThree);
+        double result = instance.calcWizard(numberOne, numberTwo, numberThree);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
