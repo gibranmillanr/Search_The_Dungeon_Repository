@@ -45,6 +45,8 @@ public class MapControl {
         finishScene.setMapSymbol("FN");
         scenes[SceneType.finish.ordinal()] = finishScene;
         
+        // Monster and Treasure Encounters
+        
         Scene room1Scene = new Scene();
         room1Scene.setDescription(
            
@@ -70,7 +72,7 @@ public class MapControl {
         Scene room2Scene = new Scene();
         room2Scene.setDescription("The strong, sour-sweet scent of vinegar assaults your nose as you enter this room. Sundered casks and broken bottle glass line the walls of this room. Clearly this was someone's wine cellar for a time. The shards of glass are somewhat dusty, and the spilled wine is nothing more than a sticky residue in some places. Only one small barrel remains unbroken amid the rubbish. ");
         room2Scene.setMapSymbol(" 2");
-        startScene.setItem(inventory[InventoryControl.ItemType.basicShield.ordinal()]);
+        room2Scene.setItem(inventory[InventoryControl.ItemType.basicShield.ordinal()]);
         scenes[SceneType.room2.ordinal()] = room2Scene;        
         
         Scene room3Scene = new Scene();
@@ -81,7 +83,7 @@ public class MapControl {
         Scene room4Scene = new Scene();
         room4Scene.setDescription("You gaze into the room and hundreds of skulls gaze coldly back at you. They're set in niches in the walls in a checkerboard pattern, each skull bearing a half-melted candle on its head. The grinning bones stare vacantly into the room, which otherwise seems empty. ");
         room4Scene.setMapSymbol(" 4");
-        startScene.setItem(inventory[InventoryControl.ItemType.basicArmor.ordinal()]);
+        room4Scene.setItem(inventory[InventoryControl.ItemType.basicArmor.ordinal()]);
         scenes[SceneType.room4.ordinal()] = room4Scene;
         
         Scene room5Scene = new Scene();
@@ -123,7 +125,7 @@ public class MapControl {
         Scene room12Scene = new Scene();
         room12Scene.setDescription("Rounded green stones set in the floor form a snake's head that points in the direction of the doorway you stand in. The body of the snake flows back and toward the wall to go round about the room in ever smaller circles, creating a spiral pattern on the floor. Similar green-stone snakes wend along the walls, seemingly at random heights, and their long bodies make wave shapes.");
         room12Scene.setMapSymbol("12");
-        room10Scene.setItem(inventory[InventoryControl.ItemType.powerShield.ordinal()]);
+        room12Scene.setItem(inventory[InventoryControl.ItemType.powerShield.ordinal()]);
         scenes[SceneType.room12.ordinal()] = room12Scene;
         
         Scene room13Scene = new Scene();
@@ -134,7 +136,7 @@ public class MapControl {
         Scene room14Scene = new Scene();
         room14Scene.setDescription("Huge rusted metal blades jut out of cracks in the walls, and rusting spikes project down from the ceiling almost to the floor. This room may have once been trapped heavily, but someone triggered them, apparently without getting killed. The traps were never reset and now seem rusted in place. ");
         room14Scene.setMapSymbol("14");
-        room10Scene.setItem(inventory[InventoryControl.ItemType.powerArmor.ordinal()]);
+        room14Scene.setItem(inventory[InventoryControl.ItemType.powerArmor.ordinal()]);
         scenes[SceneType.room14.ordinal()] = room14Scene;
         
         Scene room15Scene = new Scene();
@@ -161,6 +163,8 @@ public class MapControl {
         room19Scene.setDescription("This tiny room holds a curious array of machinery. Winches and levers project from every wall, and chains with handles dangle from the ceiling. On a nearby wall, you note a pictogram of what looks like a scythe on a chain. ");
         room19Scene.setMapSymbol("19");        
         scenes[SceneType.room19.ordinal()] = room19Scene;
+        
+        // Riddle Scenes
         
         Scene fairiesScene = new Scene();
         fairiesScene.setDescription("You have entered the fairies domain!");
