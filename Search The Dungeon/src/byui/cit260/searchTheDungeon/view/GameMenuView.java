@@ -6,6 +6,7 @@
 package byui.cit260.searchTheDungeon.view;
 
 import buyi.cit460.searchTheDungeon.control.MapControl;
+import buyi.cit460.searchTheDungeon.control.RiddleControl;
 import byui.cit260.searchTheDungeon.exceptions.MapControlException;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.Location;
@@ -55,6 +56,11 @@ public class GameMenuView extends View {
            case "R": // View Reports 
                this.viewReports();
                break;
+               
+            case "D": // Dragon View
+                 this.displayDragonView();
+                 break;
+
            default:
                System.out.println("\n***Invalid selection *** Try again");
                break;
@@ -114,6 +120,13 @@ public class GameMenuView extends View {
         reportsView.display();
     }
     
+    private void displayDragonView() {
+        
+          DragonView dragonView = new DragonView();
+          dragonView.display(); 
+
+    }
+    
     private void move(){ 
         try {
             Game game = SearchTheDungeon.getCurrentGame(); // retreive the game
@@ -131,4 +144,6 @@ public class GameMenuView extends View {
             Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    
 }

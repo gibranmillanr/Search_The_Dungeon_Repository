@@ -94,12 +94,26 @@ public class TrapView extends View {
    // private boolean doAction(double radius,double height,double volumeOfHole) {
     @Override
     public boolean doAction(String value) {
-        double radius = Double.parseDouble(value);
+        String radiusRaw = getInput();
+        double radius = 0;
+        try{
+        radius =Double.parseDouble(radiusRaw);
+        } catch (NumberFormatException nf) {
+              System.out.println("\n You must enter a valid number." 
+                      + "Try again or enter Q to quit");
+          
+          }
         this.displayMessage="\nNow enter the height! ";
         
         String heightRaw = getInput();
-        double height = Double.parseDouble(heightRaw); 
-        
+        double height= 0;
+        try{
+        height= Double.parseDouble(heightRaw); 
+        }catch (NumberFormatException nf) {
+              System.out.println("\n You must enter a valid number." 
+                      + "Try again or enter Q to quit");
+          
+          }
         double volumeOfH = RiddleControl.calcTrap(radius,height);
         
         if (radius == 0) //User wants to quit

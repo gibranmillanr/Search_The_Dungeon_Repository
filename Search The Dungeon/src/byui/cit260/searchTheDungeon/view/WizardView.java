@@ -43,15 +43,37 @@ public class WizardView extends View  {
     
     @Override
     public boolean doAction(String value) {
-        double numberOne = Double.parseDouble(value);
+        String numberOneRaw = getInput();
+        double numberOne = 0;
+        try{
+         numberOne = Double.parseDouble(numberOneRaw);
+        } catch (NumberFormatException nf) {
+              System.out.println("\n You must enter a valid number." 
+                      + "Try again or enter Q to quit");
+          
+          }
         this.displayMessage="\nWhat is your second number? ";
           
         String numberTwoRaw = getInput();
-        double numberTwo = Double.parseDouble(numberTwoRaw);
+        double numberTwo = 0;
+        try{
+        numberTwo = Double.parseDouble(numberTwoRaw);
+        } catch (NumberFormatException nf) {
+              System.out.println("\n You must enter a valid number." 
+                      + "Try again or enter Q to quit");
+          
+          }
 
         this.displayMessage="\nWhat is your third number? ";
         String numberThreeRaw = getInput();
-        double numberThree = Double.parseDouble(numberThreeRaw); 
+        double numberThree = 0;
+        try{
+        numberThree = Double.parseDouble(numberThreeRaw); 
+        }catch (NumberFormatException nf) {
+              System.out.println("\n You must enter a valid number." 
+                      + "Try again or enter Q to quit");
+          
+          }
           
 //          double mathWizard = 0; 
            
