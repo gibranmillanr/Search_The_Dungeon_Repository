@@ -7,6 +7,7 @@ package buyi.cit460.searchTheDungeon.control;
 
 
 import buyi.cit460.searchTheDungeon.control.MapControl.SceneType;
+import byui.cit260.searchTheDungeon.exceptions.GameControlException;
 import byui.cit260.searchTheDungeon.model.Actor;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
@@ -23,10 +24,10 @@ import search.the.dungeon.SearchTheDungeon;
  */
 public class GameControl {
 
-    public static Player createPlayer(String name) {
+    public static Player createPlayer(String name)throws GameControlException {
        
-        if (name == null){
-            return null;
+        if (name == null) {
+            throw new GameControlException("The name variable was null.");
         }
         
         Player player = new Player();
