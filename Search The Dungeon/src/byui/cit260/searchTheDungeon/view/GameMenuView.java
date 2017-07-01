@@ -54,9 +54,18 @@ public class GameMenuView extends View {
                this.viewReports();
                break;
                
-            case "F": // Dragon View
-                 this.displayFairiesView();
-                 break;
+           case "C": // Fairies View
+               this.displayFairiesView();
+               break;
+           case "T": // Trap View
+               this.displayTrapView();
+               break;
+           case "D": // Dragon View
+               this.displayDragonView();
+               break;
+           case "W": // Wizard View
+               this.displayWizardView();
+               break;
 
            default:
                System.out.println("\n***Invalid selection *** Try again\n");
@@ -117,12 +126,22 @@ public class GameMenuView extends View {
         reportsView.display();
     }
     
-    private void displayFairiesView() {
-        
+    private void displayFairiesView() {       
           FairiesView fairiesView = new FairiesView();
           fairiesView.display(); 
-
     }
+    private void displayDragonView() {
+       DragonView dragonView = new DragonView();
+        dragonView.display();  
+    }
+    private void displayTrapView() {
+       TrapView trapView = new TrapView();
+        trapView.display();  
+    }
+    private void displayWizardView() {
+       WizardView wizardView = new WizardView();
+        wizardView.display();  
+    }    
     
     private void move(){ 
         try {
