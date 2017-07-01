@@ -54,8 +54,8 @@ public class GameMenuView extends View {
                this.viewReports();
                break;
                
-            case "D": // Dragon View
-                 this.displayDragonView();
+            case "F": // Dragon View
+                 this.displayFairiesView();
                  break;
 
            default:
@@ -117,10 +117,10 @@ public class GameMenuView extends View {
         reportsView.display();
     }
     
-    private void displayDragonView() {
+    private void displayFairiesView() {
         
-          DragonView dragonView = new DragonView();
-          dragonView.display(); 
+          FairiesView fairiesView = new FairiesView();
+          fairiesView.display(); 
 
     }
     
