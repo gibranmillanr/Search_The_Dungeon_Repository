@@ -12,9 +12,8 @@ import java.util.Scanner;
  *
  * @author Les and Sue
  */
-public class FairiesView extends View{
-    
-        private String banner;
+public class FairiesView extends View{    
+    private String banner;
     
     public FairiesView() {
     
@@ -41,27 +40,32 @@ public class FairiesView extends View{
         System.out.println("\n" + this.banner);
     }
 
-    private int getNumberRooms() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        int value = 0; //value to be returned
-        boolean valid = false; //initialize to not valid
-        
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.banner);
-            
-            value = keyboard.nextInt(); //get next line typed on keyboard
-
-            
-            break; //end the loop
-        }
-        
-        return value; //return the value entered
-    }
+//    private int getNumberRooms() {
+//        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+//        int value = 0; //value to be returned
+//        boolean valid = false; //initialize to not valid
+//        
+//        while (!valid) { // loop while an invalid value is entered
+//            System.out.println("\n" + this.banner);        
+//            value = keyboard.nextInt(); //get next line typed on keyboard
+//            break; //end the loop
+//        }
+//        
+//        return value; //return the value entered
+//    }
     
+    @Override
     public boolean doAction(String value) {
+        String numberRoomsRaw = getInput();
+        int numberRooms = 0;
+        try{
+        numberRooms = Integer.parseInt(numberRoomsRaw);
         
-        
-        int numberRooms = Integer.parseInt(value);
+        } catch (NumberFormatException nf) {
+              System.out.println("\n You must enter a valid number." 
+                      + "Try again or enter Q to quit");
+          
+        }
         
         if (numberRooms > 26) {
             System.out.println("\n There are only so many rooms! Try again!");
