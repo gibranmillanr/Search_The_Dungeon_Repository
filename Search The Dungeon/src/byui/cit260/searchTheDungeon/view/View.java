@@ -104,9 +104,9 @@ public abstract class View implements ViewInterface {
                 return -999;
             returned = Integer.parseInt(value);
             if (returned < min || returned >max) {
-            throw new MapControlException ("Sorry, but YOU CAN'T DO THAT!"
-                    + returned + "is not valid at this point."
-                            + "\nWere you thinking of a different dungeon?");
+            throw new MapControlException ("\nWere you thinking of a different dungeon?"
+                            + "Sorry, but YOU CAN'T DO THAT!"
+                    + returned + "is not valid at this point.");
         }
             if (returned < min || returned >max) valid=!valid;
             else                   
