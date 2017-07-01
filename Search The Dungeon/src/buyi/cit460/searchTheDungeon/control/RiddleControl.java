@@ -42,29 +42,44 @@ public class RiddleControl {
     return -1;
     }
 
-    /**
-    * 
-    * @author Les Aycock
-     * @param sizeOfMap
-     * @param howManyRooms
-     * @return 
-    */
-    public int calcFaries (int sizeOfMap, int howManyRooms){
-        if (sizeOfMap<=0){
-                return -1;
-        }
-        if (howManyRooms <= 0) {
-            return -1;
-        }
-        if (sizeOfMap !=26) {
-            return -1;
-        }
-        if (howManyRooms > 26){
-            return -1;
-        }
-        int percentageRooms = (howManyRooms * 100) / sizeOfMap;
-        return percentageRooms;
-    }
+//    /**
+//    * 
+//    * @author Les Aycock
+//     * @param sizeOfMap
+//     * @param howManyRooms
+//     * @return 
+//    */
+//    public int calcFaries (int sizeOfMap, int howManyRooms){
+//        if (sizeOfMap<=0){
+//                return -1;
+//        }
+//        if (howManyRooms <= 0) {
+//            return -1;
+//        }
+//        if (sizeOfMap !=26) {
+//            return -1;
+//        }
+//        if (howManyRooms > 26){
+//            return -1;
+//        }
+//        int percentageRooms = (howManyRooms * 100) / sizeOfMap;
+//        return percentageRooms;
+//    }
+    
+/**
+ *
+ * @author Les Aycock, Paul Darr
+ * @param numberRooms
+ * @return 
+ */
+public static boolean calcFairies (int numberRooms){
+        // 26 rooms in the dungeon
+        int totalRooms = 25; 
+        // getting half the number of rooms
+        int halfRooms = totalRooms / 2; 
+        // returning if user explored half or not
+        return numberRooms >= halfRooms; 
+    }    
     
     /**
      * @author Gibran Millan

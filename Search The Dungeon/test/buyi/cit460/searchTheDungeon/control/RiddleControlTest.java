@@ -189,151 +189,32 @@ public class RiddleControlTest {
         //fail("The test case is a prototype.");
         
     }
+
     /**
-     * Test of calcFaries method, of class RiddleControl.
+     * Test of calcFairies method, of class RiddleControl.
      */
     @Test
-    public void testCalcFaries() {
-        System.out.println("calcFaries");
+    public void testCalcFairies() {
+        System.out.println("calcFairies");
         
-
         //Test case #1
         System.out.println("\tTest case #1");
         
         // input values for test case 1
-        int sizeOfMap = 26;
-        int howManyRooms = 18;
+        int numberRooms = 0;
 
-        // create instance of Riddle control class
-        RiddleControl instance = new RiddleControl();
+         // create instance of Riddle control class
+        RiddleControl instance = new RiddleControl();       
         
         // expected output returned value
-        int expResult = 69;
-        
-                
-        // call function to run test
-        int result = instance.calcFaries(sizeOfMap, howManyRooms);
-        
-        // compare expected return value with actual value returned
-        assertEquals(expResult, result, 0.0001);
-       
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");   
-        
-                //Test case #2
-        System.out.println("\tTest case #2");
-        
-        // input values for test case 2
-        sizeOfMap = 5;
-        howManyRooms = -1;
-        
-        // expected output returned value
-        expResult = -1;
-        
-                
-        // call function to run test
-        result = instance.calcFaries(sizeOfMap, howManyRooms);
-        
-        // compare expected return value with actual value returned
-        assertEquals(expResult, result, 0.0001);
-       
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-        
-                //Test case #3
-        System.out.println("\tTest case #3");
-        
-        // input values for test case 3
-        sizeOfMap = 50;
-        howManyRooms = 4;
-        
-        // expected output returned value
-        expResult = -1;
+        boolean expResult = false;
         
         // call function to run test
-        result = instance.calcFaries(sizeOfMap, howManyRooms);
+        boolean result = RiddleControl.calcFairies(numberRooms);
         
         // compare expected return value with actual value returned
-        assertEquals(expResult, result, 0.0001);
-       
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-                //Test case #4
-        System.out.println("\tTest case #4");
-        
-        // input values for test case 4
-        sizeOfMap = 30;
-        howManyRooms = 15;
-        
-        // expected output returned value
-        expResult = -1;
-        
-        // call function to run test
-        result = instance.calcFaries(sizeOfMap, howManyRooms);
-        
-        // compare expected return value with actual value returned
-        assertEquals(expResult, result, 0.0001);
-       
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-        
-                //Test case #5
-        System.out.println("\tTest case #5");
-        
-        // input values for test case 5
-        sizeOfMap = 34;
-        howManyRooms = 0;
-        
-        // expected output returned value
-        expResult = -1;
-        
-        // call function to run test
-        result = instance.calcFaries(sizeOfMap, howManyRooms);
-        
-        // compare expected return value with actual value returned
-        assertEquals(expResult, result, 0.0001);
-       
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-        
-                        //Test case #6
-        System.out.println("\tTest case #6");
-        
-        // input values for test case 6
-        sizeOfMap = 34;
-        howManyRooms = 34;
-        
-        // expected output returned value
-        expResult = -1;
-        
-        // call function to run test
-        result = instance.calcFaries(sizeOfMap, howManyRooms);
-        
-        // compare expected return value with actual value returned
-        assertEquals(expResult, result, 0.0001);
-       
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-        
-                        //Test case #7
-        System.out.println("\tTest case #7");
-        
-        // input values for test case 7
-        sizeOfMap = 34;
-        howManyRooms = 17;
-        
-        // expected output returned value
-        expResult = -1;
-        
-        // call function to run test
-        result = instance.calcFaries(sizeOfMap, howManyRooms);
-        
-        // compare expected return value with actual value returned
-        assertEquals(expResult, result, 0.0001);
-       
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    } 
+        assertEquals(expResult, result);
+    }    
 
     /**
      * Test of calcTrap method, of class RiddleControl.
@@ -615,4 +496,5 @@ public class RiddleControlTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+
 }

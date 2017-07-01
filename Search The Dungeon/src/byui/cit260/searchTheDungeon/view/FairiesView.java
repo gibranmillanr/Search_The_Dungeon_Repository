@@ -5,8 +5,7 @@
  */
 package byui.cit260.searchTheDungeon.view;
 
-import buyi.cit460.searchTheDungeon.control.FairiesControl;
-import java.util.Scanner;
+import buyi.cit460.searchTheDungeon.control.RiddleControl;
 
 /**
  *
@@ -72,7 +71,7 @@ public class FairiesView extends View{
             return false;
         }
        // call checkRooms() control function
-       boolean half = FairiesControl.checkRooms(numberRooms);
+       boolean half = RiddleControl.calcFairies(numberRooms);
        
        if (!half) {  //if usuccessful
         System.out.println(
