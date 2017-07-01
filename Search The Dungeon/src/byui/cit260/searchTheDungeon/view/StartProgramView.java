@@ -6,8 +6,11 @@
 package byui.cit260.searchTheDungeon.view;
 
 import buyi.cit460.searchTheDungeon.control.GameControl;
+import byui.cit260.searchTheDungeon.exceptions.GameControlException;
 import byui.cit260.searchTheDungeon.model.Player;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -56,24 +59,29 @@ public class StartProgramView extends View {
     @Override
     public boolean doAction(String playersName) {
         
-       if (playersName.length() < 2) {
-        System.out.println("\nInvalid players name: "
-                + "The name must be greater than one character in length");
-        return false;
-    }
-       
-       // call createPlayer() control function
-       Player player = GameControl.createPlayer(playersName);
-       
-       if (player == null) { //if usuccessful
-           System.out.println("\nError creating the player");
-        return false;   
-       }
-       
-       // display next view
-       this.displayNextView(player);
-       
-       return true; // success!
+            try {
+                if (playersName.length() < 2) {
+                    System.out.println("\nInvalid players name: "
+                            + "The name must be greater than one character in length");
+                    return false;
+                }
+                
+                // call createPlayer() control function
+                Player player = GameControl.createPlayer(playersName);
+                
+                if (player == null) { //if usuccessful
+                    System.out.println("\nError creating the player");
+                    return false;
+                }
+                
+                // display next view
+                this.displayNextView(player);
+                
+                return true; // success!
+            } catch (GameControlException ex) {
+                Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return true;
     }
 
     private void displayNextView(Player player) {

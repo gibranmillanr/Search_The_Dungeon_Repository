@@ -6,13 +6,10 @@
 package byui.cit260.searchTheDungeon.view;
 
 import buyi.cit460.searchTheDungeon.control.MapControl;
-import buyi.cit460.searchTheDungeon.control.RiddleControl;
 import byui.cit260.searchTheDungeon.exceptions.MapControlException;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.Location;
 import byui.cit260.searchTheDungeon.model.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import search.the.dungeon.SearchTheDungeon;
 
 /**
@@ -62,7 +59,7 @@ public class GameMenuView extends View {
                  break;
 
            default:
-               System.out.println("\n***Invalid selection *** Try again");
+               System.out.println("\n***Invalid selection *** Try again\n");
                break;
        }
        return false;
@@ -132,18 +129,17 @@ public class GameMenuView extends View {
             Game game = SearchTheDungeon.getCurrentGame(); // retreive the game
             Map map = game.getMap(); // retreive the map from game
             displayMap();
-            int row = getIntInput("Enter row: ",4,4);
+            int row = getIntInput("Enter row: ",0,4);
             if (row == -999)
                 return;
-            int column = getIntInput ("Enter column: ",4,4);
+            int column = getIntInput ("Enter column: ",0,4);
             if (column == -999)
                 return;
             MapControl.movePlayer(SearchTheDungeon.getCurrentGame().getMap(), row, column);
             displayMap();
         } catch (MapControlException ex) {
-            Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println("\nNot a valid coordinate! Were you thinking of another dungeon?"
+                    + "Try again!\n");
         }
     }
-
-    
 }

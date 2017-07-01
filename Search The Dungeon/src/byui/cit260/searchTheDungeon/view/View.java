@@ -78,11 +78,12 @@ public abstract class View implements ViewInterface {
     }
     
     public int getIntInput(String prompt, int min, int max)
-        throws MapControlException {
+        throws MapControlException 
+    {
         
         Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
-        String value = null;
+        String value;
         int returned = 0;
         
 	// while a valid name has not been retrived
@@ -100,15 +101,15 @@ public abstract class View implements ViewInterface {
                 continue;
             }
             if (value.toUpperCase().equals("Q"))
-            return -999;
+                return -999;
             returned = Integer.parseInt(value);
-            if (returned < min || returned >=max ||
-                returned < min || returned >=max) {
+            if (returned < min || returned >max) {
             throw new MapControlException ("Sorry, but YOU CAN'T DO THAT!"
-                    + returned + "is not valid at thsi point."
+                    + returned + "is not valid at this point."
                             + "\nWere you thinking of a different dungeon?");
-//            return -1;
         }
+            if (returned < min || returned >max) valid=!valid;
+            else                   
             valid = true;
         }
         return returned; // return the name
