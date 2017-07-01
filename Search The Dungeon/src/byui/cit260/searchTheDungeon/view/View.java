@@ -101,7 +101,7 @@ public abstract class View implements ViewInterface {
                 continue;
             }
             if (value.toUpperCase().equals("Q"))
-                return -999;
+                return -999; // player wants to quit
             returned = Integer.parseInt(value);
             if (returned < min || returned >max) {
             throw new MapControlException ("\nWere you thinking of a different dungeon?"
