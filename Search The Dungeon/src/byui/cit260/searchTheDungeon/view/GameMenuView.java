@@ -5,7 +5,7 @@
  */
 package byui.cit260.searchTheDungeon.view;
 
-import buyi.cit460.searchTheDungeon.control.MapControl;
+import byui.cit260.searchTheDungeon.control.MapControl;
 import byui.cit260.searchTheDungeon.exceptions.MapControlException;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.Location;

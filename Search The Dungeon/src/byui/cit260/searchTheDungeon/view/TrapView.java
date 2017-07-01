@@ -5,7 +5,7 @@
  */
 package byui.cit260.searchTheDungeon.view;
 
-import buyi.cit460.searchTheDungeon.control.RiddleControl;
+import byui.cit260.searchTheDungeon.control.RiddleControl;
 import java.util.Scanner;
 
 
