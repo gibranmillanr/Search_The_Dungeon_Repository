@@ -5,7 +5,6 @@
  */
 package byui.cit260.searchTheDungeon.control;
 
-import buyi.cit460.searchTheDungeon.control.*;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -61,7 +60,7 @@ public class RiddleControlTest {
         double expResult = 1;
         
         // call function to run test
-        double result = instance.calcWizard(numberOne, numberTwo, numberThree);
+        double result = RiddleControl.calcWizard(numberOne, numberTwo, numberThree);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -81,7 +80,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         // call function to run test
-        result = instance.calcWizard(numberOne, numberTwo, numberThree);
+        result = RiddleControl.calcWizard(numberOne, numberTwo, numberThree);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -101,7 +100,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         // call function to run test
-        result = instance.calcWizard(numberOne, numberTwo, numberThree);
+        result = RiddleControl.calcWizard(numberOne, numberTwo, numberThree);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -121,7 +120,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         // call function to run test
-        result = instance.calcWizard(numberOne, numberTwo, numberThree);
+        result = RiddleControl.calcWizard(numberOne, numberTwo, numberThree);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -141,7 +140,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         // call function to run test
-        result = instance.calcWizard(numberOne, numberTwo, numberThree);
+        result = RiddleControl.calcWizard(numberOne, numberTwo, numberThree);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -161,7 +160,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         // call function to run test
-        result = instance.calcWizard(numberOne, numberTwo, numberThree);
+        result = RiddleControl.calcWizard(numberOne, numberTwo, numberThree);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -181,7 +180,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         // call function to run test
-        result = instance.calcWizard(numberOne, numberTwo, numberThree);
+        result = RiddleControl.calcWizard(numberOne, numberTwo, numberThree);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -238,7 +237,7 @@ public class RiddleControlTest {
         double expResult = 4561.59;
         
         //call function to run test
-        double result = instance.calcTrap(radius, height);
+        double result = RiddleControl.calcTrap(radius, height);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -256,7 +255,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         //call function to run test
-        result = instance.calcTrap(radius, height);
+        result = RiddleControl.calcTrap(radius, height);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -274,7 +273,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         //call function to run test
-        result = instance.calcTrap(radius, height);
+        result = RiddleControl.calcTrap(radius, height);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -292,7 +291,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         //call function to run test
-        result = instance.calcTrap(radius, height);
+        result = RiddleControl.calcTrap(radius, height);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -310,7 +309,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         //call function to run test
-        result = instance.calcTrap(radius, height);
+        result = RiddleControl.calcTrap(radius, height);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -328,7 +327,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         //call function to run test
-        result = instance.calcTrap(radius, height);
+        result = RiddleControl.calcTrap(radius, height);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -346,7 +345,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         //call function to run test
-        result = instance.calcTrap(radius, height);
+        result = RiddleControl.calcTrap(radius, height);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -375,7 +374,7 @@ public class RiddleControlTest {
         int expResult = 1;
         
         // call function to run test
-        double result = instance.calcDragon(numberOne, numberTwo);
+        double result = RiddleControl.calcDragon(numberOne, numberTwo);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -394,7 +393,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         // call function to run test
-        result = instance.calcDragon(numberOne, numberTwo);
+        result = RiddleControl.calcDragon(numberOne, numberTwo);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -413,7 +412,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         // call function to run test
-        result = instance.calcDragon(numberOne, numberTwo);
+        result = RiddleControl.calcDragon(numberOne, numberTwo);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -432,7 +431,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         // call function to run test
-        result = instance.calcDragon(numberOne, numberTwo);
+        result = RiddleControl.calcDragon(numberOne, numberTwo);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -451,7 +450,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         // call function to run test
-        result = instance.calcDragon(numberOne, numberTwo);
+        result = RiddleControl.calcDragon(numberOne, numberTwo);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -470,7 +469,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         // call function to run test
-        result = instance.calcDragon(numberOne, numberTwo);
+        result = RiddleControl.calcDragon(numberOne, numberTwo);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
@@ -489,7 +488,7 @@ public class RiddleControlTest {
         expResult = -1;
         
         // call function to run test
-        result = instance.calcDragon(numberOne, numberTwo);
+        result = RiddleControl.calcDragon(numberOne, numberTwo);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
