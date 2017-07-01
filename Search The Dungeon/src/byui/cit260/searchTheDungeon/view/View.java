@@ -104,8 +104,8 @@ public abstract class View implements ViewInterface {
                 return -999; // player wants to quit
             returned = Integer.parseInt(value);
             if (returned < min || returned >max) {
-            throw new MapControlException ("\nWere you thinking of a different dungeon?"
-                            + "Sorry, but YOU CAN'T DO THAT!"
+            throw new MapControlException ("\nWere you thinking of a different dungeon?\n"
+                            + "Sorry, but YOU CAN'T DO THAT!\n"
                     + returned + "is not valid at this point.");
         }
             if (returned < min || returned >max) valid=!valid;
