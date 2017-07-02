@@ -30,25 +30,12 @@ public abstract class View implements ViewInterface {
 
         boolean done = false;
         do {
-            // prompt for and get players name
-            Game currentGame = SearchTheDungeon.getCurrentGame();
-            if (currentGame != null) {
-                String className = this.getClass().getName();
-                if (!className.contains("MainMenuView")
-                        && currentGame.isGameOver()) {
-                    return;
-                }
-            }
             String value = this.getInput();
-            if (value.toUpperCase().equals("Q")) {
-                return;
-            }
-
+            if (value.toUpperCase().equals("Q")) 
+                return;            
             // do the requested action and display the next view
             done = this.doAction(value);
-
         } while (!done); // exit the view when done == true
-
     }
 
     @Override

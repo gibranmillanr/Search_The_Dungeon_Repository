@@ -16,7 +16,7 @@ public class FairiesView extends View{
     
     public FairiesView() {
     
-      super("\nHow many rooms have you explored so far? (enter 0 to quit) ");
+      super("\nHow many rooms have you explored so far? (enter Q to quit) ");
               
       this.banner = "\n"
       +"\n***********************************************"
@@ -38,21 +38,7 @@ public class FairiesView extends View{
         
         System.out.println("\n" + this.banner);
     }
-
-//    private int getNumberRooms() {
-//        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-//        int value = 0; //value to be returned
-//        boolean valid = false; //initialize to not valid
-//        
-//        while (!valid) { // loop while an invalid value is entered
-//            System.out.println("\n" + this.banner);        
-//            value = keyboard.nextInt(); //get next line typed on keyboard
-//            break; //end the loop
-//        }
-//        
-//        return value; //return the value entered
-//    }
-    
+        
     @Override
     public boolean doAction(String value) {
         String numberRoomsRaw = getInput();
