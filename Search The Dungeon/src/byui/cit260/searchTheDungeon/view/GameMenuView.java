@@ -157,8 +157,7 @@ public class GameMenuView extends View {
             MapControl.movePlayer(SearchTheDungeon.getCurrentGame().getMap(), row, column);
             displayMap();
         } catch (MapControlException ex) {
-            System.err.println("\nNot a valid coordinate! Were you thinking of another dungeon?"
-                    + "Try again!\n");
+            System.err.println(ex.getMessage());
         }
     }
 }

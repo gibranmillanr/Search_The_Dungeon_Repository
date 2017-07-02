@@ -5,10 +5,13 @@
  */
 package byui.cit260.searchTheDungeon.control;
 import byui.cit260.searchTheDungeon.control.*;
+import byui.cit260.searchTheDungeon.exceptions.MapControlException;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
 import byui.cit260.searchTheDungeon.model.Map;
 import byui.cit260.searchTheDungeon.model.Scene;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import search.the.dungeon.SearchTheDungeon;
 
 /**
@@ -218,11 +221,22 @@ public class MapControl {
     }
     
     public static void movePlayerToStartingLocation(Map map) {
-        // If starting location is not supposed to be 0,0 then use the correct values here.
-        movePlayer(map, 0, 0); // or instead of 0,0 you can select a different starting location
+        try {
+            // If starting location is not supposed to be 0,0 then use the correct values here.
+            movePlayer(map, 0, 0); // or instead of 0,0 you can select a different starting location
+        } catch (MapControlException ex) { // not used - dont' remove
+//            Logger.getLogger(MapControl.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-    public static void movePlayer(Map map, int row, int column) {
+    public static void movePlayer(Map map, int row, int column) 
+        throws MapControlException{
+        if (map == null)
+            throw new MapControlException("Unitialized map");
+        if (row < 0 || row >= map.getRowCount())
+            throw new MapControlException("Invalid row. Try again.");
+        if (column < 0 || column >= map.getColumnCount())
+            throw new MapControlException("Invalid column. Try again.");
         map.setCurrentRow(row);
         map.setCurrentColumn(column);
         map.getCurrentLocation().setVisited(true);
