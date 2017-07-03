@@ -54,7 +54,7 @@ public class GameMenuView extends View {
                this.viewReports();
                break;
                
-           case "C": // Fairies View
+           case "F": // Fairies View
                this.displayFairiesView();
                break;
            case "T": // Trap View
