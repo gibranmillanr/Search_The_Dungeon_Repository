@@ -4,14 +4,11 @@
  * and open the template in the editor.
  */
 package byui.cit260.searchTheDungeon.control;
-import byui.cit260.searchTheDungeon.control.*;
 import byui.cit260.searchTheDungeon.exceptions.MapControlException;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
 import byui.cit260.searchTheDungeon.model.Map;
 import byui.cit260.searchTheDungeon.model.Scene;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import search.the.dungeon.SearchTheDungeon;
 
 /**
