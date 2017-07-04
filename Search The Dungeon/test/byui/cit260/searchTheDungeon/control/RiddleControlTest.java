@@ -5,6 +5,7 @@
  */
 package byui.cit260.searchTheDungeon.control;
 
+import byui.cit260.searchTheDungeon.exceptions.RiddleControlException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -39,9 +40,10 @@ public class RiddleControlTest {
 
     /**
      * Test of calcWizard method, of class RiddleControl.
+     * @throws byui.cit260.searchTheDungeon.exceptions.RiddleControlException
      */
     @Test
-    public void testCalcWizard() {
+    public void testCalcWizard() throws RiddleControlException {
         System.out.println("calcWizard");
         
 
@@ -218,9 +220,10 @@ public class RiddleControlTest {
 
     /**
      * Test of calcTrap method, of class RiddleControl.
+     * @throws byui.cit260.searchTheDungeon.exceptions.RiddleControlException
      */
     @Test
-    public void testCalcTrap() {
+    public void testCalcTrap() throws RiddleControlException {
         System.out.println("calcTrap");
         
         //calcTrap test #1
@@ -355,9 +358,10 @@ public class RiddleControlTest {
 
     /**
      * Test of calcDragon method, of class RiddleControl.
+     * @throws byui.cit260.searchTheDungeon.exceptions.RiddleControlException
      */
     @Test
-    public void testCalcDragon() {
+    public void testCalcDragon() throws RiddleControlException {
         System.out.println("calcDragon");
         
         //Test case #1
