@@ -6,6 +6,7 @@
 package byui.cit260.searchTheDungeon.view;
 
 import byui.cit260.searchTheDungeon.control.RiddleControl;
+import byui.cit260.searchTheDungeon.exceptions.RiddleControlException;
 
 /**
  *
@@ -57,6 +58,7 @@ public class FairiesView extends View{
             return false;
         }
        // call checkRooms() control function
+       try{
        boolean half = RiddleControl.calcFairies(numberRooms);
        
        if (!half) {  //if usuccessful
@@ -87,6 +89,9 @@ public class FairiesView extends View{
             +"\n***********************************************"
             );
        }
+        } catch (RiddleControlException we) {
+        System.out.println(we.getMessage());
+        }
        return true; // success!
     }
 }

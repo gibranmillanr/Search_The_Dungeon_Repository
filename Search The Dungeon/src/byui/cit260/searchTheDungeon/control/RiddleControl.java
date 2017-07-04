@@ -67,9 +67,13 @@ public class RiddleControl {
  * @author Les Aycock, Paul Darr
  * @param numberRooms
  * @return 
+ * @throws byui.cit260.searchTheDungeon.exceptions.RiddleControlException 
  */
-public static boolean calcFairies (int numberRooms){
-        // 26 rooms in the dungeon
+public static boolean calcFairies (int numberRooms)throws RiddleControlException{
+        if (numberRooms <= 0){
+            throw new RiddleControlException("Can't be less than or equal to zero.");
+        }
+        // 25 rooms in the dungeon
         int totalRooms = 25; 
         // getting half the number of rooms
         int halfRooms = totalRooms / 2; 
