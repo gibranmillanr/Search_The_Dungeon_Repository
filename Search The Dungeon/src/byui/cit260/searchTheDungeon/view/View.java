@@ -5,10 +5,7 @@
  */
 package byui.cit260.searchTheDungeon.view;
 
-import byui.cit260.searchTheDungeon.exceptions.MapControlException;
-import byui.cit260.searchTheDungeon.model.Game;
 import java.util.Scanner;
-import search.the.dungeon.SearchTheDungeon;
 
 /**
  *
