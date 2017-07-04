@@ -6,6 +6,7 @@
 package byui.cit260.searchTheDungeon.view;
 
 import byui.cit260.searchTheDungeon.control.RiddleControl;
+import byui.cit260.searchTheDungeon.exceptions.RiddleControlException;
 
 /**
  *
@@ -69,8 +70,8 @@ public class DragonView extends View  {
           
           }
         
-          double mathDragon = 0; 
-           
+//          double mathDragon = 0; 
+          try{ 
           double mathDrag = RiddleControl.calcDragon(numberOne,numberTwo);
           if (numberOne == 0) //User wants to quit
 
@@ -97,6 +98,9 @@ public class DragonView extends View  {
         +"\n***********************************************");
         
         this.displayWinGameView();
+        }
+        } catch (RiddleControlException we) {
+        System.out.println(we.getMessage());
         }
         return true;   
     }

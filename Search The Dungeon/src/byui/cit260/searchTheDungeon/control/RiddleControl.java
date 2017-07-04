@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.searchTheDungeon.control;
-
-import byui.cit260.searchTheDungeon.control.*;
+import byui.cit260.searchTheDungeon.exceptions.RiddleControlException;
 
 /**
  *
@@ -20,18 +19,13 @@ public class RiddleControl {
     * @param numberTwo
     * @param numberThree
     * @return 
+    * @throws byui.cit260.searchTheDungeon.exceptions.RiddleControlException 
     */
     
-    public static double calcWizard ( double numberOne, double numberTwo, double numberThree){ 
+    public static double calcWizard ( double numberOne, double numberTwo, double numberThree)throws RiddleControlException{ 
        
-        if (numberOne <= 0){ 
-            return -1;
-        }
-        if (numberTwo <= 0){ 
-            return -1;
-        }
-        if (numberThree <= 0){ 
-            return -1;
+        if (numberOne <= 0 && numberTwo <= 0 && numberThree <= 0){ 
+            throw new RiddleControlException("Can't be less than or equal to zero.");
         }
  
         double addedNumber = numberOne + numberTwo + numberThree;
@@ -88,14 +82,12 @@ public static boolean calcFairies (int numberRooms){
      * @param radius
      * @param height
      * @return 
+     * @throws byui.cit260.searchTheDungeon.exceptions.RiddleControlException 
     */
-    public static double calcTrap ( double radius, double height ){ 
+    public static double calcTrap ( double radius, double height )throws RiddleControlException{ 
        
-        if (radius <= 0){ 
-            return -1;
-        }
-        if (height <= 0){ 
-            return -1;
+        if (radius <= 0 && height <= 0){ 
+            throw new RiddleControlException("Can't be less than or equal to zero.");
         }
        
         double volumeNotRounded = ( Math.PI * Math.pow(radius, 2) * height );
@@ -113,14 +105,12 @@ public static boolean calcFairies (int numberRooms){
     * @param numberOne
     * @param numberTwo
     * @return 
+     * @throws byui.cit260.searchTheDungeon.exceptions.RiddleControlException 
     */
-    public static double calcDragon ( double numberOne, double numberTwo){ 
+    public static double calcDragon ( double numberOne, double numberTwo)throws RiddleControlException{ 
        
-        if (numberOne <= 0){ 
-            return -1;
-        }
-        if (numberTwo <= 0){ 
-            return -1;
+        if (numberOne <= 0 && numberTwo <= 0){ 
+            throw new RiddleControlException("Can't be less than or equal to zero.");
         }
  
         double addedNumber = numberOne + numberTwo;

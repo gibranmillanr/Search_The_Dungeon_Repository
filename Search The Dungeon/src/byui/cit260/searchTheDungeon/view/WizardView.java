@@ -6,6 +6,7 @@
 package byui.cit260.searchTheDungeon.view;
 
 import byui.cit260.searchTheDungeon.control.RiddleControl;
+import byui.cit260.searchTheDungeon.exceptions.RiddleControlException;
 
 /**
  *
@@ -74,15 +75,15 @@ public class WizardView extends View  {
                       + "Try again or enter Q to quit");
           
           }
-          
-//          double mathWizard = 0; 
            
+//          double mathWiz = 0;
+          try{ 
           double mathWiz = RiddleControl.calcWizard(numberOne,numberTwo,numberThree);
           if (numberOne == 0) //User wants to quit
 
               return false; //exit the game
         
-       if (mathWiz == 1) {  //incorrect
+       if (mathWiz == -1) {  //incorrect
         System.out.println(
         "\n***********************************************"
         +"\n*                                             *" 
@@ -104,7 +105,11 @@ public class WizardView extends View  {
         
         this.displayWinGameView();
         }
-        return true;   
+        } catch (RiddleControlException we) {
+        System.out.println(we.getMessage());
+        }
+        return true;
+
     }
       
         private void displayLoseGameView() {

@@ -6,6 +6,7 @@
 package byui.cit260.searchTheDungeon.view;
 
 import byui.cit260.searchTheDungeon.control.RiddleControl;
+import byui.cit260.searchTheDungeon.exceptions.RiddleControlException;
 import java.util.Scanner;
 
 
@@ -114,6 +115,7 @@ public class TrapView extends View {
                       + "Try again or enter Q to quit");
           
           }
+        try{
         double volumeOfH = RiddleControl.calcTrap(radius,height);
         
         if (radius == 0) //User wants to quit
@@ -148,7 +150,9 @@ public class TrapView extends View {
         +"\n*        You have escaped the trap            *" 
         +"\n***********************************************"
        );    
-        
+        } catch (RiddleControlException we) {
+        System.out.println(we.getMessage());
+        }
         return true;
     }
     
