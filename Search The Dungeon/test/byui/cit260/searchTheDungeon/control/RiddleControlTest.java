@@ -194,9 +194,10 @@ public class RiddleControlTest {
 
     /**
      * Test of calcFairies method, of class RiddleControl.
+     * @throws byui.cit260.searchTheDungeon.exceptions.RiddleControlException
      */
     @Test
-    public void testCalcFairies() {
+    public void testCalcFairies() throws RiddleControlException {
         System.out.println("calcFairies");
         
         //Test case #1
