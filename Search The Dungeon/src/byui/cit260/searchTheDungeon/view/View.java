@@ -5,7 +5,13 @@
  */
 package byui.cit260.searchTheDungeon.view;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import search.the.dungeon.SearchTheDungeon;
 
 /**
  *
@@ -14,6 +20,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
 
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = SearchTheDungeon.getInFile();
+    protected final PrintWriter console = SearchTheDungeon.getOutFile();
 
     public View() {
     }
@@ -38,38 +47,38 @@ public abstract class View implements ViewInterface {
     @Override
     public String getInput() {
 
-        Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
         String value = null;
-
+        try {
         // while a valid name has not been retrived
         while (!valid) {
 
             // prompt for the player's name
             System.out.println("\n" + this.displayMessage);
-
-            // get the value entered from the keyboard
-            value = keyboard.nextLine();
+            
+                // get the value entered from the keyboard
+                value = keyboard.readLine();
             value = value.trim();
 
             if (value.length() < 1) {
                 System.out.println("\n*** You must enter a value *** ");
                 continue;
             }
-
             break;
         }
-
+    } catch (Exception e){
+            System.out.println("\n*** You must enter a value *** ");
+      // System.out.println("Error reading input: " + e.getMessage());
+    }
         return value; // return the name
     }
 
     public int getIntInput(String prompt, int min, int max){
 
-        Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
         String value;
         int returned = 0;
-
+        try {
         // while a valid name has not been retrived
         while (!valid) {
 
@@ -77,7 +86,7 @@ public abstract class View implements ViewInterface {
             System.out.println("\n" + prompt + "(enter Q to Quit): ");
 
             // get the value entered from the keyboard
-            value = keyboard.nextLine();
+            value = keyboard.readLine();
             value = value.trim();
 
             if (value.length() < 1) {
@@ -87,18 +96,16 @@ public abstract class View implements ViewInterface {
             if (value.toUpperCase().equals("Q")) {
                 return -999; // player wants to quit
             }
-            try {
                 returned = Integer.parseInt(value);
                 if (returned < min || returned > max) {
                     System.out.println("Invalid entry. Entry needs to be between " + min + " and " + max + ". Try again.");
                 } else {
                     valid = true;
                 }
-            } catch (NumberFormatException nfe) {
-                System.err.println("Invalid entry. You must enter a number or a Q to quit. ");
-            }
-
         }
+    } catch (Exception e){
+      System.out.println("Error reading input: " + e.getMessage());
+    }
         return returned; // return the name
     }
 }

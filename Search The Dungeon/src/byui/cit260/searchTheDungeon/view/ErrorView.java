@@ -15,6 +15,7 @@ import search.the.dungeon.SearchTheDungeon;
 public class ErrorView {
     
     private static final PrintWriter errorFile = SearchTheDungeon.getOutFile();
+    private static final PrintWriter logFile = SearchTheDungeon.getLogFile();
             
     public static void display(String className, String errorMessage) {
         
@@ -22,6 +23,8 @@ public class ErrorView {
                     "_______________________________________________________"
                    +"\n- ERROR -" + errorMessage
                    +"\n______________________________________________________");
+        // log error
+        logFile.println(className + " - " + errorMessage);
     }        
     
 }
