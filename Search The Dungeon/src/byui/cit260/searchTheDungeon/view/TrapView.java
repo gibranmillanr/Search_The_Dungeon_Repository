@@ -49,18 +49,18 @@ public class TrapView extends View {
     
     private void displayBanner() {
         
-        System.out.println("\n" + this.banner);
+        this.console.println("\n" + this.banner);
     }
     
 //    public void displayTrapView() {
 //        
 //        boolean done = false; // set flag to not done
 //        do{
-//           System.out.println("\n" + this.menu);
+//           this.console.println("\n" + this.menu);
 //           // prompt for and get players name
-//           System.out.println("\n enter radius: ");
+//           this.console.println("\n enter radius: ");
 //           double radius = this.getinput();
-//           System.out.println("\n enter height: ");
+//           this.console.println("\n enter height: ");
 //           double height = this.getinput();
 //           double volumeOfHole = 0; 
 //           if (radius == 0) //User wants to quit
@@ -79,8 +79,8 @@ public class TrapView extends View {
 //        boolean valid = false; //initialize to not valid
 //        
 //        while (!valid) { // loop while an invalid value is entered
-//            //System.out.println("\n" + this.menu);
-//            //System.out.println("\n" + this.promptMessage);
+//            //this.console.println("\n" + this.menu);
+//            //this.console.println("\n" + this.promptMessage);
 //            
 //            
 //            value = keyboard.nextDouble(); //get next line typed on keyboard
@@ -100,7 +100,7 @@ public class TrapView extends View {
         try{
         radius =Double.parseDouble(radiusRaw);
         } catch (NumberFormatException nf) {
-              System.out.println("\n You must enter a valid number." 
+              ErrorView.display(this.getClass().getName(),"\n You must enter a valid number." 
                       + "Try again or enter Q to quit");
           
           }
@@ -111,7 +111,7 @@ public class TrapView extends View {
         try{
         height= Double.parseDouble(heightRaw); 
         }catch (NumberFormatException nf) {
-              System.out.println("\n You must enter a valid number." 
+              ErrorView.display(this.getClass().getName(),"\n You must enter a valid number." 
                       + "Try again or enter Q to quit");
           
           }
@@ -123,7 +123,7 @@ public class TrapView extends View {
               return false; //exit the game
         
         if (volumeOfH < 3141.59) {  //if too small
-        System.out.println(
+        this.console.println(
         "\n***********************************************"
         +"\n*                                             *" 
         +"\n*       It Is either too big or too small     *" 
@@ -133,7 +133,7 @@ public class TrapView extends View {
         this.displayLoseGameView();
        }
         else if (volumeOfH > 10602.88) {
-        System.out.println(
+        this.console.println(
         "\n***********************************************"
         +"\n*                                             *" 
         +"\n*       It Is either too big or too small     *" 
@@ -143,7 +143,7 @@ public class TrapView extends View {
         this.displayLoseGameView();
        }
         else
-        System.out.println(
+        this.console.println(
         "\n***********************************************"
         +"\n*                                             *" 
         +"\n*   The hole is not too big nor too small     *" 
@@ -151,7 +151,7 @@ public class TrapView extends View {
         +"\n***********************************************"
        );    
         } catch (RiddleControlException we) {
-        System.out.println(we.getMessage());
+        ErrorView.display(this.getClass().getName(),we.getMessage());
         }
         return true;
     }

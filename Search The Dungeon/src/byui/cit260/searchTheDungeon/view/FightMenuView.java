@@ -41,7 +41,8 @@ public class FightMenuView extends View{
                this.displayRun();
                break;
            default:
-               System.out.println("\n***Invalid option. Either fight or retreat!");
+               ErrorView.display(this.getClass().getName(),
+                       "\n***Invalid option. Either fight or retreat!");
                break;
        }
        return false;
@@ -52,10 +53,10 @@ public class FightMenuView extends View{
         tempActor.powerLevel = 12;
         boolean winFight = FightControl.winFight(player, tempActor);
         if (!winFight) {
-            System.out.println("\n You’ve lost the game!");
+            this.console.println("\n You’ve lost the game!");
         }
         else {
-            System.out.println("\n You WON! The room has been cleared!");
+            this.console.println("\n You WON! The room has been cleared!");
         }
     }
 

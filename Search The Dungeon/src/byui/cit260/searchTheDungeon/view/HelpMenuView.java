@@ -57,14 +57,15 @@ public class HelpMenuView extends View {
                this.displayInteractions();
                break;
            default:
-               System.out.println("\n***Invalid selection *** Try again");
+               ErrorView.display(this.getClass().getName(),
+                       "\n***Invalid selection *** Try again");
                break;
        }
        return false;
     }
     private void displayGame() {
 
-        System.out.println(
+        this.console.println(
                  "\n***********************************************"
                 +"\n*                Goal of Game                 *"
                 +"\n***********************************************"
@@ -77,7 +78,7 @@ public class HelpMenuView extends View {
     }
 
     private void displayMove() {
-        System.out.println(
+        this.console.println(
                  "\n***********************************************"
                 +"\n*                 How to Move                 *"
                 +"\n***********************************************"
@@ -91,7 +92,7 @@ public class HelpMenuView extends View {
     }
 
     private void displayExplore() {
-        System.out.println(
+        this.console.println(
                  "\n***********************************************"
                 +"\n*               How to Explore                *"
                 +"\n***********************************************"
@@ -104,7 +105,7 @@ public class HelpMenuView extends View {
     }
 
     private void displayView() {
-        System.out.println(
+        this.console.println(
                  "\n***********************************************"
                 +"\n*           How to View Inventory             *"
                 +"\n***********************************************"
@@ -114,7 +115,7 @@ public class HelpMenuView extends View {
     }
 
     private void displayAdd() {
-        System.out.println(
+        this.console.println(
                  "\n************************************************"
                 +"\n*         How to Add To Your Inventory         *"
                 +"\n************************************************"
@@ -124,7 +125,7 @@ public class HelpMenuView extends View {
     }
     
     private void displayFight() {
-        System.out.println(
+        this.console.println(
                  "\n************************************************"
                 +"\n*                How to Fight                  *"
                 +"\n************************************************"
@@ -136,7 +137,7 @@ public class HelpMenuView extends View {
     }
     
     private void displayInteractions() {
-        System.out.println(
+        this.console.println(
                  "\n*************************************************"
                 +"\n*                Interactions                   *"
                 +"\n*************************************************"

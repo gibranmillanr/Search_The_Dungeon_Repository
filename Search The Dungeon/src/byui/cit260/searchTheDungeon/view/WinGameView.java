@@ -35,7 +35,7 @@ public class WinGameView extends View{
     }
     
     private void displayBanner() {   
-        System.out.println("\n" + this.banner);
+        this.console.println("\n" + this.banner);
     }
     
  @Override

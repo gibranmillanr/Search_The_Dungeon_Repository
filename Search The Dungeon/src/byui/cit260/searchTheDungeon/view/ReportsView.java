@@ -50,7 +50,7 @@ public class ReportsView extends View {
                 this.displayEnemies();
                 break;
            default:
-               System.out.println("\n***Invalid selection *** Try again");
+               ErrorView.display(this.getClass().getName(),"\n***Invalid selection *** Try again");
                break;
         }
         return false;
@@ -62,11 +62,11 @@ public class ReportsView extends View {
         Game game = SearchTheDungeon.getCurrentGame();
         InventoryItem[] inventory = game.getInventory();
         
-        System.out.println("\n LIST OF GAME INVENTORY ITEMS");
+        this.console.println("\n LIST OF GAME INVENTORY ITEMS");
         line = new StringBuilder("                                              ");
         line.insert(0,"DESCRIPTION");
         line.insert(20, "LEVEL");
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         
         //for each inventory item
         for (InventoryItem item : inventory) {
@@ -75,7 +75,7 @@ public class ReportsView extends View {
             line.insert(23, item.getPowerLevel());
             
             //DISPLAY the line
-            System.out.println(line.toString());
+            this.console.println(line.toString());
         }
     }
     
@@ -86,11 +86,11 @@ public class ReportsView extends View {
         Game game = SearchTheDungeon.getCurrentGame();
         ArrayList<InventoryItem> backpack=game.getBackpack();
         
-        System.out.println("\n LIST OF INVENTORY ITEMS\n");
+        this.console.println("\n LIST OF INVENTORY ITEMS\n");
         line = new StringBuilder("                                              ");
         line.insert(0,"DESCRIPTION");
         line.insert(20, "LEVEL");
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         
         //for each inventory item
         for (InventoryItem item : backpack) {
@@ -99,7 +99,7 @@ public class ReportsView extends View {
             line.insert(23, item.getPowerLevel());
             
             //DISPLAY the line
-            System.out.println(line.toString());
+            this.console.println(line.toString());
         }
     }
     
@@ -112,11 +112,11 @@ public class ReportsView extends View {
         ArrayList<InventoryItem> backpack=game.getBackpack();
         int playerStrength=0;
         
-        System.out.println("\n   LIST OF ACTORS IN GAME\n");
+        this.console.println("\n   LIST OF ACTORS IN GAME\n");
         line = new StringBuilder("                                                 ");
         line.insert(0, "NAME");
         line.insert(20, "STRENGTH");
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         
         //for each actor
         for (Actor actor : actors) {
@@ -125,7 +125,7 @@ public class ReportsView extends View {
             line.insert(24, actor.getPowerLevel());
             
             //Display line
-            System.out.println(line.toString());
+            this.console.println(line.toString());
         }
         for (InventoryItem item : backpack) {
             playerStrength = playerStrength+item.getPowerLevel();
@@ -134,7 +134,7 @@ public class ReportsView extends View {
             line.insert(0, player.getName());
             line.insert(24, playerStrength);
             
-            System.out.println(line.toString());
+            this.console.println(line.toString());
     }
 
     private void displayEnemies() {
@@ -144,11 +144,11 @@ public class ReportsView extends View {
         Game game = SearchTheDungeon.getCurrentGame();
         Actor[] actors = game.getActors();        
         
-        System.out.println("\n   LIST OF ENEMIES IN GAME\n");
+        this.console.println("\n   LIST OF ENEMIES IN GAME\n");
         line = new StringBuilder("                                                 ");
         line.insert(0, "NAME");
         line.insert(20, "STRENGTH");
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         
         //for each actor
         for (Actor actor : actors) {
@@ -156,7 +156,7 @@ public class ReportsView extends View {
                 line = new StringBuilder("                                                 ");
                 line.insert(0, actor.getName());
                 line.insert(24, actor.getPowerLevel());
-                System.out.println(line.toString());
+                this.console.println(line.toString());
             }
         }
     }        

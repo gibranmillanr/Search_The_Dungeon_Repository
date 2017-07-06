@@ -39,7 +39,7 @@ public class WizardView extends View  {
     
     private void displayBanner() {
         
-        System.out.println("\n" + this.banner);
+        this.console.println("\n" + this.banner);
     }
     
     @Override
@@ -49,7 +49,7 @@ public class WizardView extends View  {
         try{
          numberOne = Double.parseDouble(numberOneRaw);
         } catch (NumberFormatException nf) {
-              System.out.println("\n You must enter a valid number." 
+              ErrorView.display(this.getClass().getName(),"\n You must enter a valid number." 
                       + "Try again or enter Q to quit");
           
           }
@@ -60,7 +60,7 @@ public class WizardView extends View  {
         try{
         numberTwo = Double.parseDouble(numberTwoRaw);
         } catch (NumberFormatException nf) {
-              System.out.println("\n You must enter a valid number." 
+              ErrorView.display(this.getClass().getName(),"\n You must enter a valid number." 
                       + "Try again or enter Q to quit");
           
           }
@@ -71,7 +71,7 @@ public class WizardView extends View  {
         try{
         numberThree = Double.parseDouble(numberThreeRaw); 
         }catch (NumberFormatException nf) {
-              System.out.println("\n You must enter a valid number." 
+              ErrorView.display(this.getClass().getName(),"\n You must enter a valid number." 
                       + "Try again or enter Q to quit");
           
           }
@@ -84,7 +84,7 @@ public class WizardView extends View  {
               return false; //exit the game
         
        if (mathWiz == -1) {  //incorrect
-        System.out.println(
+        this.console.println(
         "\n***********************************************"
         +"\n*                                             *" 
         +"\n*       Incorrect                             *" 
@@ -95,7 +95,7 @@ public class WizardView extends View  {
         }
        
         else {
-        System.out.println(
+        this.console.println(
         "\n***********************************************"
         +"\n*                                             *" 
         +"\n*   Correct                                   *" 
@@ -106,7 +106,7 @@ public class WizardView extends View  {
         this.displayWinGameView();
         }
         } catch (RiddleControlException we) {
-        System.out.println(we.getMessage());
+            ErrorView.display(this.getClass().getName(),we.getMessage());
         }
         return true;
 

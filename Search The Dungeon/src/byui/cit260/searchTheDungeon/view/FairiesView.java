@@ -37,7 +37,7 @@ public class FairiesView extends View{
     }
     private void displayBanner() {
         
-        System.out.println("\n" + this.banner);
+        this.console.println("\n" + this.banner);
     }
         
     @Override
@@ -48,13 +48,14 @@ public class FairiesView extends View{
         numberRooms = Integer.parseInt(numberRoomsRaw);
         
         } catch (NumberFormatException nf) {
-              System.out.println("\n You must enter a valid number." 
+              ErrorView.display(this.getClass().getName(),"\n You must enter a valid number." 
                       + "Try again or enter Q to quit");
           
         }
         
         if (numberRooms > 26) {
-            System.out.println("\n There are only so many rooms! Try again!");
+            ErrorView.display(this.getClass().getName(),
+                    "\n There are only so many rooms! Try again!");
             return false;
         }
        // call checkRooms() control function
@@ -62,7 +63,7 @@ public class FairiesView extends View{
        boolean half = RiddleControl.calcFairies(numberRooms);
        
        if (!half) {  //if usuccessful
-        System.out.println(
+        this.console.println(
         "\n***********************************************"
         +"\n*                                             *" 
         +"\n*            Less than HALF?                  *" 
@@ -75,7 +76,7 @@ public class FairiesView extends View{
        );
        }
        else {
-        System.out.println(
+        this.console.println(
             "\n***********************************************"
             +"\n*                                             *" 
             +"\n*             Over HALF!                      *" 
@@ -90,7 +91,7 @@ public class FairiesView extends View{
             );
        }
         } catch (RiddleControlException we) {
-        System.out.println(we.getMessage());
+        ErrorView.display(this.getClass().getName(),we.getMessage());
         }
        return true; // success!
     }

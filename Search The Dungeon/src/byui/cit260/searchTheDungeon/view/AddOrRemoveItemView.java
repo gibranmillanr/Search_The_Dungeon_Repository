@@ -52,10 +52,10 @@ public class AddOrRemoveItemView extends View {
     }
 
     private void switchItem() {
-        System.out.println("*** switchItem function called ***");
+        this.console.println("*** switchItem function called ***");
     }
 
     private void leaveItem() {
-        System.out.println("*** leaveItem function called ***");
+        this.console.println("*** leaveItem function called ***");
     }
 }

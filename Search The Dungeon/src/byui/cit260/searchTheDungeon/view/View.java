@@ -8,9 +8,6 @@ package byui.cit260.searchTheDungeon.view;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import search.the.dungeon.SearchTheDungeon;
 
 /**
@@ -55,21 +52,21 @@ public abstract class View implements ViewInterface {
             while (!valid) {
 
                 // prompt for the player's name
-                System.out.println("\n" + this.displayMessage);
+                this.console.println("\n" + this.displayMessage);
 
                 // get the value entered from the keyboard
                 value = keyboard.readLine();
                 value = value.trim();
 
                 if (value.length() < 1) {
-                    System.out.println("\n*** You must enter a value *** ");
+                    ErrorView.display(this.getClass().getName(),"\n*** You must enter a value *** ");
                     continue;
                 }
                 break;
             }
         } catch (Exception e) {
-            System.out.println("\n*** You must enter a value *** ");
-            // System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "\n*** You must enter a value *** ");
         }
         return value; // return the name
     }
@@ -83,14 +80,15 @@ public abstract class View implements ViewInterface {
         while (!valid) {
 
             // prompt for the player's name
-            System.out.println("\n" + prompt + "(enter Q to Quit): ");
+            this.console.println("\n" + prompt + "(enter Q to Quit): ");
 
             // get the value entered from the keyboard
             value = keyboard.readLine();
             value = value.trim();
 
             if (value.length() < 1) {
-                System.out.println("\n*** You must enter a value *** ");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** You must enter a value *** ");
                 continue;
             }
             if (value.toUpperCase().equals("Q")) {
@@ -99,12 +97,16 @@ public abstract class View implements ViewInterface {
             try {
                 returned = Integer.parseInt(value);
                 if (returned < min || returned > max) {
-                    System.out.println("Invalid entry. Entry needs to be between " + min + " and " + max + ". Try again.");
+                     ErrorView.display(this.getClass().getName(),
+                            "Invalid entry. Entry needs to be between " + min + " and " + max + ". Try again.");
+                     continue;
                 } else {
                     valid = true;
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Invalid entry. Entry needs to be a NUMBER between " + min + " and " + max + ". Try again.");
+                 ErrorView.display(this.getClass().getName(),
+                        "Invalid entry. Entry needs to be a NUMBER between " + min + " and " + max + ". Try again.");
+                valid=false;
             }
         }
         return returned; // return the name

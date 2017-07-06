@@ -5,16 +5,9 @@
  */
 package search.the.dungeon;
 
-//import byui.cit260.searchTheDungeon.model.Actor;
-//import byui.cit260.searchTheDungeon.model.Game;
-//import byui.cit260.searchTheDungeon.model.InventoryItem;
-//import byui.cit260.searchTheDungeon.model.Location;
-//import byui.cit260.searchTheDungeon.model.Player;
-//import byui.cit260.searchTheDungeon.model.Map;
-//import byui.cit260.searchTheDungeon.model.Riddle;
-//import byui.cit260.searchTheDungeon.model.Scene;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.Player;
+import byui.cit260.searchTheDungeon.view.ErrorView;
 import byui.cit260.searchTheDungeon.view.StartProgramView;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -99,9 +92,9 @@ public class SearchTheDungeon {
             SearchTheDungeon.logFile = new PrintWriter(filePath);                        
         
         } catch (Exception e) {
-            System.out.println("Exception: " + e.toString() +
-                    "\nCause: " + e.getCause() +
-                    "\nMessage: " + e.getMessage());
+            System.err.println( 
+                    "\nCause: " + "Exception: " + e.toString()
+                            + e.getCause() + "\nMessage: " + e.getMessage());
         }
             
         }
@@ -115,7 +108,7 @@ public class SearchTheDungeon {
                 if (SearchTheDungeon.logFile != null)
                     SearchTheDungeon.logFile.close();
             } catch (IOException ex) {
-                System.out.println("Error closing files");
+                System.err.println("Error closing files");
                 return;
             }
             

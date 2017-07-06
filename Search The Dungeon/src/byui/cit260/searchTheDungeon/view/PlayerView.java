@@ -46,22 +46,23 @@ public class PlayerView extends View {
                this.displayPowerLevel();
                break;
            default:
-               System.out.println("\n***Invalid selection *** Try again");
+               ErrorView.display(this.getClass().getName(),
+                       "\n***Invalid selection *** Try again");
                break;
        }
        return false;
     }
     private void displayName() {
-        System.out.println("\n player.getName()");
+        this.console.println("\n player.getName()");
     }
 
     private void displayTime() {
-        System.out.println("\n Display Time");
+        this.console.println("\n Display Time");
     }
 
     
     private void displayPowerLevel() {
-        System.out.println("\n Display Power Level");
+        this.console.println("\n Display Power Level");
     }
 }
 

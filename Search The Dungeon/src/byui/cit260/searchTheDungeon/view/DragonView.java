@@ -42,7 +42,7 @@ public class DragonView extends View  {
     
     private void displayBanner() {
         
-        System.out.println("\n" + this.banner);
+        this.console.println("\n" + this.banner);
     }
     
       @Override
@@ -53,7 +53,7 @@ public class DragonView extends View  {
           numberOne = Double.parseDouble(numberOneRaw);
           
           } catch (NumberFormatException nf) {
-              System.out.println("\n You must enter a valid number." 
+              ErrorView.display(this.getClass().getName(),"\n You must enter a valid number." 
                       + "Try again or enter Q to quit");
           
           }
@@ -65,7 +65,7 @@ public class DragonView extends View  {
           numberTwo = Double.parseDouble(numberTwoRaw);
           
           } catch (NumberFormatException nf) {
-              System.out.println("\n You must enter a valid number." 
+              ErrorView.display(this.getClass().getName(),"\n You must enter a valid number." 
                       + "Try again or enter Q to quit");
           
           }
@@ -78,7 +78,7 @@ public class DragonView extends View  {
               return false; //exit the game
         
        if (mathDrag == -1) {  //incorrect
-        System.out.println(
+        this.console.println(
         "\n***********************************************"
         +"\n*                                             *" 
         +"\n*       Foolish human, you have lost.         *" 
@@ -89,7 +89,7 @@ public class DragonView extends View  {
         }
        
         else {
-        System.out.println(
+        this.console.println(
         "\n***********************************************"
         +"\n*                                             *" 
         +"\n*   Well done! The numbers six and eight      *" 
@@ -100,7 +100,7 @@ public class DragonView extends View  {
         this.displayWinGameView();
         }
         } catch (RiddleControlException we) {
-        System.out.println(we.getMessage());
+        ErrorView.display(this.getClass().getName(),we.getMessage());
         }
         return true;   
     }

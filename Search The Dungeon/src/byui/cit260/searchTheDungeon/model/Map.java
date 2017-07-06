@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.searchTheDungeon.model;
+import byui.cit260.searchTheDungeon.view.ErrorView;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -29,7 +30,7 @@ public class Map implements Serializable {
     public Map(int rowCount, int columnCount) {
         
         if (rowCount < 1 || columnCount < 1) {
-            System.out.println("The number of rows and columns must be > zero");
+            ErrorView.display(this.getClass().getName(),"The number of rows and columns must be > zero");
             return;
         }
         
