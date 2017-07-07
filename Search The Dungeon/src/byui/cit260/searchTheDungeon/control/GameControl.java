@@ -16,6 +16,10 @@ import byui.cit260.searchTheDungeon.model.Location;
 import byui.cit260.searchTheDungeon.model.Map;
 import byui.cit260.searchTheDungeon.model.Player;
 import byui.cit260.searchTheDungeon.model.Scene;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import search.the.dungeon.SearchTheDungeon;
 
 
@@ -50,6 +54,43 @@ public class GameControl {
       Map map = MapControl.createMap();
       game.setMap(map);
       MapControl.movePlayerToStartingLocation(map);
+    }
+
+    public static void saveGame(Game game, String filePath)
+            throws GameControlException {
+        String filepath = null;
+        
+        try( FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            // Pg 24 group assign. may need more objects?
+            output.writeObject(game); // write the game object out to file
+        }
+        catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+
+    public static void getSavedGame(String filePath)
+                        throws GameControlException {
+        
+        Game game = null;
+            String filepath = null;
+        
+        try( FileInputStream fips = new FileInputStream(filepath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject(); //read the game object from file
+        }    
+        catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        
+        //close the output file
+        SearchTheDungeon.setCurrentGame(game);
+    }
+
+    private static void writeObject(Game game) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public boolean starNewGame(boolean player, boolean newGame, boolean saveFile, boolean starNewGame){
