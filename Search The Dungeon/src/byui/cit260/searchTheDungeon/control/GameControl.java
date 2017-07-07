@@ -58,9 +58,8 @@ public class GameControl {
 
     public static void saveGame(Game game, String filePath)
             throws GameControlException {
-        String filepath = null;
         
-        try( FileOutputStream fops = new FileOutputStream(filepath)) {
+        try( FileOutputStream fops = new FileOutputStream(filePath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
             // Pg 24 group assign. may need more objects?
             output.writeObject(game); // write the game object out to file
@@ -74,9 +73,8 @@ public class GameControl {
                         throws GameControlException {
         
         Game game = null;
-            String filepath = null;
         
-        try( FileInputStream fips = new FileInputStream(filepath)) {
+        try( FileInputStream fips = new FileInputStream(filePath)) {
             ObjectInputStream input = new ObjectInputStream(fips);
             
             game = (Game) input.readObject(); //read the game object from file

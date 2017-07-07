@@ -52,47 +52,6 @@ public class TrapView extends View {
         this.console.println("\n" + this.banner);
     }
     
-//    public void displayTrapView() {
-//        
-//        boolean done = false; // set flag to not done
-//        do{
-//           this.console.println("\n" + this.menu);
-//           // prompt for and get players name
-//           this.console.println("\n enter radius: ");
-//           double radius = this.getinput();
-//           this.console.println("\n enter height: ");
-//           double height = this.getinput();
-//           double volumeOfHole = 0; 
-//           if (radius == 0) //User wants to quit
-//               return; //exit the game
-//           
-//           // do the requested action and display the next view
-//           done = this.doAction(radius,height,volumeOfHole);
-//          
-//        } while (!done);
-//        
-//    } 
-//
-//    private double getinput() {
-//        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-//        double value = 1; //value to be returned
-//        boolean valid = false; //initialize to not valid
-//        
-//        while (!valid) { // loop while an invalid value is entered
-//            //this.console.println("\n" + this.menu);
-//            //this.console.println("\n" + this.promptMessage);
-//            
-//            
-//            value = keyboard.nextDouble(); //get next line typed on keyboard
-//
-//            
-//            break; //end the loop
-//        }
-//        
-//        return value; //return the value entered
-//    }
-
-   // private boolean doAction(double radius,double height,double volumeOfHole) {
     @Override
     public boolean doAction(String value) {
         String radiusRaw = getInput();
