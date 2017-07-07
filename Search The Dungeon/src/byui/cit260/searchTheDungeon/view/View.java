@@ -20,6 +20,7 @@ public abstract class View implements ViewInterface {
 
     protected final BufferedReader keyboard = SearchTheDungeon.getInFile();
     protected final PrintWriter console = SearchTheDungeon.getOutFile();
+    private boolean message;
 
     public View() {
     }
@@ -32,7 +33,9 @@ public abstract class View implements ViewInterface {
     public void display() {
 
         boolean done = false;
+        
         do {
+            this.console.println(this.message);
             String value = this.getInput();
             if (value.toUpperCase().equals("Q")) {
                 return;
@@ -55,7 +58,7 @@ public abstract class View implements ViewInterface {
                 this.console.println("\n" + this.displayMessage);
 
                 // get the value entered from the keyboard
-                value = keyboard.readLine();
+                value = this.keyboard.readLine();
                 value = value.trim();
 
                 if (value.length() < 1) {
@@ -66,7 +69,7 @@ public abstract class View implements ViewInterface {
             }
         } catch (Exception e) {
             ErrorView.display(this.getClass().getName(),
-                    "\n*** You must enter a value *** ");
+                    "Error reading input: " + e.getMessage());
             return null;
         }
         return value; // return the name
@@ -100,7 +103,6 @@ public abstract class View implements ViewInterface {
                 if (returned < min || returned > max) {
                      ErrorView.display(this.getClass().getName(),
                             "Invalid entry. Entry needs to be between " + min + " and " + max + ". Try again.");
-                     continue;
                 } else {
                     valid = true;
                 }

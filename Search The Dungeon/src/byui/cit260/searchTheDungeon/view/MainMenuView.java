@@ -8,6 +8,7 @@ package byui.cit260.searchTheDungeon.view;
 import byui.cit260.searchTheDungeon.control.GameControl;
 import byui.cit260.searchTheDungeon.model.Actor;
 import byui.cit260.searchTheDungeon.model.Game;
+import static java.lang.System.console;
 import search.the.dungeon.SearchTheDungeon;
 
 /**
@@ -39,7 +40,7 @@ public class MainMenuView extends View {
                this.startNewGame();
                break;
            case "G": // get and start an existing game
-               this.startExistingGame();
+               this.startSavedGame();
                break;
            case "H": // display the help menu
                this.displayHelpMenu();
@@ -64,8 +65,24 @@ public class MainMenuView extends View {
         gameMenu.display();
     }
 
-    private void startExistingGame() {
-        this.console.println("*** startExistingGame function called ***");
+    private void startSavedGame() {
+        
+      
+      // prompt for and get the name of the file to save the game in
+        this.console.println("\n\nEnter the file path for the file where the game " 
+                            + "is to be saved");
+        String filePath = this.getInput();
+        
+        try {
+            // save the game to the specified file
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        //display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void displayHelpMenu() {
@@ -75,7 +92,17 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        this.console.println("*** saveGame function called ***");
+        // prompt for and get the name of the file to save the game in
+        this.console.println("\n\nEnter the file path for the file where the game " 
+                            + "is to be saved");
+        String filePath = this.getInput();
+        
+        try {
+            // save the game to the specified file
+            GameControl.saveGame(SearchTheDungeon.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
 }
