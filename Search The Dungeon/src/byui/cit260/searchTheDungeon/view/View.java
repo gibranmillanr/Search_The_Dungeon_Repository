@@ -67,6 +67,7 @@ public abstract class View implements ViewInterface {
         } catch (Exception e) {
             ErrorView.display(this.getClass().getName(),
                     "\n*** You must enter a value *** ");
+            return null;
         }
         return value; // return the name
     }
