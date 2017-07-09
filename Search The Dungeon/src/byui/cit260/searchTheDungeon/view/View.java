@@ -21,9 +21,7 @@ public abstract class View implements ViewInterface {
     protected final BufferedReader keyboard = SearchTheDungeon.getInFile();
     protected final PrintWriter console = SearchTheDungeon.getOutFile();
     private boolean message;
-//
-//    public View() {
-//    }
+
 
     public View(String message) {
         this.displayMessage = message;
