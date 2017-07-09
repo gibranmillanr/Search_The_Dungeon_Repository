@@ -30,6 +30,7 @@ public class ReportsView extends View {
                 + "\n* I - List all items in game          *"
                 + "\n* P - Print all items in game         *"
                 + "\n* C - List all in your backpack       *"
+                + "\n* D - Print all in your backpack      *"
                 + "\n* A - List all actors in game         *"
                 + "\n* B - Print all actors in game        *"
                 + "\n* E - List all enemies in game        *"
@@ -51,6 +52,9 @@ public class ReportsView extends View {
                 break;
             case "C": // List all items carried
                 this.displayInventoryCarried();
+                break;
+            case "D": // print content of backpack
+                this.printBackPack();
                 break;
             case "A": // List all actors in game
                 this.displayActors();
@@ -110,13 +114,13 @@ public class ReportsView extends View {
             try (PrintWriter out = new PrintWriter(outputLocation)) {
                 //print report form
                 out.println("\n"
-                        + "\n*****************************************"
-                        + "\n*                                       *"
-                        + "\n*           Inventory  Report           *"
-                        + "\n*                                       *"
-                        + "\n*****************************************"
-                        + "\n Item Type  Item Description  Power Level"
-                        + "\n*****************************************");
+                        + "\n*****************************************\r"
+                        + "\n*                                       *\r"
+                        + "\n*           Inventory  Report           *\r"
+                        + "\n*                                       *\r"
+                        + "\n*****************************************\r"
+                        + "\n Item Type  Item Description  Power Level\r"
+                        + "\n*****************************************\r");
 
                 //print the description and strength of each item
                 for (InventoryItem item : inventory) {
@@ -216,6 +220,7 @@ public class ReportsView extends View {
             }
         }
     }
+
     // by Les Aycock
     private void printEnemy() {
 
@@ -232,18 +237,18 @@ public class ReportsView extends View {
             try (PrintWriter out = new PrintWriter(outputLocation)) {
                 //print report form
                 out.println("\n"
-                        + "\n*********************************\n"
-                        + "\n*                               *\n"
-                        + "\n*      Enemy List               *\n"
-                        + "\n*                               *\n"
-                        + "\n*********************************\n"
-                        + "\n*Enemy Name          Power Level*\n"
-                        + "\n*********************************\n");
+                        + "\n*********************************\r"
+                        + "\n*                               *\r"
+                        + "\n*          Enemy List           *\r"
+                        + "\n*                               *\r"
+                        + "\n*********************************\r"
+                        + "\n*Enemy Name          Power Level*\r"
+                        + "\n*********************************\r");
 
                 //print the description and strength of each item
                 for (Actor actor : actors) {
                     if (actor.isEnemy() != false) {
-                        out.printf("%n%-25s%-5d",actor.getName(),
+                        out.printf("%n%-25s%-5d", actor.getName(),
                                 actor.getPowerLevel());
                     }
                 }
@@ -257,10 +262,10 @@ public class ReportsView extends View {
             ErrorView.display("ReportView", ex.getMessage());
         }
     }
-    
+
     // By Gibran Millan
     private void printActors() {
-         
+
         Game game = SearchTheDungeon.getCurrentGame();
         Actor[] actors = game.getActors();
 
@@ -269,25 +274,61 @@ public class ReportsView extends View {
         try {
             outputLocation = this.keyboard.readLine();
 
-            
             try (PrintWriter out = new PrintWriter(outputLocation)) {
-                
-                out.println("\n"
-                        + "\n*********************************\n"
-                        + "\n*                               *\n"
-                        + "\n*         Actor's list          *\n"
-                        + "\n*                               *\n"
-                        + "\n*********************************\n"
-                        + "\n*Name                Power Level*\n"
-                        + "\n*********************************\n");
 
-              
+                out.println("\n"
+                        + "\n*********************************\r"
+                        + "\n*                               *\r"
+                        + "\n*         Actor's list          *\r"
+                        + "\n*                               *\r"
+                        + "\n*********************************\r"
+                        + "\n*Name                Power Level*\r"
+                        + "\n*********************************\r");
+
                 for (Actor actor : actors) {
-                   
-                        out.printf("%n%-25s%-5d",actor.getName(),
-                                actor.getPowerLevel());
-                    
+
+                    out.printf("%n%-25s%-5d", actor.getName(),
+                            actor.getPowerLevel());
                 }
+                this.console.println("Your report was saved successfully.");
+
+            } catch (IOException ex) {
+                ErrorView.display("ReportView", ex.getMessage());
+            }
+        } catch (IOException ex) {
+            ErrorView.display("ReportView", ex.getMessage());
+        }
+    }
+// by Les
+
+    private void printBackPack() {
+        //Retrieve list of items
+        Game game = SearchTheDungeon.getCurrentGame();
+        ArrayList<InventoryItem> backpack = game.getBackpack();
+        this.console.println("\nWhat would you like the file name to be? Please use format: 'example.txt'");
+        String outputLocation;
+
+        try {
+            outputLocation = this.keyboard.readLine();
+
+            //create object for input file
+            try (PrintWriter out = new PrintWriter(outputLocation)) {
+                //print report form
+                out.println("\n"
+                        + "\n*****************************************\r"
+                        + "\n*                                       *\r"
+                        + "\n*           Inventory  Report           *\r"
+                        + "\n*                                       *\r"
+                        + "\n*****************************************\r"
+                        + "\n Item Type  Item Description  Power Level\r"
+                        + "\n*****************************************\r");
+
+                //print the description and strength of each item
+                backpack.forEach((item) -> {
+                    out.printf("%n%-13s%-20s%-5d", item.getItemType(),
+                            item.getDescription(),
+                            item.getPowerLevel());
+                });
 
                 this.console.println("Your report was saved successfully.");
 
