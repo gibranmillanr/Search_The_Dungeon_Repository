@@ -87,9 +87,9 @@ public class GameControl {
         SearchTheDungeon.setCurrentGame(game);
     }
 
-    private static void writeObject(Game game) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    private static void writeObject(Game game) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
     public boolean starNewGame(boolean player, boolean newGame, boolean saveFile, boolean starNewGame){
         if (player == newGame && player ==saveFile){

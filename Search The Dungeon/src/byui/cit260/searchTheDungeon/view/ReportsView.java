@@ -8,6 +8,8 @@ package byui.cit260.searchTheDungeon.view;
 import byui.cit260.searchTheDungeon.model.Actor;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import search.the.dungeon.SearchTheDungeon;
 import static search.the.dungeon.SearchTheDungeon.player;
@@ -25,6 +27,7 @@ public class ReportsView extends View {
         + "\n* Which report would you like to see? *"
         + "\n***************************************"
         + "\n* I - List all items in game          *"
+        + "\n* P - Print all items in game         *"            
         + "\n* C - List all in your backpack       *" 
         + "\n* A - List all actors in game         *" 
         + "\n* E - List all enemies in game        *"
@@ -40,6 +43,9 @@ public class ReportsView extends View {
             case "I": // List all items in game
                 this.displayInventory();
                 break;
+            case "P": // List all items in game
+                this.printInventory();
+                break;                
             case "C": // List all items carried
                 this.displayInventoryCarried();
                 break;
@@ -78,6 +84,46 @@ public class ReportsView extends View {
             this.console.println(line.toString());
         }
     }
+
+    private void printInventory() {
+        
+        Game game = SearchTheDungeon.getCurrentGame();
+        InventoryItem[] inventory = game.getInventory();
+        
+        this.console.println("\nWhat would you like the file name to be? Please use format: 'example.txt'");
+            String outputLocation;   
+
+        try {
+            outputLocation = this.keyboard.readLine();
+        
+            //create object for input file
+        try (PrintWriter out = new PrintWriter(outputLocation)) {
+            //print report form
+            out.println("\n"
+                + "\n*****************************************"
+                + "\n*                                       *"
+                + "\n*           Inventory  Report           *"
+                + "\n*                                       *"
+                + "\n*****************************************"
+                + "\n Item Type  Item Description  Power Level"  
+                + "\n*****************************************");
+            
+            //print the description and strength of each item
+            for (InventoryItem item : inventory) {
+                out.printf("%n%-13s%-20s%-5d"    , item.getItemType()
+                                                 , item.getDescription()
+                                                 , item.getPowerLevel());
+            }
+            
+            this.console.println("Your report was saved successfully.");
+            
+        }   catch (IOException ex)  {
+            System.out.println("I/O Error: " + ex.getMessage());
+        }
+        } catch (IOException ex) {
+            this.console.println("Error closing files");
+        }
+}    
     
     private void displayInventoryCarried() {
         StringBuilder line;
@@ -160,4 +206,5 @@ public class ReportsView extends View {
             }
         }
     }        
+
 }
