@@ -7,7 +7,6 @@ package search.the.dungeon;
 
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.Player;
-import byui.cit260.searchTheDungeon.view.ErrorView;
 import byui.cit260.searchTheDungeon.view.StartProgramView;
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -11,8 +11,6 @@ import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.Location;
 import byui.cit260.searchTheDungeon.model.Map;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import search.the.dungeon.SearchTheDungeon;
 
 /**

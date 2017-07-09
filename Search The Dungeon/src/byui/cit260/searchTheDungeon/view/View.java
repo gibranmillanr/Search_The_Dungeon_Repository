@@ -21,9 +21,9 @@ public abstract class View implements ViewInterface {
     protected final BufferedReader keyboard = SearchTheDungeon.getInFile();
     protected final PrintWriter console = SearchTheDungeon.getOutFile();
     private boolean message;
-
-    public View() {
-    }
+//
+//    public View() {
+//    }
 
     public View(String message) {
         this.displayMessage = message;
@@ -35,7 +35,6 @@ public abstract class View implements ViewInterface {
         boolean done = false;
         
         do {
-            this.console.println(this.message);
             String value = this.getInput();
             if (value.toUpperCase().equals("Q")) {
                 return;

@@ -6,9 +6,6 @@
 package byui.cit260.searchTheDungeon.view;
 
 import byui.cit260.searchTheDungeon.control.GameControl;
-import byui.cit260.searchTheDungeon.model.Actor;
-import byui.cit260.searchTheDungeon.model.Game;
-import static java.lang.System.console;
 import search.the.dungeon.SearchTheDungeon;
 
 /**
