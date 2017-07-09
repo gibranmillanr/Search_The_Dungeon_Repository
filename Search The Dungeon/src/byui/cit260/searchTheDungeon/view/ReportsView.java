@@ -118,10 +118,10 @@ public class ReportsView extends View {
             this.console.println("Your report was saved successfully.");
             
         }   catch (IOException ex)  {
-            System.out.println("I/O Error: " + ex.getMessage());
+            ErrorView.display("ReportView", ex.getMessage());
         }
-        } catch (IOException ex) {
-            this.console.println("Error closing files");
+        }   catch (IOException ex) {
+            ErrorView.display("ReportView", ex.getMessage());
         }
 }    
     
