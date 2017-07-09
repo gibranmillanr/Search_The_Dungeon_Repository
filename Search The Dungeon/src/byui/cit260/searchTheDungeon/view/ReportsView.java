@@ -31,6 +31,7 @@ public class ReportsView extends View {
                 + "\n* P - Print all items in game         *"
                 + "\n* C - List all in your backpack       *"
                 + "\n* A - List all actors in game         *"
+                + "\n* B - Print all actors in game        *"
                 + "\n* E - List all enemies in game        *"
                 + "\n* X - Print all enemies in game       *"
                 + "\n* Q - Quit                            *"
@@ -53,6 +54,9 @@ public class ReportsView extends View {
                 break;
             case "A": // List all actors in game
                 this.displayActors();
+                break;
+            case "B": // List all Actors in game
+                this.printActors();
                 break;
             case "E": // List all enemies in game
                 this.displayEnemies();
@@ -242,6 +246,47 @@ public class ReportsView extends View {
                         out.printf("%n%-25s%-5d",actor.getName(),
                                 actor.getPowerLevel());
                     }
+                }
+
+                this.console.println("Your report was saved successfully.");
+
+            } catch (IOException ex) {
+                ErrorView.display("ReportView", ex.getMessage());
+            }
+        } catch (IOException ex) {
+            ErrorView.display("ReportView", ex.getMessage());
+        }
+    }
+    
+    // By Gibran Millan
+    private void printActors() {
+         
+        Game game = SearchTheDungeon.getCurrentGame();
+        Actor[] actors = game.getActors();
+
+        this.console.println("\nWhat filename do you want to use? Please use format: 'example.txt' ");
+        String outputLocation;
+        try {
+            outputLocation = this.keyboard.readLine();
+
+            
+            try (PrintWriter out = new PrintWriter(outputLocation)) {
+                
+                out.println("\n"
+                        + "\n*********************************\n"
+                        + "\n*                               *\n"
+                        + "\n*         Actor's list          *\n"
+                        + "\n*                               *\n"
+                        + "\n*********************************\n"
+                        + "\n*Name                Power Level*\n"
+                        + "\n*********************************\n");
+
+              
+                for (Actor actor : actors) {
+                   
+                        out.printf("%n%-25s%-5d",actor.getName(),
+                                actor.getPowerLevel());
+                    
                 }
 
                 this.console.println("Your report was saved successfully.");
