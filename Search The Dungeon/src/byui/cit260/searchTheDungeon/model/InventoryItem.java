@@ -99,10 +99,7 @@ public class InventoryItem implements Serializable{
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.itemType, other.itemType)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.itemType, other.itemType);
     }
 
     

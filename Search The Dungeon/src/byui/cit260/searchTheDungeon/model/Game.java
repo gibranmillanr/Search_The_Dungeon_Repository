@@ -14,15 +14,13 @@ import java.util.ArrayList;
  */
 public class Game implements Serializable {
     
-    // Class instance Variables
-//    private int noPeople;
     private boolean gameOver;
     private Player player;
     private Map map;
     private Actor[] actors; // enum
     private InventoryItem[] inventory;
     private ArrayList<InventoryItem> backpack;
-//    private BackPack[] backpack;
+    
     //Default Constructor
 
     public Map getMap() {
@@ -66,50 +64,6 @@ public class Game implements Serializable {
         this.gameOver = gameOver;
     }
     
-    //Getter and Setter
-
-//    public int getNoPeople() {
-//        return noPeople;
-//    }
-//
-//    public void setNoPeople(int noPeople) {
-//        this.noPeople = noPeople;
-//    }
-    
-    //hashcode
-//    @Override
-//    public int hashCode() {
-//        int hash = 7;
-//        hash = 97 * hash + Objects.hashCode(this.noPeople);
-//        return hash;
-//    }
-//    
-//    //toString
-//    @Override
-//    public String toString() {
-//        return "Game{" + "noPeople=" + noPeople + '}';
-//    }
-//    
-//
-//    //equals
-//    @Override
-//    public boolean equals(Object obj) {
-//        if (this == obj) {
-//            return true;
-//        }
-//        if (obj == null) {
-//            return false;
-//        }
-//        if (getClass() != obj.getClass()) {
-//            return false;
-//        }
-//        final Game other = (Game) obj;
-//        if (!Objects.equals(this.noPeople, other.noPeople)) {
-//            return false;
-//        }
-//        return true;
-//    }
-
     public Actor[] getActors() {
         return actors;
     }

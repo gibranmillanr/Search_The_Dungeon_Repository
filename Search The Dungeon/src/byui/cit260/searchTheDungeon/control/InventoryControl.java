@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package byui.cit260.searchTheDungeon.control;
-import byui.cit260.searchTheDungeon.control.*;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
 
 /**
@@ -30,7 +29,7 @@ public class InventoryControl {
         dagger.setDescription("Dagger");
         dagger.setItemType("Weapon");
         dagger.setPowerLevel(1);
-        dagger.setAmount(0);
+        dagger.setAmount(1);
         inventory[ItemType.dagger.ordinal()]=dagger;
         
         InventoryItem basicShield = new InventoryItem();
