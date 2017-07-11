@@ -142,8 +142,10 @@ public class ReportsView extends View {
         StringBuilder line;
 
         //Retrieve list of items
+//        Game game = SearchTheDungeon.getCurrentGame();
+//        ArrayList<InventoryItem> backpack = game.getBackpack();
         Game game = SearchTheDungeon.getCurrentGame();
-        ArrayList<InventoryItem> backpack = game.getBackpack();
+        InventoryItem[] inventory = game.getInventory();
 
         this.console.println("\n LIST OF INVENTORY ITEMS\n");
         line = new StringBuilder("                                              ");
@@ -152,13 +154,15 @@ public class ReportsView extends View {
         this.console.println(line.toString());
 
         //for each inventory item
-        for (InventoryItem item : backpack) {
-            line = new StringBuilder("                                              ");
-            line.insert(0, item.getDescription());
-            line.insert(23, item.getPowerLevel());
+        for (InventoryItem item : inventory) {
+            if (item.getAmount() != 0) {
+                line = new StringBuilder("                                              ");
+                line.insert(0, item.getDescription());
+                line.insert(23, item.getPowerLevel());
 
-            //DISPLAY the line
-            this.console.println(line.toString());
+                //DISPLAY the line
+                this.console.println(line.toString());
+            }
         }
     }
 
@@ -168,6 +172,7 @@ public class ReportsView extends View {
         //retrieve list of actors
         Game game = SearchTheDungeon.getCurrentGame();
         Actor[] actors = game.getActors();
+        InventoryItem[] inventory = game.getInventory();
         ArrayList<InventoryItem> backpack = game.getBackpack();
         int playerStrength = 0;
 
@@ -186,8 +191,10 @@ public class ReportsView extends View {
             //Display line
             this.console.println(line.toString());
         }
-        for (InventoryItem item : backpack) {
-            playerStrength = playerStrength + item.getPowerLevel();
+        for (InventoryItem item : inventory) {
+            if (item.getAmount() != 0) {
+                playerStrength = playerStrength + item.getPowerLevel();
+            }
         }
         line = new StringBuilder("                                                 ");
         line.insert(0, player.getName());
@@ -303,7 +310,9 @@ public class ReportsView extends View {
     private void printBackPack() {
         //Retrieve list of items
         Game game = SearchTheDungeon.getCurrentGame();
-        ArrayList<InventoryItem> backpack = game.getBackpack();
+//        ArrayList<InventoryItem> backpack = game.getBackpack();
+        InventoryItem[] inventory = game.getInventory();
+
         this.console.println("\nWhat would you like the file name to be? Please use format: 'example.txt'");
         String outputLocation;
 
@@ -323,11 +332,14 @@ public class ReportsView extends View {
                         + "\n*****************************************\r");
 
                 //print the description and strength of each item
-                backpack.forEach((item) -> {
-                    out.printf("%n%-13s%-20s%-5d", item.getItemType(),
-                            item.getDescription(),
-                            item.getPowerLevel());
-                });
+//                inventory.forEach((item) -> {
+                for (InventoryItem item : inventory) {
+                    if (item.getAmount() != 0) {
+                        out.printf("%n%-13s%-20s%-5d", item.getItemType(),
+                                item.getDescription(),
+                                item.getPowerLevel());
+                    }
+                }
 
                 this.console.println("Your report was saved successfully.");
 

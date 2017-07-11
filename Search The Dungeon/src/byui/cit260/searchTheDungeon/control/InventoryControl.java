@@ -50,7 +50,7 @@ public class InventoryControl {
         basicArmor.setDescription("Basic Armor");
         basicArmor.setItemType("Armor");
         basicArmor.setPowerLevel(1);
-        basicArmor.setAmount(1);
+        basicArmor.setAmount(0);
         inventory[ItemType.basicArmor.ordinal()]=basicArmor;
         
         InventoryItem powerArmor = new InventoryItem();
