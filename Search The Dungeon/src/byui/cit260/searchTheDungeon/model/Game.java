@@ -19,7 +19,7 @@ public class Game implements Serializable {
     private Map map;
     private Actor[] actors; // enum
     private InventoryItem[] inventory;
-    private ArrayList<InventoryItem> backpack;
+//    private ArrayList<InventoryItem> backpack;
     
     //Default Constructor
 
@@ -31,9 +31,9 @@ public class Game implements Serializable {
         this.map = map;
     }
 
-    public ArrayList<InventoryItem> getBackpack() {
-        return backpack;
-    }
+//    public ArrayList<InventoryItem> getBackpack() {
+//        return backpack;
+//    }
     
     public InventoryItem[] getInventory() {
         return inventory;
@@ -45,7 +45,7 @@ public class Game implements Serializable {
 
     public Game() {
         gameOver=false;
-        backpack = new ArrayList<InventoryItem>();
+//        backpack = new ArrayList<InventoryItem>();
     }
 
     public Player getPlayer() {

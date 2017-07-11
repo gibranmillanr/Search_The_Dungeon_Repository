@@ -173,7 +173,7 @@ public class ReportsView extends View {
         Game game = SearchTheDungeon.getCurrentGame();
         Actor[] actors = game.getActors();
         InventoryItem[] inventory = game.getInventory();
-        ArrayList<InventoryItem> backpack = game.getBackpack();
+//        ArrayList<InventoryItem> backpack = game.getBackpack();
         int playerStrength = 0;
 
         this.console.println("\n   LIST OF ACTORS IN GAME\n");
