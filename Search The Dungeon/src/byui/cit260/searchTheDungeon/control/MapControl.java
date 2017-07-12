@@ -176,65 +176,203 @@ public class MapControl {
         scenes[SceneType.room7.ordinal()] = room7Scene;
         
         Scene room8Scene = new Scene();
-        room8Scene.setDescription("A skeleton dressed in moth-eaten garb lies before a large open chest in the rear of this chamber. The chest is empty, but you note two needles projecting from the now-open lock. Dust coats something sticky on the needles' points. ");
+        room8Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+        +"\n A skeleton dressed in moth-eaten garb lies "
+        +"\n before a large open chest in the rear of   "
+        +"\n this chamber. The chest is empty, but you  "
+        +"\n note two needles projecting from the       "
+        +"\n now-open lock. Dust coats something sticky "
+        +"\n on the needles' points.                    "
+	+"\n                                            "
+        +"\n********************************************");
         room8Scene.setMapSymbol("TR");
         scenes[SceneType.room8.ordinal()] = room8Scene;
         
         Scene room9Scene = new Scene();
-        room9Scene.setDescription("Stinking smoke wafts up from braziers made of skulls set around the edges of this room. The walls bear scratch marks and lines of soot that form crude pictures and what looks like words in some language [Goblin]. To the left lies a pile of rubbish and rubble heaped into a crude dais. The dais has upon it an ironbound chest that has been painted with a goblinlike face. Furs and skins of unknown origin are strewn haphazardly about the floor before the dais. ");
+        room9Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+        +"\n Stinking smoke wafts up from braziers made "
+        +"\n of skulls set around the edges of this     "
+        +"\n room. The walls bear scratch marks and     "
+        +"\n lines of soot that form crude pictures and "
+        +"\n what looks like words in some language     "
+        +"\n [Goblin]. To the left lies a pile of       "
+        +"\n rubbish and rubble heaped into a crude     "
+        +"\n dais. The dais has upon it an ironbound    "
+        +"\n chest that has been painted with a         "
+        +"\n goblinlike face. Furs and skins of unknown "
+        +"\n origin are strewn haphazardly about the    "
+        +"\n floor before the dais.                     "
+	+"\n                                            "
+        +"\n********************************************");
         room9Scene.setMapSymbol("HR");       
         scenes[SceneType.room9.ordinal()] = room9Scene;
         
         Scene room10Scene = new Scene();
-        room10Scene.setDescription("This room looks like it was designed by drow. Rusted metal tiles create a huge mosaic of a spider in the floor, and someone set up rusted gratings like draperies of webs. At the far end of the chamber, the carving of a spider squats on the floor. It's about 3 feet tall and seems molded into the floor. Beyond it stands tall double doors of stone, their surface covered in a glittering web of gold. ");
+        room10Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+        +"\n This room looks like it was designed by    " 
+        +"\n drow. Rusted metal tiles create a huge     "
+        +"\n mosaic of a spider in the floor, and       " 
+        +"\n someone set up rusted gratings like        "
+        +"\n draperies of webs. At the far end of the   "
+        +"\n chamber, the carving of a spider squats on "
+        +"\n the floor. It's about 3 feet tall and seems"
+        +"\n molded into the floor. Beyond it stands    "
+	+"\n tall double doors of stone, their surface  "
+        +"\n coveredin a glittering web of gold.        "
+	+"\n                                            "
+        +"\n********************************************");
         room10Scene.setMapSymbol("MR");
         room10Scene.setItem(inventory[InventoryControl.ItemType.sword.ordinal()]);
         scenes[SceneType.room10.ordinal()] = room10Scene;
         
         Scene room11Scene = new Scene();
-        room11Scene.setDescription("The manacles set into the walls of this room give you the distinct impression that it was used as a prison and torture chamber, although you can see no evidence of torture devices. One particularly large set of manacles -- big enough for an ogre -- have been broken open. ");
+        room11Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+        +"\n The manacles set into the walls of this    "
+        +"\n room give you the distinct impression that "
+        +"\n it was used as a prison and torture        "
+        +"\n chamber, although you can see no evidence  "
+        +"\n of torture devices. One particularly large "
+        +"\n set of manacles -- big enough for an       "
+        +"\n ogre -- have been broken open.             "
+	+"\n                                            "
+        +"\n********************************************");
         room11Scene.setMapSymbol("DU");        
         scenes[SceneType.room11.ordinal()] = room11Scene;
         
         Scene room12Scene = new Scene();
-        room12Scene.setDescription("Rounded green stones set in the floor form a snake's head that points in the direction of the doorway you stand in. The body of the snake flows back and toward the wall to go round about the room in ever smaller circles, creating a spiral pattern on the floor. Similar green-stone snakes wend along the walls, seemingly at random heights, and their long bodies make wave shapes.");
+        room12Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+        +"\n Rounded green stones set in the floor      "
+        +"\n form a snake's head that points in the     "
+        +"\n direction of the doorway you stand in.     "
+        +"\n The body of the snake flows back and       "
+        +"\n toward the wall to go round about the      "
+        +"\n room in ever smaller circles, creating a   "
+        +"\n spiral pattern on the floor. Similar       "
+        +"\n green-stone snakes wend along the walls,   "
+        +"\n seemingly at random heights, and their     "
+        +"\n long bodies make wave shapes.              "
+	+"\n                                            "
+        +"\n********************************************");
         room12Scene.setMapSymbol("ER");
         room12Scene.setItem(inventory[InventoryControl.ItemType.powerShield.ordinal()]);
         scenes[SceneType.room12.ordinal()] = room12Scene;
         
         Scene room13Scene = new Scene();
-        room13Scene.setDescription("You open the door to a long narrow room with a high ceiling. Three thick circles of wood rest on wooden stands. You're not certain what they are because you came into the room behind them. ");
+        room13Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+        +"\n You open the door to a long narrow room    "
+        +"\n with a high ceiling. Three thick circles   "
+        +"\n of wood rest on wooden stands. You're not  "
+        +"\n certain what they are because you came     "
+        +"\n into the room behind them.                 "
+	+"\n                                            "
+        +"\n********************************************");
         room13Scene.setMapSymbol("TC");        
         scenes[SceneType.room13.ordinal()] = room13Scene;
         
         Scene room14Scene = new Scene();
-        room14Scene.setDescription("Huge rusted metal blades jut out of cracks in the walls, and rusting spikes project down from the ceiling almost to the floor. This room may have once been trapped heavily, but someone triggered them, apparently without getting killed. The traps were never reset and now seem rusted in place. ");
+        room14Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+        +"\n Huge rusted metal blades jut out of cracks "
+        +"\n in the walls, and rusting spikes project   "
+        +"\n down from the ceiling almost to the floor. "
+        +"\n This room may have once been trapped       "
+        +"\n heavily, but someone triggered them,       "
+        +"\n apparently without getting killed. The     "
+        +"\n traps were never reset and now seem        "
+        +"\n rusted in place.                           "
+	+"\n                                            "
+        +"\n********************************************");
         room14Scene.setMapSymbol("DG");
         room14Scene.setItem(inventory[InventoryControl.ItemType.powerArmor.ordinal()]);
         scenes[SceneType.room14.ordinal()] = room14Scene;
         
         Scene room15Scene = new Scene();
-        room15Scene.setDescription("You enter a small room and your steps echo. Looking about, you're uncertain why, but then a wall vanishes and reveals an enormous chamber. The wall was an illusion and whoever cast it must be nearby! ");
+        room15Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+        +"\n You enter a small room and your steps echo." 
+        +"\n Looking about, you're uncertain why, but   "
+        +"\n then a wall vanishes and reveals an        "
+        +"\n enormous chamber. The wall was an illusion "
+        +"\n and whoever cast it must be nearby!        "
+	+"\n                                            "
+        +"\n********************************************");
         room15Scene.setMapSymbol("RE");        
         scenes[SceneType.room15.ordinal()] = room15Scene;
         
         Scene room16Scene = new Scene();
-        room16Scene.setDescription("This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor, blocking your view of the rest of the room. ");
+        room16Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+        +"\n This room is hung with hundreds of dusty   "
+        +"\n tapestries. All show signs of wear: moth   "
+        +"\n holes, scorch marks, dark stains, and      "
+        +"\n the damage of years of neglect. They hang  "
+        +"\n on all the walls and hang from the ceiling "
+        +"\n to brush against the floor, blocking your  "
+        +"\n view of the rest of the room.              "
+	+"\n                                            "
+        +"\n********************************************");
         room16Scene.setMapSymbol("TG");       
         scenes[SceneType.room16.ordinal()] = room16Scene;
         
         Scene room17Scene = new Scene();
-        room17Scene.setDescription("This room holds six dry circular basins large enough to hold a man and a dry fountain at its center. All possess chipped carvings of merfolk and other sea creatures. It looks like this room once served some group of people as a bath. ");
+        room17Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+        +"\n This room holds six dry circular basins    "
+        +"\n large enough to hold a man and a dry       "
+        +"\n fountain at its center. All possess chipped" 
+        +"\n carvings of merfolk and other sea          "
+        +"\n creatures. It looks like this room once    "
+        +"\n served some group of people as a bath.     "
+	+"\n                                            "
+        +"\n********************************************");
         room17Scene.setMapSymbol("BA");       
         scenes[SceneType.room17.ordinal()] = room17Scene;
 
         Scene room18Scene = new Scene();
-        room18Scene.setDescription("A dozen statues stand or kneel in this room, and each one lacks a head and stands in a posture of action or defense. All are garbed for battle. It's difficult to tell for sure without their heads, but two appear to be dwarves, one might be an elf, six appear human, and the rest look like they might be orcs.");
+        room18Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+        +"\n A dozen statues stand or kneel in this     "
+        +"\n room, and each one lacks a head and stands "
+        +"\n in a posture of action or defense. All are "
+        +"\n garbed for battle. It's difficult to tell  "
+        +"\n for sure without their heads, but two      "
+        +"\n appear to be dwarves, one might be an elf, "
+        +"\n six appear human, and the rest look like   "
+        +"\n they might be orcs.                        "
+	+"\n                                            "
+        +"\n********************************************");
         room18Scene.setMapSymbol("ST"); 
         scenes[SceneType.room18.ordinal()] = room18Scene;
         
         Scene room19Scene = new Scene();
-        room19Scene.setDescription("This tiny room holds a curious array of machinery. Winches and levers project from every wall, and chains with handles dangle from the ceiling. On a nearby wall, you note a pictogram of what looks like a scythe on a chain. ");
+        room19Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+        +"\n This tiny room holds a curious array of    "
+        +"\n machinery. Winches and levers project from "
+        +"\n every wall, and chains with handles dangle "
+        +"\n from the ceiling. On a nearby wall, you    "
+        +"\n note a pictogram of what looks like a      "
+        +"\n scythe on a chain.                         "
+	+"\n                                            "
+        +"\n********************************************");
         room19Scene.setMapSymbol("TI");        
         scenes[SceneType.room19.ordinal()] = room19Scene;
         
