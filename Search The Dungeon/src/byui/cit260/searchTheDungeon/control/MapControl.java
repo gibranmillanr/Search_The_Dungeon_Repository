@@ -132,17 +132,46 @@ public class MapControl {
         scenes[SceneType.room4.ordinal()] = room4Scene;
         
         Scene room5Scene = new Scene();
-        room5Scene.setDescription("You have entered an empty room as the rusty door creaks shut!");
+        room5Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+	+"\n You have entered an empty room as the      " 
+	+"\n rusty door creaks shut!                    "
+	+"\n                                            "
+        +"\n********************************************");
         room5Scene.setMapSymbol("SR");
         scenes[SceneType.room5.ordinal()] = room5Scene;
         
         Scene room6Scene = new Scene();
-        room6Scene.setDescription("The reek of garbage assaults your nose. Looking inside, you see a pile of refuse and offal that nearly reaches the ceiling. In the ceiling above it is a small hole that is roughly as wide as two human hands. No doubt some city dweller high above disposes of his rubbish without ever thinking about where it goes. ");
+        room6Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+	+"\n The reek of garbage assaults your nose.    "
+	+"\n Looking inside, you see a pile of refuse   "
+	+"\n and offal that nearly reaches the ceiling. "
+	+"\n In the ceiling above it is a small hole    "
+	+"\n that is roughly as wide as two human hands."
+	+"\n No doubt some city dweller high above      "
+	+"\n disposes of his rubbish without ever       "
+	+"\n thinking about where it goes.              "
+	+"\n                                            "
+        +"\n********************************************");
         room6Scene.setMapSymbol("JR");
         scenes[SceneType.room6.ordinal()] = room6Scene;
         
         Scene room7Scene = new Scene();
-        room7Scene.setDescription("Many doors fill the room ahead. Doors of varied shape, size, and design are set in every wall and even the ceiling and floor. Barely a hand's width lies between one door and the next. All the doors but the one you entered by are shut, and many have obvious locks.");
+        room7Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+	+"\n Many doors fill the room ahead. Doors of   " 
+	+"\n varied shape, size, and design are set in  "
+	+"\n every wall and even the ceiling and floor. "
+	+"\n Barely a hand's width lies between one door"
+	+"\n and the next. All the doors but the one    "
+	+"\n you entered by are shut, and many have     "
+	+"\n obvious locks.                             "
+	+"\n                                            "
+        +"\n********************************************");
         room7Scene.setMapSymbol("EC");
         scenes[SceneType.room7.ordinal()] = room7Scene;
         
