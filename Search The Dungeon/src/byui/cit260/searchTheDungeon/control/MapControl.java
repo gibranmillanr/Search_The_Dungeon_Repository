@@ -53,21 +53,22 @@ public class MapControl {
         Scene room1Scene = new Scene();
         room1Scene.setDescription(
            
-           "***********************************************"
-           +"\n                                            "
-           +"\n Rats inside the room shriek when they hear "
-           +"\n the door open, then they run in all"
-           +"\n directions from a putrid corpse lying in"
-           +"\n the center of the floor. As these creatures"
-           +"\n crowd around the edges of the room, seeking"
-           +"\n to crawl through a hole in one corner, they"
-           +"\n fight one another. The stinking corpse in"
-           +"\n the middle of the room looks human, but the"
-           +"\n damage both time and the rats have wrought"
-           +"\n are enough to make determining its race by"
-           +"\n appearance an extremely difficulttask at best."
-           +"\n                                               "
-           +"\n*********************************************");
+        "***********************************************"
+        +"\n                                            "
+        +"\n Rats inside the room shriek when they hear "
+        +"\n the door open, then they run in all        "
+        +"\n directions from a putrid corpse lying in   "
+        +"\n the center of the floor. As these creatures"
+        +"\n crowd around the edges of the room, seeking"
+        +"\n to crawl through a hole in one corner, they"
+        +"\n fight one another. The stinking corpse in  "
+        +"\n the middle of the room looks human, but the"
+        +"\n damage both time and the rats have wrought "
+        +"\n are enough to make determining its race by "
+        +"\n appearance an extremely difficulttask at   "
+	+"\n best.                                      "
+        +"\n                                            "
+        +"\n********************************************");
 
         room1Scene.setMapSymbol("ZR");
         scenes[SceneType.room1.ordinal()] = room1Scene;
@@ -77,29 +78,55 @@ public class MapControl {
 	"***********************************************"
         +"\n                                            "
 	+"\n The strong, sour-sweet scent of vinegar    "
-	+"\n assaults your nose as you enter this room." 
-	+"\n Sundered casks and broken bottle glass" 
-	+"\n line the walls of this room. Clearly this" 
-	+"\n was someone's wine cellar for a time. The "
-	+"\n shards of glass are somewhat dusty, and "
-	+"\n the spilled wine is nothing more than a "
-	+"\n sticky residue in some places. Only one "
-	+"\n small barrel remains unbroken amid the "
-	+"\n rubbish. "
-	+"\n                                               "
-        +"\n*********************************************");
+	+"\n assaults your nose as you enter this room. " 
+	+"\n Sundered casks and broken bottle glass     " 
+	+"\n line the walls of this room. Clearly this  " 
+	+"\n was someone's wine cellar for a time. The  "
+	+"\n shards of glass are somewhat dusty, and    "
+	+"\n the spilled wine is nothing more than a    "
+	+"\n sticky residue in some places. Only one    "
+	+"\n small barrel remains unbroken amid the     "
+	+"\n rubbish.                                   "
+	+"\n                                            "
+        +"\n********************************************");
         room2Scene.setMapSymbol("WC");
         room2Scene.setItem(inventory[InventoryControl.ItemType.basicShield.ordinal()]);
         // room2Scene.setEquipped(inventory[InventoryControl.ItemType.basicShield.ordinal()]);
         scenes[SceneType.room2.ordinal()] = room2Scene;        
         
         Scene room3Scene = new Scene();
-        room3Scene.setDescription("A chill wind blows against you as you open the door. Beyond it, you see that the floor and ceiling are nothing but iron grates. Above and below the grates the walls extend up and down with no true ceiling or floor within your range of vision. It's as though the chamber is a bridge through the shaft of a great well. Standing on the edge of this shaft, you feel a chill wind pass down it and over your shoulder into the hall beyond. ");
+        room3Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+	+"\n A chill wind blows against you as you open "
+	+"\n the door. Beyond it, you see that the floor"
+	+"\n and ceiling are nothing but iron grates.   "
+	+"\n Above and below the grates the walls extend" 
+	+"\n up and down with no true ceiling or floor  "
+	+"\n within your range of vision. It's as though" 
+	+"\n the chamber is a bridge through the shaft  "
+	+"\n of a great well. Standing on the edge of   "
+	+"\n this shaft, you feel a chill wind pass down" 
+	+"\n it and over your shoulder into the hall    "
+	+"\n beyond.                                    "
+	+"\n                                            "
+        +"\n********************************************");
         room3Scene.setMapSymbol("GR");
         scenes[SceneType.room3.ordinal()] = room3Scene;
         
         Scene room4Scene = new Scene();
-        room4Scene.setDescription("You gaze into the room and hundreds of skulls gaze coldly back at you. They're set in niches in the walls in a checkerboard pattern, each skull bearing a half-melted candle on its head. The grinning bones stare vacantly into the room, which otherwise seems empty. ");
+        room4Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+	+"\n You gaze into the room and hundreds of     "
+	+"\n skulls gaze coldly back at you. They're    "
+	+"\n set in niches in the walls in a            "
+	+"\n checkerboard pattern, each skull bearing a "
+	+"\n half-melted candle on its head. The        "
+	+"\n grinning bones stare vacantly into the     "
+	+"\n room, which otherwise seems empty.         "
+	+"\n                                            "
+        +"\n********************************************");
         room4Scene.setMapSymbol("CE");
         room4Scene.setItem(inventory[InventoryControl.ItemType.basicArmor.ordinal()]);
         scenes[SceneType.room4.ordinal()] = room4Scene;
