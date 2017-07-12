@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.searchTheDungeon.control;
+import byui.cit260.searchTheDungeon.control.InventoryControl.ItemType;
 import byui.cit260.searchTheDungeon.exceptions.MapControlException;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
@@ -37,7 +38,9 @@ public class MapControl {
            +"\n initial items are not very powerful. Hurry and search the dungeon for "
            +"\n better gear before you encounter something dangerous. ");
         startScene.setMapSymbol("ST");
-        startScene.setItem(inventory[InventoryControl.ItemType.dagger.ordinal()]);
+	//  startScene.setItem(inventory[InventoryControl.ItemType.dagger.ordinal()]);
+        startScene.setItem(inventory[ItemType.dagger.ordinal()]);
+        // startScene.setEquipped(inventory[ItemType.dagger.ordinal()]);
         scenes[SceneType.start.ordinal()] = startScene;
         
         Scene finishScene = new Scene();
@@ -64,15 +67,30 @@ public class MapControl {
            +"\n are enough to make determining its race by"
            +"\n appearance an extremely difficulttask at best."
            +"\n                                               "
-           +"\n***********************************************");
+           +"\n*********************************************");
 
         room1Scene.setMapSymbol("ZR");
         scenes[SceneType.room1.ordinal()] = room1Scene;
 
         Scene room2Scene = new Scene();
-        room2Scene.setDescription("The strong, sour-sweet scent of vinegar assaults your nose as you enter this room. Sundered casks and broken bottle glass line the walls of this room. Clearly this was someone's wine cellar for a time. The shards of glass are somewhat dusty, and the spilled wine is nothing more than a sticky residue in some places. Only one small barrel remains unbroken amid the rubbish. ");
+        room2Scene.setDescription(
+	"***********************************************"
+        +"\n                                            "
+	+"\n The strong, sour-sweet scent of vinegar    "
+	+"\n assaults your nose as you enter this room." 
+	+"\n Sundered casks and broken bottle glass" 
+	+"\n line the walls of this room. Clearly this" 
+	+"\n was someone's wine cellar for a time. The "
+	+"\n shards of glass are somewhat dusty, and "
+	+"\n the spilled wine is nothing more than a "
+	+"\n sticky residue in some places. Only one "
+	+"\n small barrel remains unbroken amid the "
+	+"\n rubbish. "
+	+"\n                                               "
+        +"\n*********************************************");
         room2Scene.setMapSymbol("WC");
         room2Scene.setItem(inventory[InventoryControl.ItemType.basicShield.ordinal()]);
+        // room2Scene.setEquipped(inventory[InventoryControl.ItemType.basicShield.ordinal()]);
         scenes[SceneType.room2.ordinal()] = room2Scene;        
         
         Scene room3Scene = new Scene();
@@ -185,9 +203,9 @@ public class MapControl {
         dragonScene.setDescription("You have entered the Dragon's Lair!");
         dragonScene.setMapSymbol("BR");
         scenes[SceneType.dragon.ordinal()] = dragonScene;
-
+        
         return scenes;
-    }
+    }    
     
     public enum SceneType{
         start,
