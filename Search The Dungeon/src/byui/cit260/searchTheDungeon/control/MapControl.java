@@ -32,11 +32,15 @@ public class MapControl {
         Game game = SearchTheDungeon.getCurrentGame();
         InventoryItem[] inventory = game.getInventory();
         Scene startScene = new Scene();
-        startScene.setDescription(
-            "You will enter the dungeon with nothing but a dagger. "
-           +"\n You won't be happy to find out that your "
-           +"\n initial items are not very powerful. Hurry and search the dungeon for "
-           +"\n better gear before you encounter something dangerous. ");
+        startScene.setDescription(                
+        "***********************************************"
+        +"\n                                            "
+        +"\n You open the door and listen as it         "
+        +"\n screeches open. Well, so much for surprise."
+        +"\n You are now in the dungeon. Where do you   "
+        +"\n want to go?                                "
+        +"\n                                            "        
+        +"\n***********************************************");   
         startScene.setMapSymbol("ST");
 	//  startScene.setItem(inventory[InventoryControl.ItemType.dagger.ordinal()]);
         startScene.setItem(inventory[ItemType.dagger.ordinal()]);
@@ -68,7 +72,7 @@ public class MapControl {
         +"\n appearance an extremely difficulttask at   "
 	+"\n best.                                      "
         +"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
 
         room1Scene.setMapSymbol("ZR");
         scenes[SceneType.room1.ordinal()] = room1Scene;
@@ -88,7 +92,7 @@ public class MapControl {
 	+"\n small barrel remains unbroken amid the     "
 	+"\n rubbish.                                   "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room2Scene.setMapSymbol("WC");
         room2Scene.setItem(inventory[InventoryControl.ItemType.basicShield.ordinal()]);
         // room2Scene.setEquipped(inventory[InventoryControl.ItemType.basicShield.ordinal()]);
@@ -110,7 +114,7 @@ public class MapControl {
 	+"\n it and over your shoulder into the hall    "
 	+"\n beyond.                                    "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room3Scene.setMapSymbol("GR");
         scenes[SceneType.room3.ordinal()] = room3Scene;
         
@@ -126,7 +130,7 @@ public class MapControl {
 	+"\n grinning bones stare vacantly into the     "
 	+"\n room, which otherwise seems empty.         "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room4Scene.setMapSymbol("CE");
         room4Scene.setItem(inventory[InventoryControl.ItemType.basicArmor.ordinal()]);
         scenes[SceneType.room4.ordinal()] = room4Scene;
@@ -138,7 +142,7 @@ public class MapControl {
 	+"\n You have entered an empty room as the      " 
 	+"\n rusty door creaks shut!                    "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room5Scene.setMapSymbol("SR");
         scenes[SceneType.room5.ordinal()] = room5Scene;
         
@@ -155,7 +159,7 @@ public class MapControl {
 	+"\n disposes of his rubbish without ever       "
 	+"\n thinking about where it goes.              "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room6Scene.setMapSymbol("JR");
         scenes[SceneType.room6.ordinal()] = room6Scene;
         
@@ -171,7 +175,7 @@ public class MapControl {
 	+"\n you entered by are shut, and many have     "
 	+"\n obvious locks.                             "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room7Scene.setMapSymbol("EC");
         scenes[SceneType.room7.ordinal()] = room7Scene;
         
@@ -186,7 +190,7 @@ public class MapControl {
         +"\n now-open lock. Dust coats something sticky "
         +"\n on the needles' points.                    "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room8Scene.setMapSymbol("TR");
         scenes[SceneType.room8.ordinal()] = room8Scene;
         
@@ -207,7 +211,7 @@ public class MapControl {
         +"\n origin are strewn haphazardly about the    "
         +"\n floor before the dais.                     "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room9Scene.setMapSymbol("HR");       
         scenes[SceneType.room9.ordinal()] = room9Scene;
         
@@ -226,7 +230,7 @@ public class MapControl {
 	+"\n tall double doors of stone, their surface  "
         +"\n coveredin a glittering web of gold.        "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room10Scene.setMapSymbol("MR");
         room10Scene.setItem(inventory[InventoryControl.ItemType.sword.ordinal()]);
         scenes[SceneType.room10.ordinal()] = room10Scene;
@@ -243,7 +247,7 @@ public class MapControl {
         +"\n set of manacles -- big enough for an       "
         +"\n ogre -- have been broken open.             "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room11Scene.setMapSymbol("DU");        
         scenes[SceneType.room11.ordinal()] = room11Scene;
         
@@ -262,7 +266,7 @@ public class MapControl {
         +"\n seemingly at random heights, and their     "
         +"\n long bodies make wave shapes.              "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room12Scene.setMapSymbol("ER");
         room12Scene.setItem(inventory[InventoryControl.ItemType.powerShield.ordinal()]);
         scenes[SceneType.room12.ordinal()] = room12Scene;
@@ -277,7 +281,7 @@ public class MapControl {
         +"\n certain what they are because you came     "
         +"\n into the room behind them.                 "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room13Scene.setMapSymbol("TC");        
         scenes[SceneType.room13.ordinal()] = room13Scene;
         
@@ -294,7 +298,7 @@ public class MapControl {
         +"\n traps were never reset and now seem        "
         +"\n rusted in place.                           "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room14Scene.setMapSymbol("DG");
         room14Scene.setItem(inventory[InventoryControl.ItemType.powerArmor.ordinal()]);
         scenes[SceneType.room14.ordinal()] = room14Scene;
@@ -309,7 +313,7 @@ public class MapControl {
         +"\n enormous chamber. The wall was an illusion "
         +"\n and whoever cast it must be nearby!        "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room15Scene.setMapSymbol("RE");        
         scenes[SceneType.room15.ordinal()] = room15Scene;
         
@@ -325,7 +329,7 @@ public class MapControl {
         +"\n to brush against the floor, blocking your  "
         +"\n view of the rest of the room.              "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room16Scene.setMapSymbol("TG");       
         scenes[SceneType.room16.ordinal()] = room16Scene;
         
@@ -340,7 +344,7 @@ public class MapControl {
         +"\n creatures. It looks like this room once    "
         +"\n served some group of people as a bath.     "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room17Scene.setMapSymbol("BA");       
         scenes[SceneType.room17.ordinal()] = room17Scene;
 
@@ -357,7 +361,7 @@ public class MapControl {
         +"\n six appear human, and the rest look like   "
         +"\n they might be orcs.                        "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room18Scene.setMapSymbol("ST"); 
         scenes[SceneType.room18.ordinal()] = room18Scene;
         
@@ -372,7 +376,7 @@ public class MapControl {
         +"\n note a pictogram of what looks like a      "
         +"\n scythe on a chain.                         "
 	+"\n                                            "
-        +"\n********************************************");
+        +"\n***********************************************");
         room19Scene.setMapSymbol("TI");        
         scenes[SceneType.room19.ordinal()] = room19Scene;
         
