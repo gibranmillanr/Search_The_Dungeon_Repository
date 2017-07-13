@@ -26,11 +26,12 @@ public class GameMenuView extends View {
                   +"\n*                  GAME MENU                  *"
                   +"\n***********************************************"
                   +"\n*                                             *"
-                  +"\n* You have entered the dungeon! it is cold    *"
+                  +"\n* You have entered the dungeon! It is cold    *"
                   +"\n* and dark. You should hurry and explore a    *"
-                  +"\n* new room. you can take a look at your       *"
-                  +"\n* items too.                                  *"
-                  +"\n* What will you do now?                       *"
+                  +"\n* new room. You can take a look at your       *"
+                  +"\n* items also.                                 *"
+                  +"\n*                                             *"
+                  +"\n* What will you do now?                       *"                
                   +"\n*                                             *"
                   +"\n* V - View the Map                            *"
                   +"\n* M - Move to new location                    *"                  
@@ -58,21 +59,7 @@ public class GameMenuView extends View {
            }
            case "R": // View Reports 
                this.viewReports();
-               break;
-               
-           case "F": // Fairies View
-               this.displayFairiesView();
-               break;
-           case "T": // Trap View
-               this.displayTrapView();
-               break;
-           case "D": // Dragon View
-               this.displayDragonView();
-               break;
-           case "W": // Wizard View
-               this.displayWizardView();
-               break;
-
+               break;               
            default:
                ErrorView.display(this.getClass().getName(),
                        "\n***Invalid selection *** Try again\n");
@@ -81,6 +68,7 @@ public class GameMenuView extends View {
        return false;
     }
 
+    //Display Map
     public void displayMap() {
         String leftIndicator;
         String rightIndicator;
@@ -128,28 +116,33 @@ public class GameMenuView extends View {
         }
  }
 
+    //View Functions
     private void viewReports() {
         ReportsView reportsView = new ReportsView();
         reportsView.display();
-    }
-    
+    }    
     private void displayFairiesView() {       
-          FairiesView fairiesView = new FairiesView();
-          fairiesView.display(); 
+        FairiesView fairiesView = new FairiesView();
+        fairiesView.display(); 
     }
     private void displayDragonView() {
        DragonView dragonView = new DragonView();
-        dragonView.display();  
+       dragonView.display();  
     }
     private void displayTrapView() {
        TrapView trapView = new TrapView();
-        trapView.display();  
+       trapView.display();  
     }
     private void displayWizardView() {
        WizardView wizardView = new WizardView();
-        wizardView.display();  
-    }    
+       wizardView.display();  
+    }
+    private void winGameView() {
+       WinGameView winGameView = new WinGameView();
+       winGameView.display();  
+    }     
     
+    //Move
     private void move() throws IOException{ 
         try {
             Game game = SearchTheDungeon.getCurrentGame(); // retreive the game
@@ -169,6 +162,7 @@ public class GameMenuView extends View {
         }
     }
 
+    //Function to load views upon entering rooms.
     private void checkRoom(int row, int column) {
         String coordinates;
         coordinates = Integer.toString(row) + Integer.toString(column);
@@ -186,8 +180,7 @@ public class GameMenuView extends View {
                     this.displayDragonView();
                     break;
                 case "44":
-                    WinGameView winGameView = new WinGameView();
-                    winGameView.display();
+                    this.winGameView();
         }
     }
 }
