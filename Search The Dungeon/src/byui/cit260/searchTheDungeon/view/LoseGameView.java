@@ -23,11 +23,11 @@ public class LoseGameView extends View{
         +"\n*               You have lost!                *" 
         +"\n***********************************************" 
         +"\n*                                             *" 
-        +"\n*    It's not whether you win or lose,        *"
-        +"\n*    it's how many people remember you        *"
-        +"\n*    when you die.                            *"
+        +"\n*                Try again?                   *"
         +"\n*                                             *"
-        +"\n*    Would you like to try again?             *"
+        +"\n*                   OR                        *"
+        +"\n*                                             *"
+        +"\n*                Rage quit?                   *"
         +"\n*                                             *"
         +"\n***********************************************";
        

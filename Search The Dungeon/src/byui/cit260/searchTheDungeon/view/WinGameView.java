@@ -9,7 +9,7 @@ import search.the.dungeon.SearchTheDungeon;
 
 /**
  *
- * @author Les and Sue
+ * @author Les Aycock
  */
 public class WinGameView extends View{
     private String banner;
@@ -20,13 +20,13 @@ public class WinGameView extends View{
         
         this.banner = "\n"
         +"\n***********************************************"
-        +"\n*            The BLACK Dragon!                *" 
+        +"\n*               You have won!                 *" 
         +"\n***********************************************" 
         +"\n*                                             *" 
-        +"\n* CONGRATULATIONS! You have successfully      *"
-        +"\n* defeated the dreaded Black Dragon!          *"
-        +"\n* You have conquered the Dungeon!             *"
-        +"\n* What are you going to do now?               *"
+        +"\n* You just won THE GAME! You feel like you    *"
+        +"\n* should start celebrating or something.      *"
+        +"\n* You haven't had a win like this in weeks,   *"
+        +"\n* this is amazing!                            *"
         +"\n*                                             *"
         +"\n***********************************************";
        
