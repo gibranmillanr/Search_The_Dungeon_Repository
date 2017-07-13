@@ -163,8 +163,31 @@ public class GameMenuView extends View {
                 return;
             MapControl.movePlayer(SearchTheDungeon.getCurrentGame().getMap(), row, column);
             displayMap();
+            checkRoom(row, column);
         } catch (MapControlException ex) {
             System.err.println(ex.getMessage());
+        }
+    }
+
+    private void checkRoom(int row, int column) {
+        String coordinates;
+        coordinates = Integer.toString(row) + Integer.toString(column);
+        switch (coordinates) {
+                case "12":
+                    this.displayFairiesView();
+                    break;
+                case "21":
+                    this.displayWizardView();
+                    break;
+                case "24":
+                    this.displayTrapView();
+                    break;
+                case "43":
+                    this.displayDragonView();
+                    break;
+                case "44":
+                    WinGameView winGameView = new WinGameView();
+                    winGameView.display();
         }
     }
 }
