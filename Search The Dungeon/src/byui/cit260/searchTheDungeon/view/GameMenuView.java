@@ -33,9 +33,7 @@ public class GameMenuView extends View {
                   +"\n* What will you do now?                       *"
                   +"\n*                                             *"
                   +"\n* V - View the Map                            *"
-                  +"\n* M - Move to new location                    *"
-                  +"\n* L - Look for trouble                        *"  
-                  +"\n* S - Search for treasure                     *"                  
+                  +"\n* M - Move to new location                    *"                  
                   +"\n* R - Report View (Items, Enemies, ect.)      *"
                   +"\n* Q - Quit                                    *"                
                   +"\n***********************************************");      
@@ -61,12 +59,7 @@ public class GameMenuView extends View {
            case "R": // View Reports 
                this.viewReports();
                break;
-           case "L": // Look for trouble
-               this.lookForTrouble();
-               break;
-           case "S": // Search for treasure
-               this.searchForTreasure();
-               break;                  
+               
            case "F": // Fairies View
                this.displayFairiesView();
                break;
@@ -139,17 +132,10 @@ public class GameMenuView extends View {
         ReportsView reportsView = new ReportsView();
         reportsView.display();
     }
-    private void lookForTrouble() {       
-        Game game = SearchTheDungeon.getCurrentGame(); // retreive the game
-        Map map = game.getMap(); // retreive the map from game
-    }
-    private void searchForTreasure() {       
-        FairiesView fairiesView = new FairiesView();
-        fairiesView.display(); 
-    }    
+    
     private void displayFairiesView() {       
-        FairiesView fairiesView = new FairiesView();
-        fairiesView.display(); 
+          FairiesView fairiesView = new FairiesView();
+          fairiesView.display(); 
     }
     private void displayDragonView() {
        DragonView dragonView = new DragonView();
