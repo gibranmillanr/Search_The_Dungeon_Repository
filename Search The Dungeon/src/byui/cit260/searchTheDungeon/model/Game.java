@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 package byui.cit260.searchTheDungeon.model;
+//import byui.cit260.searchTheDungeon.control.InventoryControl;
 import java.io.Serializable;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 //import java.util.Objects;
 
 /**
@@ -13,6 +14,7 @@ import java.util.ArrayList;
  * @author Gibran Millan, Paul Darr, Les Aycock
  */
 public class Game implements Serializable {
+
     
     private boolean gameOver;
     private Player player;
@@ -71,5 +73,16 @@ public class Game implements Serializable {
     public void setActors(Actor[] actors) {
         this.actors = actors;
     }
+    
+//    public void addItemToBackpack(InventoryItem item) {
+//        InventoryItem newItem = new InventoryItem();
+//        newItem.setAmount(item.getAmount());
+//        newItem.setDescription(item.getDescription());
+//        newItem.setItemType(item.getItemType());
+//        newItem.setPowerLevel(item.getPowerLevel());
+//        
+//        //add item to backpack
+//        backpack.add(newItem);
+//    }
 
 }

@@ -10,7 +10,6 @@ import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import search.the.dungeon.SearchTheDungeon;
 import static search.the.dungeon.SearchTheDungeon.player;
 
@@ -81,16 +80,18 @@ public class ReportsView extends View {
         InventoryItem[] inventory = game.getInventory();
 
         this.console.println("\n LIST OF GAME INVENTORY ITEMS");
-        line = new StringBuilder("                                              ");
+        line = new StringBuilder("                                                                  ");
         line.insert(0, "DESCRIPTION");
         line.insert(20, "LEVEL");
+        line.insert(30, "QUANTITY");
         this.console.println(line.toString());
 
         //for each inventory item
         for (InventoryItem item : inventory) {
-            line = new StringBuilder("                                              ");
+            line = new StringBuilder("                                                        ");
             line.insert(0, item.getDescription());
             line.insert(23, item.getPowerLevel());
+            line.insert(32, item.getAmount());
 
             //DISPLAY the line
             this.console.println(line.toString());
@@ -113,19 +114,20 @@ public class ReportsView extends View {
             try (PrintWriter out = new PrintWriter(outputLocation)) {
                 //print report form
                 out.println("\n"
-                        + "\n*****************************************\r"
-                        + "\n*                                       *\r"
-                        + "\n*           Inventory  Report           *\r"
-                        + "\n*                                       *\r"
-                        + "\n*****************************************\r"
-                        + "\n Item Type  Item Description  Power Level\r"
-                        + "\n*****************************************\r");
+                        + "\n*********************************************************\r"
+                        + "\n*                                                       *\r"
+                        + "\n*                 Inventory  Report                     *\r"
+                        + "\n*                                                       *\r"
+                        + "\n*********************************************************\r"
+                        + "\n Item Type  Item Description  Power Level  Number Carried\r"
+                        + "\n*********************************************************\r");
 
                 //print the description and strength of each item
                 for (InventoryItem item : inventory) {
-                    out.printf("%n%-13s%-20s%-5d", item.getItemType(),
+                    out.printf("%n%-13s%-20s%-30s%-5d", item.getItemType(),
                             item.getDescription(),
-                            item.getPowerLevel());
+                            item.getPowerLevel(),
+                            item.getAmount());
                 }
 
                 this.console.println("Your report was saved successfully.");
@@ -162,6 +164,7 @@ public class ReportsView extends View {
 
                 //DISPLAY the line
                 this.console.println(line.toString());
+            } else {
             }
         }
     }

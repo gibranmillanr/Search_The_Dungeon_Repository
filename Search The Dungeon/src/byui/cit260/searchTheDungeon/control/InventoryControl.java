@@ -29,7 +29,7 @@ public class InventoryControl {
         dagger.setDescription("Dagger");
         dagger.setItemType("Weapon");
         dagger.setPowerLevel(1);
-        dagger.setAmount(1);
+        dagger.setAmount(0);
         inventory[ItemType.dagger.ordinal()]=dagger;
         
         InventoryItem basicShield = new InventoryItem();

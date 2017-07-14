@@ -7,7 +7,6 @@ package byui.cit260.searchTheDungeon.view;
 
 import byui.cit260.searchTheDungeon.control.RiddleControl;
 import byui.cit260.searchTheDungeon.exceptions.RiddleControlException;
-import java.util.Scanner;
 
 
 /**
