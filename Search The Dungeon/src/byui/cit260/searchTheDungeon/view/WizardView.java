@@ -5,8 +5,12 @@
  */
 package byui.cit260.searchTheDungeon.view;
 
+import byui.cit260.searchTheDungeon.control.InventoryControl;
+import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.control.RiddleControl;
 import byui.cit260.searchTheDungeon.exceptions.RiddleControlException;
+import byui.cit260.searchTheDungeon.model.InventoryItem;
+import search.the.dungeon.SearchTheDungeon;
 
 /**
  *
@@ -15,6 +19,8 @@ import byui.cit260.searchTheDungeon.exceptions.RiddleControlException;
 
 public class WizardView extends View  {
     private String banner;
+    Game game = SearchTheDungeon.getCurrentGame();
+    InventoryItem[] inventory = game.getInventory();
     
     public WizardView(){
     
@@ -102,8 +108,7 @@ public class WizardView extends View  {
         +"\n*                                             *"
         +"\n*                                             *" 
         +"\n***********************************************");
-        
-        this.displayWinGameView();
+        game.addItemToBackpack(game.getInventory()[InventoryControl.ItemType.powerArmor.ordinal()]);
         }
         } catch (RiddleControlException we) {
             ErrorView.display(this.getClass().getName(),we.getMessage());

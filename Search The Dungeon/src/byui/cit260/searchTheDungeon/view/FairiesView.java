@@ -5,6 +5,8 @@
  */
 package byui.cit260.searchTheDungeon.view;
 
+import byui.cit260.searchTheDungeon.control.InventoryControl;
+import static byui.cit260.searchTheDungeon.control.InventoryControl.ItemType.powerArmor;
 import byui.cit260.searchTheDungeon.control.RiddleControl;
 import byui.cit260.searchTheDungeon.exceptions.RiddleControlException;
 import byui.cit260.searchTheDungeon.model.Game;
@@ -95,6 +97,7 @@ public class FairiesView extends View {
                         + "\n* Now go and continue exploring!              *"
                         + "\n***********************************************"
                 );
+                game.addItemToBackpack(game.getInventory()[InventoryControl.ItemType.powerArmor.ordinal()]);
             }
         } catch (RiddleControlException we) {
             ErrorView.display(this.getClass().getName(), we.getMessage());

@@ -50,7 +50,7 @@ public class FightMenuView extends View{
     private void displayFight() {
         Player player=SearchTheDungeon.getPlayer();
         Actor tempActor = new Actor();
-        tempActor.powerLevel = 12;
+        tempActor.powerLevel = 2;
         boolean winFight = FightControl.winFight(player, tempActor);
         if (!winFight) {
             this.console.println("\n You’ve lost the game!");

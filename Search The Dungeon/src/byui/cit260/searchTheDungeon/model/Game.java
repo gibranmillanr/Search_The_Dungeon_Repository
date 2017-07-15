@@ -4,17 +4,16 @@
  * and open the template in the editor.
  */
 package byui.cit260.searchTheDungeon.model;
-//import byui.cit260.searchTheDungeon.control.InventoryControl;
+import byui.cit260.searchTheDungeon.control.InventoryControl;
 import java.io.Serializable;
 import java.util.ArrayList;
-//import java.util.Objects;
+import java.util.Objects;
 
 /**
  *
  * @author Gibran Millan, Paul Darr, Les Aycock
  */
 public class Game implements Serializable {
-
     
     private boolean gameOver;
     private Player player;
