@@ -10,6 +10,8 @@ import byui.cit260.searchTheDungeon.exceptions.MapControlException;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.Location;
 import byui.cit260.searchTheDungeon.model.Map;
+import byui.cit260.searchTheDungeon.control.InventoryControl;
+import byui.cit260.searchTheDungeon.model.InventoryItem;
 import java.io.IOException;
 import search.the.dungeon.SearchTheDungeon;
 
@@ -18,7 +20,8 @@ import search.the.dungeon.SearchTheDungeon;
  * @author Les and Sue
  */
 public class GameMenuView extends View {
-
+    Game game = SearchTheDungeon.getCurrentGame();
+    InventoryItem[] inventory = game.getInventory();
     public GameMenuView(){
         
         super("\n"
@@ -34,7 +37,7 @@ public class GameMenuView extends View {
                   +"\n* What will you do now?                       *"                
                   +"\n*                                             *"
                   +"\n* V - View the Map                            *"
-                  +"\n* M - Move to new location                    *"                  
+                  +"\n* M - Move to new location                    *"
                   +"\n* R - Report View (Items, Enemies, ect.)      *"
                   +"\n* Q - Quit                                    *"                
                   +"\n***********************************************");      
@@ -44,12 +47,12 @@ public class GameMenuView extends View {
     public boolean doAction(String choice) {
         choice = choice.toUpperCase(); //convert choice to uppsercase
 
-       switch (choice) {
-           case "V": // Go to the map and choose a room
+        switch (choice) {
+            case "V": // Go to the map and choose a room
                this.displayMap();
                break;
-           case "M": {
-            try {
+            case "M": {
+                try {
                 this.move(); // Go to the map and choose a room
                 break;                              
             } catch (IOException ex) {
@@ -140,7 +143,7 @@ public class GameMenuView extends View {
     private void winGameView() {
        WinGameView winGameView = new WinGameView();
        winGameView.display();  
-    }     
+    }
     
     //Move
     private void move() throws IOException{ 
@@ -167,15 +170,30 @@ public class GameMenuView extends View {
         String coordinates;
         coordinates = Integer.toString(row) + Integer.toString(column);
         switch (coordinates) {
+                case "02":
+                    game.addItemToBackpack(game.getInventory()[InventoryControl.ItemType.basicShield.ordinal()]);
+                    break;
+                case "04":
+                    game.addItemToBackpack(game.getInventory()[InventoryControl.ItemType.basicArmor.ordinal()]);
+                    break;
                 case "12":
                     this.displayFairiesView();
                     break;
                 case "21":
                     this.displayWizardView();
                     break;
+                case "22":
+                    game.addItemToBackpack(game.getInventory()[InventoryControl.ItemType.sword.ordinal()]);
+                    break;
                 case "24":
                     this.displayTrapView();
                     break;
+                case "30":
+                    game.addItemToBackpack(game.getInventory()[InventoryControl.ItemType.powerShield.ordinal()]);
+                    break;
+                case "32":
+                    game.addItemToBackpack(game.getInventory()[InventoryControl.ItemType.powerArmor.ordinal()]);
+                    break;                      
                 case "43":
                     this.displayDragonView();
                     break;

@@ -104,8 +104,8 @@ public class WizardView extends View  {
         this.console.println(
         "\n***********************************************"
         +"\n*                                             *" 
-        +"\n*   Correct                                   *" 
-        +"\n*                                             *"
+        +"\n*   Correct!                                  *" 
+        +"\n*   Here is the great armor of Ephysiyies.    *"
         +"\n*                                             *" 
         +"\n***********************************************");
         game.addItemToBackpack(game.getInventory()[InventoryControl.ItemType.powerArmor.ordinal()]);

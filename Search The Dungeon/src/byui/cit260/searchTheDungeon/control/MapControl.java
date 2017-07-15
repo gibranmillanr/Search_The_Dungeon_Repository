@@ -97,7 +97,6 @@ public class MapControl {
         +"\n***********************************************");
         room2Scene.setMapSymbol("WC");
         room2Scene.setItem(inventory[InventoryControl.ItemType.basicShield.ordinal()]);
-//        room2Scene.getItem().setAmount(room2Scene.getItem().getAmount()+1);
         scenes[SceneType.room2.ordinal()] = room2Scene;
         
         Scene room3Scene = new Scene();
@@ -135,7 +134,6 @@ public class MapControl {
         +"\n***********************************************");
         room4Scene.setMapSymbol("CE");
         room4Scene.setItem(inventory[InventoryControl.ItemType.basicArmor.ordinal()]);
-//        room4Scene.getItem().setAmount(room4Scene.getItem().getAmount()+1);
         scenes[SceneType.room4.ordinal()] = room4Scene;
         
         Scene room5Scene = new Scene();
@@ -236,7 +234,6 @@ public class MapControl {
         +"\n***********************************************");
         room10Scene.setMapSymbol("MR");
         room10Scene.setItem(inventory[InventoryControl.ItemType.sword.ordinal()]);
-//        room10Scene.getItem().setAmount(room10Scene.getItem().getAmount()+1);
         scenes[SceneType.room10.ordinal()] = room10Scene;
         
         Scene room11Scene = new Scene();
@@ -273,7 +270,6 @@ public class MapControl {
         +"\n***********************************************");
         room12Scene.setMapSymbol("ER");
         room12Scene.setItem(inventory[InventoryControl.ItemType.powerShield.ordinal()]);
-//        room12Scene.getItem().setAmount(room12Scene.getItem().getAmount()+1);
         scenes[SceneType.room12.ordinal()] = room12Scene;
         
         Scene room13Scene = new Scene();
@@ -306,7 +302,6 @@ public class MapControl {
         +"\n***********************************************");
         room14Scene.setMapSymbol("DG");
         room14Scene.setItem(inventory[InventoryControl.ItemType.powerArmor.ordinal()]);
-//        room14Scene.getItem().setAmount(room14Scene.getItem().getAmount()+1);
         scenes[SceneType.room14.ordinal()] = room14Scene;
         
         Scene room15Scene = new Scene();
@@ -391,8 +386,6 @@ public class MapControl {
         Scene fairiesScene = new Scene();
         fairiesScene.setDescription("You have entered the fairies domain!");
         fairiesScene.setMapSymbol("FD");
-//        fairiesScene.setItem(inventory[InventoryControl.ItemType.powerArmor.ordinal()]);
-//        fairiesScene.getItem().setAmount(fairiesScene.getItem().getAmount()+1);
         scenes[SceneType.fairies.ordinal()] = fairiesScene;
         
         Scene blueWizardScene = new Scene();
