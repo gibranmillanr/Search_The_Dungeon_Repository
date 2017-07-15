@@ -6,7 +6,7 @@
 package byui.cit260.searchTheDungeon.model;
 //import byui.cit260.searchTheDungeon.control.InventoryControl;
 import java.io.Serializable;
-//import java.util.ArrayList;
+import java.util.ArrayList;
 //import java.util.Objects;
 
 /**
@@ -21,7 +21,7 @@ public class Game implements Serializable {
     private Map map;
     private Actor[] actors; // enum
     private InventoryItem[] inventory;
-//    private ArrayList<InventoryItem> backpack;
+    private ArrayList<InventoryItem> backpack;
     
     //Default Constructor
 
@@ -33,9 +33,9 @@ public class Game implements Serializable {
         this.map = map;
     }
 
-//    public ArrayList<InventoryItem> getBackpack() {
-//        return backpack;
-//    }
+    public ArrayList<InventoryItem> getBackpack() {
+        return backpack;
+    }
     
     public InventoryItem[] getInventory() {
         return inventory;
@@ -47,7 +47,7 @@ public class Game implements Serializable {
 
     public Game() {
         gameOver=false;
-//        backpack = new ArrayList<InventoryItem>();
+        backpack = new ArrayList<InventoryItem>();
     }
 
     public Player getPlayer() {
@@ -74,15 +74,15 @@ public class Game implements Serializable {
         this.actors = actors;
     }
     
-//    public void addItemToBackpack(InventoryItem item) {
-//        InventoryItem newItem = new InventoryItem();
-//        newItem.setAmount(item.getAmount());
-//        newItem.setDescription(item.getDescription());
-//        newItem.setItemType(item.getItemType());
-//        newItem.setPowerLevel(item.getPowerLevel());
-//        
-//        //add item to backpack
-//        backpack.add(newItem);
-//    }
+    public void addItemToBackpack(InventoryItem item) {
+        InventoryItem newItem = new InventoryItem();
+        newItem.setAmount(item.getAmount());
+        newItem.setDescription(item.getDescription());
+        newItem.setItemType(item.getItemType());
+        newItem.setPowerLevel(item.getPowerLevel());
+        
+        //add item to backpack
+        backpack.add(newItem);
+    }
 
 }

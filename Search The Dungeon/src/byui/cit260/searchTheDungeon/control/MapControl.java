@@ -10,6 +10,7 @@ import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
 import byui.cit260.searchTheDungeon.model.Map;
 import byui.cit260.searchTheDungeon.model.Scene;
+import java.util.ArrayList;
 import search.the.dungeon.SearchTheDungeon;
 
 /**
@@ -31,6 +32,7 @@ public class MapControl {
         Scene[] scenes = new Scene[SceneType.values().length];
         Game game = SearchTheDungeon.getCurrentGame();
         InventoryItem[] inventory = game.getInventory();
+        ArrayList<InventoryItem> backpack = game.getBackpack();
         Scene startScene = new Scene();
         startScene.setDescription(                
         "***********************************************"
@@ -42,9 +44,10 @@ public class MapControl {
         +"\n                                            "        
         +"\n***********************************************");   
         startScene.setMapSymbol("ST");
-	//  startScene.setItem(inventory[InventoryControl.ItemType.dagger.ordinal()]);
-        startScene.setItem(inventory[ItemType.dagger.ordinal()]);
-        // startScene.setEquipped(inventory[ItemType.dagger.ordinal()]);
+	  startScene.setItem(inventory[InventoryControl.ItemType.dagger.ordinal()]);
+//        Game.addItemToBackpack(inventory[ItemType.dagger.ordinal()]);
+//        startScene.setItem(inventory[ItemType.dagger.ordinal()]);
+//        startScene.setEquipped(inventory[ItemType.dagger.ordinal()]);
         scenes[SceneType.start.ordinal()] = startScene;
         
         Scene finishScene = new Scene();

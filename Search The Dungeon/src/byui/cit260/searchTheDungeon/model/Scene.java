@@ -56,10 +56,7 @@ public class Scene implements Serializable {
         if (!Objects.equals(this.mapSymbol, other.mapSymbol)) {
             return false;
         }
-        if (!Objects.equals(this.actor, other.actor)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.actor, other.actor);
     }
 
         //Getter and Setter

@@ -10,6 +10,7 @@ import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import search.the.dungeon.SearchTheDungeon;
 import static search.the.dungeon.SearchTheDungeon.player;
 
@@ -144,10 +145,10 @@ public class ReportsView extends View {
         StringBuilder line;
 
         //Retrieve list of items
-//        Game game = SearchTheDungeon.getCurrentGame();
-//        ArrayList<InventoryItem> backpack = game.getBackpack();
         Game game = SearchTheDungeon.getCurrentGame();
-        InventoryItem[] inventory = game.getInventory();
+        ArrayList<InventoryItem> backpack = game.getBackpack();
+//        Game game = SearchTheDungeon.getCurrentGame();
+//        InventoryItem[] inventory = game.getInventory();
 
         this.console.println("\n LIST OF INVENTORY ITEMS\n");
         line = new StringBuilder("                                              ");
@@ -156,18 +157,18 @@ public class ReportsView extends View {
         this.console.println(line.toString());
 
         //for each inventory item
-        for (InventoryItem item : inventory) {
-            if (item.getAmount() != 0) {
+        for (InventoryItem item : backpack) {
+//            if (item.getAmount() != 0) {
                 line = new StringBuilder("                                              ");
                 line.insert(0, item.getDescription());
                 line.insert(23, item.getPowerLevel());
 
                 //DISPLAY the line
                 this.console.println(line.toString());
-            } else {
+//            } else {
             }
         }
-    }
+//    }
 
     private void displayActors() {
         StringBuilder line;
