@@ -55,14 +55,15 @@ public class FightMenuView extends View {
     private boolean displayFight() {
         Player player = SearchTheDungeon.getPlayer();
         Actor tempActor = new Actor();
-        tempActor.powerLevel = 2;
+        tempActor.powerLevel = 1;
         boolean winFight = FightControl.winFight(player, tempActor);
         if (!winFight) {
             this.console.println("\n You’ve lost the fight!");
             return true;
         } else {
-            this.console.println("\n You WON! The room has been cleared!");
+            this.console.println("\n You WON! The room has been cleared! Now"
+                    + "\nQuit and let's move on.");
+            return false;
         }
-        return true;
     }
 }
