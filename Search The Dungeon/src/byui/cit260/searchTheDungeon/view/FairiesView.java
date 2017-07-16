@@ -6,7 +6,6 @@
 package byui.cit260.searchTheDungeon.view;
 
 import byui.cit260.searchTheDungeon.control.InventoryControl;
-import static byui.cit260.searchTheDungeon.control.InventoryControl.ItemType.powerArmor;
 import byui.cit260.searchTheDungeon.control.RiddleControl;
 import byui.cit260.searchTheDungeon.exceptions.RiddleControlException;
 import byui.cit260.searchTheDungeon.model.Game;
@@ -59,7 +58,6 @@ public class FairiesView extends View {
         } catch (NumberFormatException nf) {
             ErrorView.display(this.getClass().getName(), "\n You must enter a valid number."
                     + "Try again or enter Q to quit");
-
         }
 
         if (numberRooms > 26) {

@@ -5,7 +5,6 @@
  */
 package byui.cit260.searchTheDungeon.control;
 
-import byui.cit260.searchTheDungeon.control.*;
 import byui.cit260.searchTheDungeon.model.Actor;
 import byui.cit260.searchTheDungeon.model.Player;
 

@@ -179,11 +179,17 @@ public class GameMenuView extends View {
                 case "12":
                     this.displayFairiesView();
                     break;
+                case "20":
+                    this.displayFight();
+                    break;
                 case "21":
                     this.displayWizardView();
                     break;
                 case "22":
                     game.addItemToBackpack(game.getInventory()[InventoryControl.ItemType.sword.ordinal()]);
+                    break;
+                case "23":
+                    this.displayFight();
                     break;
                 case "24":
                     this.displayTrapView();
@@ -193,13 +199,23 @@ public class GameMenuView extends View {
                     break;
                 case "32":
                     game.addItemToBackpack(game.getInventory()[InventoryControl.ItemType.powerArmor.ordinal()]);
-                    break;                      
+                    break;  
+                case "34":
+                    this.displayFight();
+                    break;
+                case "42":
+                    this.displayFight();
+                    break;
                 case "43":
                     this.displayDragonView();
                     break;
                 case "44":
                     this.winGameView();
-                
         }
+    }
+
+    private void displayFight() {
+        FightMenuView fightView = new FightMenuView();
+        fightView.display();
     }
 }

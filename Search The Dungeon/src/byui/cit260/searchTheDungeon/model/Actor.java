@@ -109,13 +109,4 @@ public boolean isEnemy() {
     public String toString() {
         return "Actor{" + "name=" + name + ", description=" + description + ", coordinants=" + coordinates + ", powerLevel=" + powerLevel + '}';
     }
-
-//    public void setDescription(String lots_of_trouble) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-
-//    public void setPowerLevel(int i) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//      }
-    
 }

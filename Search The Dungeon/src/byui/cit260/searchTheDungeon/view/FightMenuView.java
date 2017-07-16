@@ -7,6 +7,7 @@ package byui.cit260.searchTheDungeon.view;
 
 import byui.cit260.searchTheDungeon.control.FightControl;
 import byui.cit260.searchTheDungeon.model.Actor;
+import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.Player;
 import search.the.dungeon.SearchTheDungeon;
 
@@ -14,54 +15,54 @@ import search.the.dungeon.SearchTheDungeon;
  *
  * @author Les and Sue
  */
-public class FightMenuView extends View{
-    
-    public FightMenuView(){
-              
+public class FightMenuView extends View {
+
+    Game game = SearchTheDungeon.getCurrentGame();
+
+    public FightMenuView() {
+
         super("\n"
-                  +"***********************************************"
-                  +"\n*                FIGHT MENU                 *"
-                  +"\n*********************************************"
-                  +"\n* A - Attack                                *"
-                  +"\n* R - Run Away                              *"
-                  +"\n* Q - Quit                                  *"
-                  +"\n*********************************************");
-           
+                + "\n***********************************************\r"
+                + "\n*                    ORCS                     *\r"
+                + "\n* Oh No! You have come face to face with one  *\r"
+                + "\n* of the UGLIEST creatures in the dungeon, an *\r"
+                + "\n* ORC! And he does not look too happy to see  *\r"
+                + "\n* you, as he is raising his club to attack!   *\r"                
+                + "\n***********************************************\r"
+                + "\n*                 FIGHT MENU                  *\r"
+                + "\n***********************************************\r"
+                + "\n* A - Attack                                  *\r"
+                + "\n* Q - Run Away                                *\r"
+                + "\n***********************************************\r\n");
     }
 
     @Override
     public boolean doAction(String choice) {
-       choice = choice.toUpperCase(); //convert choice to uppsercase
+        choice = choice.toUpperCase(); //convert choice to uppsercase
 
-       switch (choice) {
-           case "A": // Player Chose to Fight
-               this.displayFight();
-               break;
-           case "R": // Run Away
-               this.displayRun();
-               break;
-           default:
-               ErrorView.display(this.getClass().getName(),
-                       "\n***Invalid option. Either fight or retreat!");
-               break;
-       }
-       return false;
+        switch (choice) {
+            case "A": // Player Chose to Fight
+                this.displayFight();
+                break;
+            default:
+                ErrorView.display(this.getClass().getName(),
+                        "\n***Invalid option. Either fight or retreat!");
+                break;
+        }
+        return false;
     }
-    private void displayFight() {
-        Player player=SearchTheDungeon.getPlayer();
+
+    private boolean displayFight() {
+        Player player = SearchTheDungeon.getPlayer();
         Actor tempActor = new Actor();
         tempActor.powerLevel = 2;
         boolean winFight = FightControl.winFight(player, tempActor);
         if (!winFight) {
-            this.console.println("\n You’ve lost the game!");
-        }
-        else {
+            this.console.println("\n You’ve lost the fight!");
+            return true;
+        } else {
             this.console.println("\n You WON! The room has been cleared!");
         }
-    }
-
-    // @SuppressWarnings("UnusedAssignment")
-    public void displayRun() {
-        return;
+        return true;
     }
 }
