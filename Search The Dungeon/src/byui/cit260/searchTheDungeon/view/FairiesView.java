@@ -97,7 +97,7 @@ public class FairiesView extends View {
                         + "\n* Now go and continue exploring!              *"
                         + "\n***********************************************"
                 );
-                game.addItemToBackpack(game.getInventory()[InventoryControl.ItemType.powerArmor.ordinal()]);
+                game.addItemToBackpack(game.getInventory()[InventoryControl.ItemType.basicShield.ordinal()]);
             }
         } catch (RiddleControlException we) {
             ErrorView.display(this.getClass().getName(), we.getMessage());
