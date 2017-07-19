@@ -8,8 +8,10 @@ package byui.cit260.searchTheDungeon.view;
 import byui.cit260.searchTheDungeon.model.Actor;
 import byui.cit260.searchTheDungeon.model.Game;
 import byui.cit260.searchTheDungeon.model.InventoryItem;
+import byui.cit260.searchTheDungeon.model.Player;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,13 +31,10 @@ public class ReportsView extends View {
                 + "\n* Which report would you like to see? *"
                 + "\n***************************************"
                 + "\n* I - List all items in game          *"
-                //                + "\n* P - Print all items in game         *"
-                + "\n* C - List all in your backpack       *"
-                //                + "\n* D - Print all in your backpack      *"
+                + "\n* B - List all in your backpack       *"
                 + "\n* A - List all actors in game         *"
-                //                + "\n* B - Print all actors in game        *"
                 + "\n* E - List all enemies in game        *"
-                //                + "\n* X - Print all enemies in game       *"
+                + "\n* P - List player information         *"                
                 + "\n* Q - Quit                            *"
                 + "\n--------------------------------------");
     }
@@ -48,27 +47,18 @@ public class ReportsView extends View {
                 case "I": // List all items in game
                     this.displayInventory();
                     break;
-                case "P": // List all items in game
-                    this.printInventory();
-                    break;
-                case "C":
+                case "B":
                     // List all items carried
                     this.displayInventoryCarried();
-                    break;
-                case "D": // print content of backpack
-                    this.printBackPack();
                     break;
                 case "A": // List all actors in game
                     this.displayActors();
                     break;
-                case "B": // List all Actors in game
-                    this.printActors();
-                    break;
                 case "E": // List all enemies in game
                     this.displayEnemies();
                     break;
-                case "X": // List all enemies in game
-                    this.printEnemy();
+                case "P":
+                    this.displayPlayer();
                     break;
                 default:
                     ErrorView.display(this.getClass().getName(), "\n***Invalid selection *** Try again");
@@ -363,8 +353,6 @@ public class ReportsView extends View {
                         + "\n Item Type  Item Description  Power Level\r"
                         + "\n*****************************************\r");
 
-                //print the description and strength of each item
-//                inventory.forEach((item) -> {
                 for (InventoryItem item : backpack) {
                     out.printf("%n%-13s%-20s%-5d", item.getItemType(),
                             item.getDescription(),
@@ -372,6 +360,76 @@ public class ReportsView extends View {
                 }
             }
 
+            this.console.println("Your report was saved successfully.");
+
+        } catch (IOException ex) {
+            ErrorView.display("ReportView", ex.getMessage());
+        }
+    }
+
+    private void displayPlayer() throws IOException {
+        StringBuilder line;
+        Game game = SearchTheDungeon.getCurrentGame();
+        Player player = SearchTheDungeon.getPlayer();
+        ArrayList<InventoryItem> backpack = game.getBackpack();
+        int playerLevel=0;
+        
+        for (InventoryItem item : backpack) {
+            playerLevel = playerLevel + item.getPowerLevel();
+        }
+
+        this.console.println("\n   PLAYER INFORMATION\n");
+        line = new StringBuilder("                                                 ");
+        line.insert(0, "NAME");
+        line.insert(20, "STRENGTH");
+        this.console.println(line.toString());
+
+        line = new StringBuilder("                                                 ");
+        line.insert(0, player.getName());
+        line.insert(24, playerLevel);
+        this.console.println(line.toString());
+
+        this.console.println("\nSave to file (Y/N)? ");
+        String answer = this.keyboard.readLine();
+        answer = answer.toUpperCase();
+        if ("Y".equals(answer) || "YES".equals(answer)) {
+            printPlayer();
+        }
+    }
+
+    private void printPlayer() {
+        StringBuilder line;
+        Game game = SearchTheDungeon.getCurrentGame();
+        Player player = SearchTheDungeon.getPlayer();
+        ArrayList<InventoryItem> backpack = game.getBackpack();
+        int playerLevel=0;
+        
+        for (InventoryItem item : backpack) {
+            playerLevel = playerLevel + item.getPowerLevel();
+        }
+        
+        this.console.println("\nWhat filename do you want to use? Please use format: 'example.txt' ");
+        String outputLocation;
+
+        try {
+            outputLocation = this.keyboard.readLine();
+
+            try (PrintWriter out = new PrintWriter(outputLocation)) {
+
+                out.println("\n"
+                        + "\n*********************************\r"
+                        + "\n*                               *\r"
+                        + "\n*        Player's list          *\r"
+                        + "\n*                               *\r"
+                        + "\n*********************************\r"
+                        + "\n*Name                Power Level*\r"
+                        + "\n*********************************\r");
+
+                line = new StringBuilder("                                                 ");
+                line.insert(0, player.getName());
+                line.insert(24, playerLevel);
+                out.println(line.toString());
+            }
             this.console.println("Your report was saved successfully.");
 
         } catch (IOException ex) {
