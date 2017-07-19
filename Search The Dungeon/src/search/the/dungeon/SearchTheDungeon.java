@@ -77,6 +77,9 @@ public class SearchTheDungeon {
             SearchTheDungeon.inFile =
                     new BufferedReader(new InputStreamReader(System.in));
             SearchTheDungeon.outFile = new PrintWriter(System.out, true);
+            
+            String filePath = "log.txt";
+            SearchTheDungeon.logFile = new PrintWriter(filePath);
                        
             //create StartProgramViewOrig and display the start program view
             StartProgramView startProgramView = new StartProgramView();
